@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>title:</strong>
+  <%= @meetings_list.title %>
+</p>
+
+<p>
+  <strong>Responsible:</strong>
+  <%= @meetings_list.responsible %>
+</p>
+
+<div id="meetings_items_wrapper">
+  <%= render  @meetings_list.meeting_item %>
+  <div id="form">
+    <%= render  "meetings_items/form" %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_meetings_list_path(@meetings_list) %> |
+<%= link_to 'Back', meetings_lists_path %>

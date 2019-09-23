@@ -1,0 +1,16 @@
+<%= form_for([@meetings_list, @meetings_list.meetings_items.build]) do |f| %>
+<%= f.label :date, "Enter date:" %>
+<%= f.date_field :date, placeholder: "Enter date" %>
+
+<%= f.label :amount, "Enter the amount:" %>
+<%= f.text_field :amount, placeholder: "amount €" %>
+
+<%= f.label :kind, "Choose an option" %>
+<%= f.text_field :kind  %>
+
+<%= f.label :reason, "Reason of income/expense:" %>
+<%= f.text_field :reason %>
+
+<%= f.submit %>
+<% end %>
+
