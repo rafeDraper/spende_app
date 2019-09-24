@@ -1,29 +1,11 @@
-<p id="notice"><%= notice %></p>
+<% @meetings_lists.each do |meetings_list| %>
+  <div class="index_row clearfix">
+    <h2 class="meetings_list_title"><%= link_to meetings_list.title, meetings_list %></h2>
+    <p class="meetings_list_sub_title"> <%= meetings_list.responsible %></p>
+  </div>
+<% end %>
 
-<h1>Meetings Lists</h1>
+<div class="links">
+  <%= link_to  "New meetings list", new_meetings_list_path %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Meeting title</th>
-      <th>Responsible</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @meetings_lists.each do |meetings_list| %>
-      <tr>
-        <td><%= meetings_list.title %></td>
-        <td><%= meetings_list.responsible %></td>
-        <td><%= link_to 'Show', meetings_list %></td>
-        <td><%= link_to 'Edit', edit_meetings_list_path(meetings_list) %></td>
-        <td><%= link_to 'Destroy', meetings_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Meetings List', new_meetings_list_path %>

@@ -1,6 +1,8 @@
-<h1>Editing Meetings List</h1>
+<h1 class="meetings_list_title">Edit Meetings List</h1>
+<div class="forms">
+  <%= render 'form', meetings_list: @meetings_list %>
+</div>
 
-<%= render 'form', meetings_list: @meetings_list %>
-
-<%= link_to 'Show', @meetings_list %> |
-<%= link_to 'Back', meetings_lists_path %>
+<div class="links">
+  <%= link_to 'Cancel', meetings_lists_path %>
+</div>

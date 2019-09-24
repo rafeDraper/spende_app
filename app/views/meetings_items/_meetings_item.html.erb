@@ -1,7 +1,9 @@
 <div class="row clearfix">
   <% if meetings_item.completed? %>
     <div class="complete">
-      <%= link_to  "Mark as Complete", complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch %>
+      <%= link_to complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch do %>
+        <i style="opacity: 0,4;" class="fa fa-check"></i>
+      <% end %>
     </div>
     <div class="meetings_item">
       <p style="opacity: 0,4;">
@@ -12,12 +14,15 @@
     </p>
     </div>
     <div class="trash">
-      <%= link_to 'Delete', meetings_list_meetings_item_path(@meetings_list, meetings_item),
-      method: :delete, data: { confirm: "Are you sure?" }  %>
+      <%= link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="fa fa-trash"></i>
+      <% end %>
     </div>
     <% else %>
     <div class="compelte">
-        <%= link_to  "Mark as Complete", complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch %>
+      <%= link_to complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch do %>
+      <i class="fa fa-check"></i>
+      <% end %>
       </div>
       <div class="meetings_item">
         <p>
@@ -26,8 +31,9 @@
         </p>
       </div>
       <div class="trash">
-        <%= link_to 'Delete', meetings_list_meetings_item_path(@meetings_list, meetings_item),
-        method: :delete, data: { confirm: "Are you sure?" }  %>
+        <%= link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
       </div>
     <% end %>
 

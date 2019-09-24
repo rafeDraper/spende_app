@@ -1,14 +1,6 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>title:</strong>
-  <%= @meetings_list.title %>
-</p>
-
-<p>
-  <strong>Responsible:</strong>
-  <%= @meetings_list.responsible %>
-</p>
+<h2 class="meetings_list_title"><%= @meetings_list.title %></h2>
+<p class="meetings_list_sub_title"><%= @meetings_list.responsible %></p>
 
 <div id="meetings_items_wrapper">
   <%= render  @meetings_list.meetings_items %>
@@ -16,6 +8,8 @@
     <%= render  "meetings_items/form" %>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_meetings_list_path(@meetings_list) %> |
-<%= link_to 'Back', meetings_lists_path %>
+<div class="links">
+  <%= link_to 'Edit', edit_meetings_list_path(@meetings_list) %> |
+  <%= link_to  "Delete", meetings_list_path(@meetings_list), method: :delete, data: { confirm: "Are you sure?" } %> |
+  <%= link_to 'Back', meetings_lists_path %>
+</div>
