@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2019_09_21_203431) do
 
   create_table "meetings_items", force: :cascade do |t|
     t.string "date"
-    t.float "amount"
-    t.string "type"
+    t.string "amount"
+    t.string "con_change"
     t.string "reason"
     t.integer "meetings_list_id", null: false
     t.datetime "created_at", precision: 6, null: false

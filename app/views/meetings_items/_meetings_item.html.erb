@@ -1,0 +1,7 @@
+<p>
+  <%= meetings_item.date %>
+  <%= meetings_item.amount %>
+</p>
+
+<%= link_to 'Delete', meetings_list_meetings_item_path(@meetings_list, meetings_item),
+method: :delete, data: { confirm: "Are you sure?" } %>

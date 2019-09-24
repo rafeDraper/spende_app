@@ -3,12 +3,12 @@
 <%= f.date_field :date, placeholder: "Enter date" %>
 
 <%= f.label :amount, "Enter the amount:" %>
-<%= f.text_field :amount, placeholder: "amount €" %>
+<%= f.text_field :amount, data: {autonumeric: {aSign: 'USD', mDec: 0}} %>
 
-<%= f.label :kind, "Choose an option" %>
-<%= f.text_field :kind  %>
+<%= f.label :con_change, "Income || expense?" %>
+<%= f.text_field :con_change %>
 
-<%= f.label :reason, "Reason of income/expense:" %>
+<%= f.label :reason, "Reason:" %>
 <%= f.text_field :reason %>
 
 <%= f.submit %>
