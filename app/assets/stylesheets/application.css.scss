@@ -135,7 +135,7 @@ body {
 		margin-top: 2em;
 		padding: 0 5%;
 		input[type="text"] {
-			width: 72%;
+			width: 100%;
 			margin-right: 2%;
 			display: inline-block;
 			outline: none;
@@ -146,7 +146,7 @@ body {
 			padding: 1em 2em;
 		}
 		input[type="submit"] {
-			background: rgba(250,250,250,.4);
+			background: rgb(255, 255, 255);
 			outline: none;
 			border: none;
 			height: 40px;
@@ -181,6 +181,20 @@ label {
 	color: $dark;
 }
 input[type="text"], textarea {
+	width: 100%;
+	margin: .5em 2% 1em 0;
+	display: inline-block;
+	outline: none;
+	background: rgba(250,250,250,.4);
+	border: none;
+	height: 40px;
+	border-radius: 4px;
+	padding: 1em 2em;
+}
+textarea {
+	height: 200px;
+}
+input[type="date"], textarea {
 	width: 100%;
 	margin: .5em 2% 1em 0;
 	display: inline-block;

@@ -8,7 +8,7 @@
     <div class="meetings_item">
       <p style="opacity: 0,4;">
         <strike>
-        <%= meetings_item.date %>
+        <%= meetings_item.date %> |
         <%= meetings_item.amount %>
       </strike>
     </p>
@@ -18,15 +18,17 @@
       <i class="fa fa-trash"></i>
       <% end %>
     </div>
+
     <% else %>
-    <div class="compelte">
+
+    <div class="complete">
       <%= link_to complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch do %>
       <i class="fa fa-check"></i>
       <% end %>
       </div>
       <div class="meetings_item">
         <p>
-          <%= meetings_item.date %>
+          <%= meetings_item.date %> | 
           <%= meetings_item.amount %>
         </p>
       </div>
@@ -35,6 +37,7 @@
         <i class="fa fa-trash"></i>
       <% end %>
       </div>
+
     <% end %>
 
 </div>

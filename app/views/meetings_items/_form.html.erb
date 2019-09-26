@@ -1,16 +1,29 @@
-<%= form_for([@meetings_list, @meetings_list.meetings_items.build]) do |f| %>
-<%= f.label :date, "Enter date:" %>
-<%= f.date_field :date, placeholder: "Enter date" %>
+<%= form_for [@meetings_list, @meetings_list.meetings_items.build] do |f| %>
 
-<%= f.label :amount, "Enter the amount:" %>
-<%= f.text_field :amount, data: {autonumeric: {aSign: 'USD', mDec: 0}} %>
+<div>
+    <%= f.label :date, "Enter date:" %>
+    <%= f.date_field :date %>
+</div>
 
-<%= f.label :con_change, "Income || expense?" %>
-<%= f.text_field :con_change %>
+<div>
+    <%= f.label :amount, "Enter the amount:" %>
+    <%= f.text_field :amount, data:{autonumeric: {aSign: 'USD', mDec: 0}} %>
+</div>
 
-<%= f.label :reason, "Reason:" %>
-<%= f.text_field :reason %>
+<div>
+    <%= f.label :con_change, "Select an option:" %>
+    <%= f.text_field :con_change %>
+</div>
 
-<%= f.submit %>
+<div>
+    <%= f.label :reason, "Reason:" %>
+    <%= f.text_field :reason %>
+</div>
+
+
+<div class="actions">
+    <%= f.submit value: "New entry" %>
+</div>
+
 <% end %>
 
