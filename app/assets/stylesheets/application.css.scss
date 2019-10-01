@@ -107,7 +107,18 @@ body {
 			padding: 1em 0;
 		}
 		.meetings_item {
-			width: 80%;
+			width: 60%;
+			float: left;
+			p {
+				margin: 0;
+				padding: 1em;
+				color: $dark;
+				font-weight: 100;
+				border-right: 1px solid rgba(250,250,250, .3);
+			}
+		}
+		.meetings_item_2 {
+			width: 20%;
 			float: left;
 			p {
 				margin: 0;
@@ -181,6 +192,20 @@ label {
 	color: $dark;
 }
 input[type="text"], textarea {
+	width: 100%;
+	margin: .5em 2% 1em 0;
+	display: inline-block;
+	outline: none;
+	background: rgba(250,250,250,.4);
+	border: none;
+	height: 40px;
+	border-radius: 4px;
+	padding: 1em 2em;
+}
+textarea {
+	height: 200px;
+}
+input[type="number"], textarea {
 	width: 100%;
 	margin: .5em 2% 1em 0;
 	display: inline-block;

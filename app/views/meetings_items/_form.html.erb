@@ -7,7 +7,7 @@
 
 <div>
     <%= f.label :amount, "Enter the amount:" %>
-    <%= f.text_field :amount, data:{autonumeric: {aSign: 'USD', mDec: 0}} %>
+    <%= f.text_field :amount, as: :currency %>
 </div>
 
 <div>

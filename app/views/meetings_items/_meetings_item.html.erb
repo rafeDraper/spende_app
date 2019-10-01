@@ -1,43 +1,56 @@
+
 <div class="row clearfix">
   <% if meetings_item.completed? %>
-    <div class="complete">
-      <%= link_to complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch do %>
-        <i style="opacity: 0,4;" class="fa fa-check"></i>
-      <% end %>
-    </div>
-    <div class="meetings_item">
-      <p style="opacity: 0,4;">
-        <strike>
-        <%= meetings_item.date %> |
+  <div class="complete">
+    <%= link_to complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch do %>
+    <i style="opacity: 0,4;" class="fa fa-check"></i>
+    <% end %>
+  </div>
+  <div class="meetings_item">
+    <p style="opacity: 0,4;">
+      <strike>
+        <%= meetings_item.date %>
+      </strike>
+    </p>
+  </div>
+
+  <div class="meetings_item_2">
+    <p style="opacity: 0,4;">
+      <strike>
         <%= meetings_item.amount %>
       </strike>
     </p>
-    </div>
-    <div class="trash">
-      <%= link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="fa fa-trash"></i>
-      <% end %>
-    </div>
+  </div>
 
-    <% else %>
-
-    <div class="complete">
-      <%= link_to complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch do %>
-      <i class="fa fa-check"></i>
-      <% end %>
-      </div>
-      <div class="meetings_item">
-        <p>
-          <%= meetings_item.date %> | 
-          <%= meetings_item.amount %>
-        </p>
-      </div>
-      <div class="trash">
-        <%= link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class="fa fa-trash"></i>
-      <% end %>
-      </div>
-
+  <div class="trash">
+    <%= link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fa fa-trash"></i>
     <% end %>
+  </div>
 
+  <% else %>
+
+
+  <div class="complete">
+    <%= link_to complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch do %>
+    <i class="fa fa-check"></i>
+    <% end %>
+  </div>
+  
+  <div class="meetings_item">
+    <p> <%= meetings_item.date %> </p>
+  </div>
+  <div class="meetings_item_2">
+    <p> <%= meetings_item.amount %> </p>
+  </div>
+  <div class="trash">
+    <%= link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fa fa-trash"></i>
+    <% end %>
+  </div>
+  <% end %>
+
+</div>
+<div class="total">
+  <%= "current balance: #{meetings_item.amount}" %>
 </div>
