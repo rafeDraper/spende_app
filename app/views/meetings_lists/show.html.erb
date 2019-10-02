@@ -2,12 +2,16 @@
 <h2 class="meetings_list_title"><%= @meetings_list.title %></h2>
 <p class="meetings_list_sub_title"><%= @meetings_list.responsible %></p>
 
+<div class="total">
+    <%= "current balance: #{@meetings_list.responsible}" %>
+  </div>
 <div id="meetings_items_wrapper">
   <%= render  @meetings_list.meetings_items %>
   <div id="form">
     <%= render  "meetings_items/form" %>
   </div>
 </div>
+
 <div class="links">
   <%= link_to 'Edit', edit_meetings_list_path(@meetings_list) %> |
   <%= link_to  "Delete", meetings_list_path(@meetings_list), method: :delete, data: { confirm: "Are you sure?" } %> |
