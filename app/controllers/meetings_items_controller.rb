@@ -1,10 +1,14 @@
 class MeetingsItemsController < ApplicationController
   before_action :set_meeting_list
-  before_action :set_meetings_item, except: [:create]
+  before_action :set_meetings_item, except: %i[create]
   def create
     @meetings_item = @meetings_list.meetings_items.create(meeting_item_params)
 
     redirect_to @meetings_list
+  end
+
+  def new
+    @meetings_item = MeetingsItem.new
   end
 
   def destroy
@@ -28,7 +32,7 @@ class MeetingsItemsController < ApplicationController
   end
 
   def set_meetings_item
-    @meetings_item = @meetings_list.meetings_items.find(params[:id])
+    @meetings_item = @meetings_list.meetings_items.find_by(id: params[:id])
   end
 
   def meeting_item_params
