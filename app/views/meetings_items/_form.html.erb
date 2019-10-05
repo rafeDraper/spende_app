@@ -7,12 +7,12 @@
 
 <div>
     <%= f.label :amount, "Enter the amount:" %>
-    <%= f.text_field :amount, as: :currency %>
+    <%= f.text_field :amount, data: {autonumeric: {aSign: 'USD ', mDec: 0}}%>
 </div>
 
 <div>
     <%= f.label :con_change, "Select an option:" %>
-    <%= f.text_field :con_change %>
+    <%= f.check_box :con_change, :data => { :size=>'small', 'on-color'=>'success', 'on-text'=>'YES', 'off-text'=>'NO' } %>
 </div>
 
 <div>

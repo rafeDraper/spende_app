@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap3-switch";
+ 
  $white_opaque: rgba(250, 250, 250, .3);
  $dark: #1F7972;
 
@@ -81,9 +83,9 @@ body {
 }
 
 .meetings_list_sub_title {
-	margin: 0 0 3em 0;
+	margin: 0 0 2em 0;
 	text-align: center;
-	font-size: 0.9em;
+	font-size: 1em;
 	color: $dark;
 	font-weight: 100;
 }
@@ -97,7 +99,11 @@ body {
 }
 
 .total {
-	padding: 1em 0 1em 2em;
+	padding: 0em 2em 0em 2em;
+	text-align: center;
+	font-size: 4em;
+	color: $dark;
+	font-weight: 100;
 }
 
 #meetings_items_wrapper {
