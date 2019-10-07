@@ -3,13 +3,13 @@
 one:
   date: MyString
   amount: 1.5
-  type: 
+  currency: MyString 
   reason: MyString
   meetings_list: one
 
 two:
   date: MyString
   amount: 1.5
-  type: 
+  currency: MyString 
   reason: MyString
   meetings_list: two
