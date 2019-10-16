@@ -1,5 +1,12 @@
 <%= form_for [@meetings_list, @meetings_list.meetings_items.build] do |f| %>
 
+<div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">
+            Income/Expense
+        </label>
+</div>
+
 <div>
     <%= f.label :date, "Enter date:" %>
     <%= f.date_field :date %>
@@ -8,11 +15,6 @@
 <div>
     <%= f.label :amount, "Enter the amount:" %>
     <%= f.text_field :amount, data: {autonumeric: {aSign: 'USD ', mDec: 0}}%>
-</div>
-
-<div>
-    <%= f.label :con_change, "Select an option:" %>
-    <%= f.check_box :con_change, :data => { :size=>'small', 'on-color'=>'success', 'on-text'=>'YES', 'off-text'=>'NO' } %>
 </div>
 
 <div>
