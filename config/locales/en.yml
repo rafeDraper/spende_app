@@ -29,9 +29,5 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en-GB:
-  number:
-    currency:
-      format:
-        format: "%n %u"
-        unit: "USD"
+en:
+  hello: "Hello world"

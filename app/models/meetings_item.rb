@@ -3,7 +3,6 @@ class MeetingsItem < ApplicationRecord
   validates :amount, presence: true
   validates :date, presence: true
   validates :reason, presence: true
-  validates :con_change, presence: true
 
   def completed?
     !completed_at.blank?
