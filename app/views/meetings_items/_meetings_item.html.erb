@@ -1,4 +1,3 @@
-
 <div class="row clearfix">
   <% if meetings_item.completed? %>
   <div class="complete">
@@ -18,7 +17,7 @@
   <div class="meetings_amount">
     <p style="opacity: 0,4;">
       <strike>
-        <%= meetings_item.amount %>
+        <%= meetings_item.amount_cents %>
       </strike>
     </p>
   </div>
@@ -42,7 +41,7 @@
     <p> <%= meetings_item.date %> </p>
   </div>
   <div class="meetings_amount">
-    <p> <%= meetings_item.amount %> </p>
+    <p> <%= meetings_item.amount_cents %> </p>
   </div>
   <div class="trash">
     <%= link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do %>

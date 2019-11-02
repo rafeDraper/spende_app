@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MeetingsListsController < ApplicationController
-  before_action :set_meetings_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_meetings_list, only: %i[show edit update destroy]
 
   # GET /meetings_lists
   # GET /meetings_lists.json
@@ -10,7 +12,7 @@ class MeetingsListsController < ApplicationController
   # GET /meetings_lists/1
   # GET /meetings_lists/1.json
   def show
-    @total = @meetings_list.meetings_items.sum(:amount)
+    @total = @meetings_list.meetings_items.sum(:amount_cents)
   end
 
   # GET /meetings_lists/new
@@ -19,8 +21,7 @@ class MeetingsListsController < ApplicationController
   end
 
   # GET /meetings_lists/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /meetings_lists
   # POST /meetings_lists.json
@@ -43,7 +44,10 @@ class MeetingsListsController < ApplicationController
   def update
     respond_to do |format|
       if @meetings_list.update(meetings_list_params)
-        format.html { redirect_to @meetings_list, notice: 'Meetings list was successfully updated.' }
+        format.html do
+          redirect_to @meetings_list,
+                      notice: 'Meetings list was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @meetings_list }
       else
         format.html { render :edit }
@@ -57,7 +61,10 @@ class MeetingsListsController < ApplicationController
   def destroy
     @meetings_list.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Meetings list was successfully destroyed.' }
+      format.html do
+        redirect_to root_url,
+                    notice: 'Meetings list was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
