@@ -3,7 +3,7 @@
 MoneyRails.configure do |config|
   # To set the default currency
   #
-  # config.default_currency = :usd
+  config.default_currency = :eur
 
   # Set default bank object
   #
@@ -45,16 +45,16 @@ MoneyRails.configure do |config|
   # Register a custom currency
   #
   # Example:
-  # config.register_currency = {
-  #   priority:            1,
-  #   iso_code:            "EU4",
-  #   name:                "Euro with subunit of 4 digits",
-  #   symbol:              "€",
-  #   symbol_first:        true,
-  #   subunit:             "Subcent",
-  #   subunit_to_unit:     10000,
-  #   decimal_mark:        ","
-  # }
+  config.register_currency = {
+    priority: 1,
+    iso_code: 'EU4',
+    name: 'Euro with subunit of 4 digits',
+    symbol: '€',
+    symbol_first: true,
+    subunit: 'Subcent',
+    subunit_to_unit: 10_000,
+    decimal_mark: ','
+  }
 
   # Specify a rounding mode
   # Any one of:
@@ -83,7 +83,7 @@ MoneyRails.configure do |config|
 
   # If you would like to use I18n localization (formatting depends on the
   # locale):
-  # config.locale_backend = :i18n
+  config.locale_backend = :i18n
   #
   # Example (using default localization from rails-i18n):
   #

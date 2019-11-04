@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2019_09_24_104628) do
 
   create_table "meetings_items", force: :cascade do |t|
     t.string "date"
-    t.integer "amount_cents", default: 0, null: false
-    t.string "amount_currency", default: "USD", null: false
+    t.integer "dinero_cents", default: 0, null: false
+    t.string "dinero_currency", default: "EUR", null: false
     t.string "reason"
     t.integer "meetings_list_id", null: false
     t.datetime "created_at", precision: 6, null: false
