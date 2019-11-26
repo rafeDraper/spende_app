@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_104628) do
+ActiveRecord::Schema.define(version: 2019_11_25_155851) do
 
   create_table "meetings_items", force: :cascade do |t|
     t.string "date"
-    t.integer "dinero_cents", default: 0, null: false
-    t.string "dinero_currency", default: "EUR", null: false
     t.string "reason"
     t.integer "meetings_list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "completed_at"
+    t.integer "geld_collect_cents"
+    t.string "geld_collect_currency", default: "EUR", null: false
     t.index ["meetings_list_id"], name: "index_meetings_items_on_meetings_list_id"
   end
 
