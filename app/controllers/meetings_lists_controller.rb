@@ -12,7 +12,6 @@ class MeetingsListsController < ApplicationController
   # GET /meetings_lists/1
   # GET /meetings_lists/1.json
   def show
-    @total = @meetings_list.meetings_items.sum(:dinero_cents)
   end
 
   # GET /meetings_lists/new

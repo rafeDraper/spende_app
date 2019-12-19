@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MeetingsItemsController < ApplicationController
   before_action :set_meeting_list
   before_action :set_meetings_item, except: %i[create]
@@ -36,7 +38,6 @@ class MeetingsItemsController < ApplicationController
   end
 
   def meeting_item_params
-    params[:meetings_item].permit(:date, :reason,
-                                  :dinero_cents, :dinero_currency)
+    params[:meetings_item].permit(:date, :reason, :geld_collect)
   end
 end
