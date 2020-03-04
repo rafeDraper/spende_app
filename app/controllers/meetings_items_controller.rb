@@ -27,7 +27,12 @@ class MeetingsItemsController < ApplicationController
     redirect_to @meetings_list, notice: 'Meetings item completed'
   end
 
+  def set_total
+    @meetings_item.find(params[:geld_collect_cents]).sum
+  end
+
   private
+  
 
   def set_meeting_list
     @meetings_list = MeetingsList.find(params[:meetings_list_id])
