@@ -43,6 +43,6 @@ class MeetingsItemsController < ApplicationController
   end
 
   def meeting_item_params
-    params[:meetings_item].permit(:date, :reason, :geld_collect)
+    params[:meetings_item].permit(:date, :reason, :geld_collect_cents)
   end
 end

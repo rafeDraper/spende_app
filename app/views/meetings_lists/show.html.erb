@@ -5,7 +5,7 @@
 <p class="meetings_list_sub_title"><%= @meetings_list.responsible %></p>
 
 <div class="total">
-    <%= collect_sum %>
+    <%= "total: #{humanized_money_with_symbol @show_total}" %>
 </div>
 
 <div id="meetings_items_wrapper">
@@ -17,6 +17,6 @@
 <div class="links">
   <%= link_to "New entry", new_meetings_list_meetings_item_path(@meetings_list)  %> |
   <%= link_to 'Edit', edit_meetings_list_path(@meetings_list) %> |
-  <%= link_to  "Delete", meetings_list_path(@meetings_list), method: :delete, data: { confirm: "Are you sure?" } %> |
+  <%= link_to "Delete", meetings_list_path(@meetings_list), method: :delete, data: { confirm: "Are you sure?" } %> |
   <%= link_to 'Back', meetings_lists_path %>
 </div>
