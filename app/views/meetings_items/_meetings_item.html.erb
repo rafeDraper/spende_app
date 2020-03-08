@@ -17,7 +17,7 @@
   <div class="meetings_amount">
     <p style="opacity: 0,4;">
       <strike>
-        <%= humanized_money_with_symbol meetings_item.geld_collect_cents %>
+        <%= humanized_money_with_symbol meetings_item.income_cents %>
       </strike>
     </p>
   </div>
@@ -41,7 +41,7 @@
     <p> <%= meetings_item.date %> </p>
   </div>
   <div class="meetings_amount">
-    <p> <%= humanized_money_with_symbol meetings_item.geld_collect_cents %> </p>
+    <p> <%= humanized_money_with_symbol meetings_item.income_cents %> </p>
   </div>
   <div class="trash">
     <%= link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do %>

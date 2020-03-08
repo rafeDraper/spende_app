@@ -27,10 +27,6 @@ class MeetingsItemsController < ApplicationController
     redirect_to @meetings_list, notice: 'Meetings item completed'
   end
 
-  def set_total
-    @meetings_item.find(params[:geld_collect_cents]).sum
-  end
-
   private
   
 
@@ -43,6 +39,6 @@ class MeetingsItemsController < ApplicationController
   end
 
   def meeting_item_params
-    params[:meetings_item].permit(:date, :reason, :geld_collect_cents)
+    params[:meetings_item].permit(:date, :reason, :income_cents)
   end
 end

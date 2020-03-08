@@ -1,9 +1,10 @@
-# frozen_string_literal: true
+# encoding : utf-8
 
 MoneyRails.configure do |config|
+
   # To set the default currency
   #
-  config.default_currency = :eur
+  # config.default_currency = :eur
 
   # Set default bank object
   #
@@ -46,15 +47,15 @@ MoneyRails.configure do |config|
   #
   # Example:
   # config.register_currency = {
-  # priority:            1,
-  # iso_code:            "EU4",
-  # name:                "Euro with subunit of 4 digits",
-  # symbol:              "€",
-  # symbol_first:        true,
-  # subunit:             "Subcent",
-  # subunit_to_unit:     10000,
-  # thousands_separator: ".",
-  # decimal_mark:        ","
+  #   priority:            1,
+  #   iso_code:            "EU4",
+  #   name:                "Euro with subunit of 4 digits",
+  #   symbol:              "€",
+  #   symbol_first:        true,
+  #   subunit:             "Subcent",
+  #   subunit_to_unit:     10000,
+  #   thousands_separator: ".",
+  #   decimal_mark:        ","
   # }
 
   # Specify a rounding mode
@@ -71,25 +72,27 @@ MoneyRails.configure do |config|
   # set to BigDecimal::ROUND_HALF_EVEN by default
   #
   # config.rounding_mode = BigDecimal::ROUND_HALF_UP
-  config.rounding_mode = BigDecimal::ROUND_HALF_UP
+
   # Set default money format globally.
   # Default value is nil meaning "ignore this option".
   # Example:
   #
   # config.default_format = {
-  #   no_cents_if_whole: true,
-  #   symbol: '€',
-  #   sign_before_symbol: false
+  #   no_cents_if_whole: nil,
+  #   symbol: nil,
+  #   sign_before_symbol: nil
   # }
 
   # If you would like to use I18n localization (formatting depends on the
   # locale):
+  # config.locale_backend = :i18n
   config.locale_backend = :i18n
-  #
   # Example (using default localization from rails-i18n):
   #
-  # I18n.locale = :en
+  # I18n.locale = :de
   # Money.new(10_000_00, 'USD').format # => $10,000.00
+  # I18n.locale = :es
+  # Money.new(10_000_00, 'USD').format # => $10.000,00
   #
   # For the legacy behaviour of "per currency" localization (formatting depends
   # only on currency):

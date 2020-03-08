@@ -2,8 +2,9 @@
 
 # Meetings items class
 class MeetingsItem < ApplicationRecord
+
   belongs_to :meetings_list
-  monetize :geld_collect_cents
+  monetize :income_cents
 
   def completed?
     !completed_at.blank?
