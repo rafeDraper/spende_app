@@ -1,0 +1,50 @@
+0000000000000000000000000000000000000000 1b772737bfc2e4e4adb8a3895cc82be732dbbd02 rafedraper <rafedraper@gmail.com> 1569068159 +0200	commit (initial): new rails app
+1b772737bfc2e4e4adb8a3895cc82be732dbbd02 707d586a4ebc8d2bb8300b5e3c914781bfdedd02 rafedraper <rafedraper@gmail.com> 1569223947 +0200	commit: updated views
+707d586a4ebc8d2bb8300b5e3c914781bfdedd02 301b935a0d3debd7930c9445d68f9d186d7b9b2e rafedraper <rafedraper@gmail.com> 1569320883 +0200	commit: Updated fields
+301b935a0d3debd7930c9445d68f9d186d7b9b2e d1aece244bb31477fffaeabb9b63c5f4de79306f rafedraper <rafedraper@gmail.com> 1569321697 +0200	commit: updated gems
+d1aece244bb31477fffaeabb9b63c5f4de79306f eaffab8518aae17b6c5e6767d738baeb4cf334d7 rafedraper <rafedraper@gmail.com> 1569325346 +0200	commit: Mark as completed ability
+eaffab8518aae17b6c5e6767d738baeb4cf334d7 11c580870bf39f1b5d8bfd2d3b6bfc2f9fd2a948 rafedraper <rafedraper@gmail.com> 1569329731 +0200	commit: styled application, still work to do
+11c580870bf39f1b5d8bfd2d3b6bfc2f9fd2a948 cf97bf36530ef11286773cdad426dbb31557954c rafedraper <rafedraper@gmail.com> 1569497063 +0200	commit: Updated gem for currency and FE
+cf97bf36530ef11286773cdad426dbb31557954c 0c902264dec798892f1428eb94847949c8162208 rafedraper <rafedraper@gmail.com> 1569919181 +0200	commit: updated FE and added couple parameters
+0c902264dec798892f1428eb94847949c8162208 781d75eea021eae57c8c8d7985039ba4479b4573 rafedraper <rafedraper@gmail.com> 1570004779 +0200	commit: formating the show view for total
+781d75eea021eae57c8c8d7985039ba4479b4573 d0370f12fcd781fc4aa14d5fb50ebd11d1a0eacb rafedraper <rafedraper@gmail.com> 1570217122 +0200	commit: update interface and new items form
+d0370f12fcd781fc4aa14d5fb50ebd11d1a0eacb d0370f12fcd781fc4aa14d5fb50ebd11d1a0eacb rafedraper <rafedraper@gmail.com> 1570270000 +0200	checkout: moving from master to proofing
+d0370f12fcd781fc4aa14d5fb50ebd11d1a0eacb e8719a8cd886ebc25f4fe50eb991d2cc8fd25c29 rafedraper <rafedraper@gmail.com> 1570270567 +0200	commit: added comments where help is needed
+e8719a8cd886ebc25f4fe50eb991d2cc8fd25c29 d0370f12fcd781fc4aa14d5fb50ebd11d1a0eacb rafedraper <rafedraper@gmail.com> 1570270593 +0200	checkout: moving from proofing to master
+d0370f12fcd781fc4aa14d5fb50ebd11d1a0eacb 0f3c0b1d11a833af9dee87d9986fb3a87f7825f4 rafedraper <rafedraper@gmail.com> 1570284190 +0200	commit: updated DB and total from the form
+0f3c0b1d11a833af9dee87d9986fb3a87f7825f4 c933c02a8285fbffea04cc98f47d72536330c7f2 rafedraper <rafedraper@gmail.com> 1570436973 +0200	commit: updated Gemfile
+c933c02a8285fbffea04cc98f47d72536330c7f2 fadf200b4242f0250a0bbd3005dea74208fc4f5f rafedraper <rafedraper@gmail.com> 1570437530 +0200	commit: updated gemfile
+fadf200b4242f0250a0bbd3005dea74208fc4f5f ef007c141b0f9be03b17fdd7ae8b82069fc0a96f rafedraper <rafedraper@gmail.com> 1570437905 +0200	commit: deleted bootstrap-switch gem
+ef007c141b0f9be03b17fdd7ae8b82069fc0a96f 29409760c18e28294535da0be3194e940843c8b3 rafedraper <rafedraper@gmail.com> 1570438597 +0200	commit: updated gem without pg
+29409760c18e28294535da0be3194e940843c8b3 cfd2394cd704a5d59837cf3a00cd78b160193627 rafedraper <rafedraper@gmail.com> 1570438621 +0200	commit: updated gem
+cfd2394cd704a5d59837cf3a00cd78b160193627 70fe405008a14f1f0a5b9e5daa3e7350b93c6cb9 rafedraper <rafedraper@gmail.com> 1570438739 +0200	commit: gem lock file updated
+70fe405008a14f1f0a5b9e5daa3e7350b93c6cb9 caf2d993439bfd6a7fa65023a407b45a2ddf3e1b rafedraper <rafedraper@gmail.com> 1570439221 +0200	commit: re instate pg for production
+caf2d993439bfd6a7fa65023a407b45a2ddf3e1b 5b3df0ec9330b246e4a72bb52893f229af1d8a1b rafedraper <rafedraper@gmail.com> 1570439829 +0200	commit: updated yarn
+5b3df0ec9330b246e4a72bb52893f229af1d8a1b 7985c74350a3b14ff2cfa81a5500413cc1c91a79 rafedraper <rafedraper@gmail.com> 1570452035 +0200	commit: update gem file with rake
+7985c74350a3b14ff2cfa81a5500413cc1c91a79 95f33a7303af8f8dcea5fc9c2ba5e27964fcdcb2 rafedraper <rafedraper@gmail.com> 1570454574 +0200	commit: update Gem file rake
+95f33a7303af8f8dcea5fc9c2ba5e27964fcdcb2 144c67de45d6c5976772e07ec6cab985496aaad7 rafedraper <rafedraper@gmail.com> 1570455085 +0200	commit: prod
+144c67de45d6c5976772e07ec6cab985496aaad7 a11f4c920f4228696adf81c42d85275ab07797bb rafedraper <rafedraper@gmail.com> 1570455651 +0200	commit: deprecations update
+a11f4c920f4228696adf81c42d85275ab07797bb 28eaf449b339baeb7c09621585939980b937b8f8 rafedraper <rafedraper@gmail.com> 1570518818 +0200	commit: check for depecation
+28eaf449b339baeb7c09621585939980b937b8f8 ac120cdf320279e447d7bf2bb7bf48c8b3a277b4 rafedraper <rafedraper@gmail.com> 1571227228 +0200	commit: Updated Gem file
+ac120cdf320279e447d7bf2bb7bf48c8b3a277b4 12da13a5872175e1a0bf2139490e5003a3f99042 rafedraper <rafedraper@gmail.com> 1571237968 +0200	commit: Added bootstrap, still needs adjusts
+12da13a5872175e1a0bf2139490e5003a3f99042 62727c83909602f2a801f50e1699314a52805280 rafedraper <rafedraper@gmail.com> 1571238647 +0200	commit: Wroking validations
+62727c83909602f2a801f50e1699314a52805280 fbadad92dc0d8bca5ecd65a333c04d46d38f68fd rafedraper <rafedraper@gmail.com> 1571300066 +0200	commit: Updated Guard test and page titles
+fbadad92dc0d8bca5ecd65a333c04d46d38f68fd 47c81c4992dc66a7001c41340382d43ed9eef2a7 rafedraper <rafedraper@gmail.com> 1571300111 +0200	commit: test guards
+47c81c4992dc66a7001c41340382d43ed9eef2a7 e322468ad13c0cafdb13712fec52528227397c76 rafedraper <rafedraper@gmail.com> 1572449646 +0100	commit: Formating the currency
+e322468ad13c0cafdb13712fec52528227397c76 908e8d850d6662d35ed22f8ae33f460b48ffdd52 rafedraper <rafedraper@gmail.com> 1572451692 +0100	commit: Updated DB and Money GEM
+908e8d850d6662d35ed22f8ae33f460b48ffdd52 8c25242c6857fc7ef7a0f9f88477b26611972520 rafedraper <rafedraper@gmail.com> 1572717729 +0100	commit: Updated Money GEm
+8c25242c6857fc7ef7a0f9f88477b26611972520 0d8a8e9113ebd9528370f1b08bcad0db94789f58 rafedraper <rafedraper@gmail.com> 1572858157 +0100	commit: Still formating money gem
+0d8a8e9113ebd9528370f1b08bcad0db94789f58 0d8a8e9113ebd9528370f1b08bcad0db94789f58 rafedraper <rafedraper@gmail.com> 1572858175 +0100	checkout: moving from master to money_gem
+0d8a8e9113ebd9528370f1b08bcad0db94789f58 f7940735f8bd2dcccf371658e96a67b137f15a49 rafedraper <rafedraper@gmail.com> 1574793104 +0100	commit: Configuring the Gem
+f7940735f8bd2dcccf371658e96a67b137f15a49 0d8a8e9113ebd9528370f1b08bcad0db94789f58 rafedraper <rafedraper@gmail.com> 1576790403 +0100	checkout: moving from money_gem to master
+0d8a8e9113ebd9528370f1b08bcad0db94789f58 59851589c87536a2e23be7cd7dccbf1ddc959032 rafedraper <rafedraper@gmail.com> 1576790443 +0100	commit: Updated Puma
+59851589c87536a2e23be7cd7dccbf1ddc959032 3877b5eba0e50d4c227c083d0a4092f79af7efe0 rafedraper <rafedraper@gmail.com> 1576791216 +0100	commit: updated Yarn
+3877b5eba0e50d4c227c083d0a4092f79af7efe0 346b9bdd189c0547b30f39463f664de40f2ff317 rafedraper <rafedraper@gmail.com> 1576791552 +0100	commit: Updated Gems
+346b9bdd189c0547b30f39463f664de40f2ff317 f7940735f8bd2dcccf371658e96a67b137f15a49 rafedraper <rafedraper@gmail.com> 1576791632 +0100	checkout: moving from master to money_gem
+f7940735f8bd2dcccf371658e96a67b137f15a49 346b9bdd189c0547b30f39463f664de40f2ff317 rafedraper <rafedraper@gmail.com> 1576791712 +0100	checkout: moving from money_gem to master
+346b9bdd189c0547b30f39463f664de40f2ff317 bcad49deb38271d9cee7ffc06eb14cab9f2ed735 rafedraper <rafedraper@gmail.com> 1576791729 +0100	merge money_gem: Merge made by the 'recursive' strategy.
+bcad49deb38271d9cee7ffc06eb14cab9f2ed735 4c035b3b8a51efab2f21118ea9920cb948fee1b3 rafedraper <rafedraper@gmail.com> 1583352554 +0100	commit: Updated ruby version
+4c035b3b8a51efab2f21118ea9920cb948fee1b3 0f273d4292f7732bc43ce914babf5c2cc25c6e75 rafedraper <rafedraper@gmail.com> 1583363736 +0100	commit: WIP
+0f273d4292f7732bc43ce914babf5c2cc25c6e75 748c5805d98708207cf8741be7c559b0e7767848 rafedraper <rafedraper@gmail.com> 1583424445 +0100	commit: Still needs some configuration the gem.
+748c5805d98708207cf8741be7c559b0e7767848 d96e23d4b9e58c56ff43dff3519f3d3c93b11041 rafedraper <rafedraper@gmail.com> 1583707447 +0100	commit: Still trying to make the currency work
+                                                              
