@@ -7,7 +7,6 @@ ruby '2.7.0'
 gem 'bootsnap',    '1.4.5', require: false
 gem 'bootstrap',   '~> 4.3.1'
 gem 'jbuilder',    '2.9.1'
-gem 'money-rails', '1.13.3'
 gem 'puma',        '4.3.3'
 gem 'rails',       '6.0.2.1'
 gem 'rails-i18n',  '~> 6.0.0'

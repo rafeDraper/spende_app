@@ -1,3 +1,5 @@
+<% provide(:title, "#{@meetings_list.title}") %>
+
 <%= form_for [@meetings_list, @meetings_list.meetings_items.build] do |f| %>
 
 <div>
@@ -6,12 +8,12 @@
 </div>
 
 <div>
-    <%= f.label :income_cents, "Enter the amount:" %>
-    <%= f.number_field :income_cents %>
+    <%= f.label :amount, "Enter the amount:" %>
+    <%= f.text_field :amount %>
 </div> 
 
 <div>
-    <%= f.label :reason, "Reason:" %>
+    <%= f.label :reason, "Motive:" %>
     <%= f.text_field :reason %>
 </div>
 
