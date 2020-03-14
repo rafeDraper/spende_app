@@ -5,8 +5,12 @@ class MeetingsItemsController < ApplicationController
   before_action :set_meetings_item, except: %i[create]
   def create
     @meetings_item = @meetings_list.meetings_items.create(meeting_item_params)
-
-    redirect_to @meetings_list
+    if @meetings_item.valid?
+      @meetings_item.save
+      redirect_to @meetings_list
+    else
+      render :new
+    end
   end
 
   def new
