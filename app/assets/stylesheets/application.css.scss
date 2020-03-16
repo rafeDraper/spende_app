@@ -15,9 +15,11 @@
  */
 
  @import "bootstrap";
+
  
  $white_opaque: rgba(250, 250, 250, .3);
  $dark: #1F7972;
+ $darker: rgb(18, 71, 67);
 
 * {
 	box-sizing: border-box;
@@ -65,6 +67,23 @@ body {
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
 	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
 	padding: 1em 0;
+	.nav {
+		display: flex;
+		justify-content: center;
+		li:not(:first-child) {
+			padding-left: 2rem;
+		}
+		li {
+			a {
+				color: $darker;
+				text-transform: uppercase;
+				font-weight: 700;
+				&:hover {
+					color: $dark;
+				}
+			}
+		}
+	}
 }
 
 .meetings_list_title {
@@ -223,6 +242,7 @@ body {
 	color: white;
 	a {
 		color: white;
+		font-size: 1rem;
 	}
 }
 

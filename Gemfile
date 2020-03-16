@@ -4,15 +4,16 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
-gem 'bootsnap',    '1.4.5', require: false
-gem 'bootstrap',   '~> 4.3.1'
-gem 'jbuilder',    '2.9.1'
-gem 'puma',        '4.3.3'
-gem 'rails',       '6.0.2.1'
-gem 'rails-i18n',  '~> 6.0.0'
-gem 'sass-rails',  '6.0.0'
-gem 'turbolinks',  '5.2.0'
-gem 'webpacker',   '4.2.2'
+gem 'bootsnap',       '1.4.5', require: false
+gem 'bootstrap',      '~> 4.3.1'
+gem 'bootstrap-sass', '3.4.1'
+gem 'jbuilder',       '2.9.1'
+gem 'puma',           '4.3.3'
+gem 'rails',          '6.0.2.1'
+gem 'rails-i18n',     '~> 6.0.0'
+gem 'sass-rails',     '6.0.0'
+gem 'turbolinks',     '5.2.0'
+gem 'webpacker',      '4.2.2'
 
 group :development, :test do
   gem 'byebug',  '11.0.1', platforms: %i[mri mingw x64_mingw]

@@ -2,6 +2,6 @@
 
 module ApplicationHelper
   def format_currency(amount)
-    number_to_currency(amount, unit: '€', precision: 2, separator: ',', delimiter: '', format: "%n%u")
+    number_to_currency(amount, locale: :de)
   end
 end

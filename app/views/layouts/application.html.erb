@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Spende App | <%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -8,13 +9,24 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
-    
+<body>
+  <header >
+    <div class="container">
+      <nav>
+        <ul class="nav">
+          <li><%= link_to "Log in", '#' %></li>
+          <li><%= link_to "Help", '#' %></li>
+          <li><%= link_to "Contact", '#' %></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
     <div class="container">
         <%= yield %>
     </div>
-    
-  </body>
+</body>
+
 </html>
