@@ -1,6 +1,5 @@
 <% provide(:title, "#{@meetings_list.title}") %>
 
-<p id="notice"><%= notice %></p>
 <h2 class="meetings_list_title"><%= @meetings_list.title %></h2>
 <p class="meetings_list_sub_title"><%= @meetings_list.responsible %></p>
 
@@ -10,13 +9,13 @@
 
 <div id="meetings_items_wrapper">
     <div id="form">
-      <%= render  @meetings_list.meetings_items %>
+        <%= render  @meetings_list.meetings_items %>
     </div>
 </div>
 
 <div class="links">
-  <%= link_to "New entry", new_meetings_list_meetings_item_path(@meetings_list)  %> |
-  <%= link_to 'Edit', edit_meetings_list_path(@meetings_list) %> |
-  <%= link_to "Delete", meetings_list_path(@meetings_list), method: :delete, data: { confirm: "Are you sure?" } %> |
-  <%= link_to 'Back', meetings_lists_path %>
+    <%= link_to "New entry", new_meetings_list_meetings_item_path(@meetings_list)  %> |
+    <%= link_to 'Edit', edit_meetings_list_path(@meetings_list) %> |
+    <%= link_to "Delete", meetings_list_path(@meetings_list), method: :delete, data: { confirm: "Are you sure?" } %> |
+    <%= link_to 'Back', meetings_lists_path %>
 </div>
