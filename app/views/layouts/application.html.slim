@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title
+      | Spende App | 
+      = yield(:title)
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    link[href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css"]
+    link[href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"]
+
+  body
+    - if notice
+      p.alert.alert-success
+        = notice
+    - if alert
+      p.alert.alert-danger
+        = alert
+    header
+      .container
+        nav
+          ul.nav
+            - if user_signed_in?
+              li
+                | Logged in as: 
+                strong
+                  = current_user.email
+                | .
+              li
+                = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+              li
+                = link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'
+            - else
+              li
+                = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
+              li
+                = link_to "Login", new_user_session_path, :class => 'navbar-link'
+            li
+              = link_to "Help", '#'
+            li
+              = link_to "Contact", '#'
+    .container
+      = yield

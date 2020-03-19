@@ -1,0 +1,13 @@
+- provide(:title, "#{@meetings_list.title}")
+= form_for [@meetings_list, @meetings_list.meetings_items.build] do |f|
+  div
+    = f.label :date, "Enter date:"
+    = f.date_field :date
+  div
+    = f.label :amount_cents, "Enter the amount:"
+    = f.text_field :amount_cents
+  div
+    = f.label :reason, "Motive:"
+    = f.text_field :reason
+  .actions
+    = f.submit value: "New entry"

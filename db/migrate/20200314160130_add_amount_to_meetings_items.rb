@@ -1,5 +1,9 @@
 class AddAmountToMeetingsItems < ActiveRecord::Migration[6.0]
   def change
-    add_column :meetings_items, :amount, :decimal, precision: 8, scale: 2
+    add_monetize :meetings_items, :amount,
+                 numericality: {
+                   greater_than_or_equal_to: 0,
+                   less_than_or_equal_to: 10_000
+                 }
   end
 end

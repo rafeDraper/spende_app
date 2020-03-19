@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(version: 2020_03_17_114807) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "completed_at"
-    t.decimal "amount", precision: 8, scale: 2
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "EUR", null: false
     t.index ["meetings_list_id"], name: "index_meetings_items_on_meetings_list_id"
   end
 

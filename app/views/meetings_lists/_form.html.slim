@@ -1,0 +1,18 @@
+= form_with(model: meetings_list, local: true) do |form|
+  - if meetings_list.errors.any?
+    #error_explanation
+      h2
+        = pluralize(meetings_list.errors.count, "error")
+        |  prohibited this meetings_list from being saved:
+      ul
+        - meetings_list.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :title
+    = form.text_field :title
+  .field
+    = form.label :responsible
+    = form.text_field :responsible
+  .actions
+    = form.submit value: "Create"
