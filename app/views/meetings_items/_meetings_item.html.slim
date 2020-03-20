@@ -10,7 +10,7 @@
     .meetings_amount
       p[style="opacity: 0,4;"]
         strike
-          = humanized_money_with_symbol meetings_item.amount_cents
+          = humanized_money_with_symbol meetings_item.amount
     .trash
       = link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do
         i.fa.fa-trash
@@ -23,7 +23,7 @@
         = meetings_item.date
     .meetings_amount
       p
-        = humanized_money_with_symbol meetings_item.amount_cents
+        = humanized_money_with_symbol meetings_item.amount
     .trash
       = link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do
         i.fa.fa-trash

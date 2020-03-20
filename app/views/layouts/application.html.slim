@@ -10,7 +10,14 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     link[href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css"]
     link[href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"]
-
+    / Global config for input masking in Cleave library
+    javascript:
+      window.__AMOUNT_INPUT_MASK__ = {
+      prefix: "#{raw Money.default_currency.symbol} ",
+      numeral: true,
+      numeralThousandsGroupStyle: 'lakh',
+      rawValueTrimPrefix: true
+      };
   body
     - if notice
       p.alert.alert-success
