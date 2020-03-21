@@ -5,9 +5,10 @@
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
-    "@rails/webpacker": "^4.0.7",
+    "@rails/webpacker": "4.2.2",
     "acorn": "^6.4.1",
     "cleave.js": "^1.5.8",
+    "core-js": "3",
     "minimist": "^1.2.2",
     "serialize-javascript": "^2.1.2",
     "turbolinks": "^5.2.0",
@@ -15,6 +16,6 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.8.1"
+    "webpack-dev-server": "^3.10.3"
   }
 }
