@@ -8,10 +8,12 @@ gem 'bootsnap',       '1.4.5', require: false
 gem 'bootstrap-sass', '3.4.1'
 gem 'devise'
 gem 'jbuilder',       '2.9.1'
+gem 'money-rails'
 gem 'puma',           '4.3.3'
 gem 'rails',          '6.0.2.2'
 gem 'rails-i18n',     '~> 6.0.0'
 gem 'sass-rails',     '6.0.0'
+gem 'slim'
 gem 'turbolinks',     '5.2.0'
 gem 'webpacker',      '4.2.2'
 

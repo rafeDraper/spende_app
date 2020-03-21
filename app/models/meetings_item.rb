@@ -1,8 +1,8 @@
 # Meetings items class
 class MeetingsItem < ApplicationRecord
+  include InputHelper
   belongs_to :meetings_list
-  validates :reason, presence: { message: "must be given please" }
-
+  monetize :amount_cents, allow_nil: true
   def completed?
     !completed_at.blank?
   end

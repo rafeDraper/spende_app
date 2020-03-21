@@ -1,0 +1,29 @@
+.row.clearfix
+  - if meetings_item.completed?
+    .complete
+      = link_to complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch do
+        i.fa.fa-check[style="opacity: 0,4;"]
+    .meetings_item
+      p[style="opacity: 0,4;"]
+        strike
+          = meetings_item.date
+    .meetings_amount
+      p[style="opacity: 0,4;"]
+        strike
+          = humanized_money_with_symbol meetings_item.amount
+    .trash
+      = link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do
+        i.fa.fa-trash
+  - else
+    .complete
+      = link_to complete_meetings_list_meetings_item_path(@meetings_list, meetings_item.id), method: :patch do
+        i.fa.fa-check
+    .meetings_item
+      p
+        = meetings_item.date
+    .meetings_amount
+      p
+        = humanized_money_with_symbol meetings_item.amount
+    .trash
+      = link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do
+        i.fa.fa-trash

@@ -1,0 +1,7 @@
+- provide(:title, "New list")
+h1.meetings_list_title
+  | New Meeting
+.forms
+  = render 'form', meetings_list: @meetings_list
+.links
+  = link_to 'Back', meetings_lists_path

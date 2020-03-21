@@ -1,0 +1,6 @@
+h1.meetings_list_title
+  | Edit Meetings List
+.forms
+  = render 'form', meetings_list: @meetings_list
+.links
+  = link_to 'Cancel', meetings_lists_path

@@ -1,0 +1,18 @@
+- provide(:title, "#{@meetings_list.title}")
+h2.meetings_list_title
+  = @meetings_list.title
+p.meetings_list_sub_title
+  = @meetings_list.responsible
+.total
+  = "total: #{ humanized_money_with_symbol @show_total }"
+#meetings_items_wrapper
+  #form
+    = render  @meetings_list.meetings_items
+.links
+  = link_to "New entry", new_meetings_list_meetings_item_path(@meetings_list)
+  |  | 
+  = link_to 'Edit', edit_meetings_list_path(@meetings_list)
+  |  | 
+  = link_to "Delete", meetings_list_path(@meetings_list), method: :delete, data: { confirm: "Are you sure?" }
+  |  | 
+  = link_to 'Back', meetings_lists_path
