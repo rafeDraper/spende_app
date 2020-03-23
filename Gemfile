@@ -4,10 +4,12 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
-gem 'bootsnap',       '1.4.5', require: false
+gem 'bootsnap', '1.4.5', require: false
+gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass', '3.4.1'
 gem 'devise'
-gem 'jbuilder',       '2.9.1'
+gem 'jbuilder', '2.9.1'
+gem 'jquery-rails'
 gem 'money-rails'
 gem 'puma',           '4.3.3'
 gem 'rails',          '6.0.2.2'

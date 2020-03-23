@@ -2,7 +2,7 @@
 = form_for [@meetings_list, @meetings_list.meetings_items.build] do |f|
   div
     = f.label :date, "Enter date:"
-    = f.date_field :date
+    = f.text_field :date, "data-provide" => 'datepicker'
   div
     = f.label :amount, "Enter the amount:"
     = f.text_field :amount
