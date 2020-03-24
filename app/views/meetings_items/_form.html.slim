@@ -1,8 +1,8 @@
 - provide(:title, "#{@meetings_list.title}")
 = form_for [@meetings_list, @meetings_list.meetings_items.build] do |f|
-  div
+  .date_wrapper
     = f.label :date, "Enter date:"
-    = f.date_field :date
+    = f.text_field :date, data: {controller: "flatpickr", flatpickr_alt_format: t("date.formats.long"), flatpickr_alt_input: true,}
   div
     = f.label :amount, "Enter the amount:"
     = f.text_field :amount
