@@ -15,6 +15,7 @@
     "minimist": "^1.2.2",
     "popper.js": "^1.16.1",
     "serialize-javascript": "^2.1.2",
+    "stimulus-flatpickr": "^1.2.1",
     "turbolinks": "^5.2.0",
     "webpack": "^4.0.0"
   },
