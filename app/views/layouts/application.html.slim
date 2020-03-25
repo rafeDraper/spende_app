@@ -12,12 +12,16 @@ html
     link[href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"]
     / Global config for input masking in Cleave library
     javascript:
-      window.__AMOUNT_INPUT_MASK__ = {
-      prefix: "#{raw Money.default_currency.symbol} ",
-      numeral: true,
-      numeralThousandsGroupStyle: 'lakh',
-      rawValueTrimPrefix: true
-      };
+        window.__AMOUNT_INPUT_MASK__ = {
+        prefix: "#{raw Money.default_currency.symbol} ",
+        numeral: true,
+        numeralThousandsGroupStyle: 'thousand',
+        tailPrefix: true,
+        rawValueTrimPrefix: true,
+        numeralDecimalMark: ',',
+        delimiter: '.'
+        };
+
   body
     - if notice
       p.alert.alert-success

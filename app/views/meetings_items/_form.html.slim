@@ -3,10 +3,10 @@
   .date_wrapper
     = f.label :date, "Enter date:"
     = f.text_field :date, data: {controller: "flatpickr", flatpickr_alt_format: t("date.formats.long"), flatpickr_alt_input: true,}
-  div
+  .currency-input
     = f.label :amount, "Enter the amount:"
-    = f.text_field :amount
-  div
+    = f.text_field :amount, class: "currency-input-mask"
+  .reason-input
     = f.label :reason, "Motive:"
     = f.text_field :reason
   .actions

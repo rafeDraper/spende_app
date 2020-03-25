@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 require("flatpickr/dist/themes/material_green.css")
+require("cleave.js")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -17,6 +18,8 @@ require("flatpickr/dist/themes/material_green.css")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+// Stimulus set up
+
 import { Application } from 'stimulus'
 
 
@@ -24,3 +27,12 @@ import { definitionsFromContext } from 'stimulus/webpack-helpers'
 const application = Application.start()
 const context = require.context('../controllers', true, /\.js$/)
 application.load(definitionsFromContext(context))
+
+// Clive setup
+
+document.addEventListener("turbolinks:load", function(event) {
+  // Input Mask
+  document.querySelectorAll("input.currency-input-mask").forEach(function(el) {
+      new Cleave(el, window.__AMOUNT_INPUT_MASK__);
+  });
+});

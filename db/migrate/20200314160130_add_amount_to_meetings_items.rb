@@ -6,6 +6,7 @@ class AddAmountToMeetingsItems < ActiveRecord::Migration[6.0]
                                            numericality: {
                                              greater_than_or_equal_to: 0,
                                              less_than_or_equal_to: 10_000
-                                           }
+                                           },
+                                           default: nil
   end
 end
