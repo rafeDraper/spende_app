@@ -33,22 +33,22 @@ html
           ul.nav
             - if user_signed_in?
               li
-                | Logged in as: 
+                | Angemeldet als:   
                 strong
                   = current_user.email
                 | .
               li
-                = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
-              li
-                = link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'
+                = link_to 'Profil', edit_user_registration_path
             - else
               li
-                = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
+                = link_to "Registrieren", new_user_registration_path
               li
-                = link_to "Login", new_user_session_path, :class => 'navbar-link'
+                = link_to "Anmelden", new_user_session_path
+            li.hilfe
+              = link_to "Hilfe", static_pages_help_path
+            li.kontakt
+              = link_to "Kontakt", static_pages_contact_path
             li
-              = link_to "Help", '#'
-            li
-              = link_to "Contact", '#'
+              = link_to "Abmelden", destroy_user_session_path, method: :delete
     .container
       = yield

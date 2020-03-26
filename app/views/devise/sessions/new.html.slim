@@ -1,6 +1,7 @@
+= provide(:title, "Anmelden")
 .devise_forms
   h2.meetings_list_title
-    | Log in
+    | Anmelden
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
       = f.label :email
@@ -15,6 +16,6 @@
         = f.check_box :remember_me
         = f.label :remember_me
     .actions
-      = f.submit "Log in"
+      = f.submit "Anmelden"
   .last_links
     = render "devise/shared/links"
