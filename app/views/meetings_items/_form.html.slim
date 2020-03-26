@@ -1,13 +1,17 @@
 - provide(:title, "#{@meetings_list.title}")
 = form_for [@meetings_list, @meetings_list.meetings_items.build] do |f|
   .date_wrapper
-    = f.label :date, "Enter date:"
-    = f.text_field :date, data: {controller: "flatpickr", flatpickr_alt_format: t("date.formats.long"), flatpickr_alt_input: true,}
+    = f.label :date, "Geben Sie das Datum ein:"
+    = f.text_field :date, data: {controller: "flatpickr", 
+                                 flatpickr_alt_format: t("date.formats.long"),
+                                 flatpickr_alt_input: true,
+                                 },
+                                 placeholder: "Wählen Sie ein Datum aus"
   .currency-input
-    = f.label :amount, "Enter the amount:"
-    = f.text_field :amount, class: "currency-input-mask"
+    = f.label :amount, "Geben Sie den Betrag ein:"
+    = f.text_field :amount, class: "currency-input-mask", value: "0"
   .reason-input
-    = f.label :reason, "Motive:"
-    = f.text_field :reason
+    = f.label :reason, "Grund:"
+    = f.text_field :reason, placeholder: "Geben Sie bitte, ein Grund für dieses summe"
   .actions
     = f.submit value: "New entry"

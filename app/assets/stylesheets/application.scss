@@ -17,8 +17,6 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "flatpickr";
- 
-
 
  
  $white_opaque: rgba(250, 250, 250, .3);
@@ -359,6 +357,23 @@ input[type="submit"] {
 			color: white;
 		}
 	}
+
+	input[value="Cancel my account"] {
+		background: white;
+		outline: none;
+		border: none;
+		height: 40px;
+		border-radius: 4px;
+		width: 100%;
+		display: inline-block;
+		transition: all .4s ease-in-out;
+		cursor: pointer;
+		color: $dark;
+		&:hover {
+			background: rgb(235, 97, 97);
+			color: white;
+		}
+	}
 	input[type="password"], textarea {
 		width: 100%;
 		margin: .5em 2% 1em 0;
@@ -388,6 +403,14 @@ input[type="submit"] {
 		&:focus {
 			background-color: $light;
 		}
+	}
+
+	.form_subtittle {
+		text-align: center;
+		padding-top: 15px;
+		font-weight: 300;
+		text-transform: uppercase;
+
 	}
 
 	.actions {
