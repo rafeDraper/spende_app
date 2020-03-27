@@ -7,7 +7,7 @@ class MeetingsItemsController < ApplicationController
     @meetings_item = @meetings_list.meetings_items.create(meeting_item_params)
     if @meetings_item.valid?
       @meetings_item.save
-      redirect_to @meetings_list
+      redirect_to @meetings_list, notice: 'Neuer Eintrag hinzugefügt'
     else
       render :new
     end
@@ -18,21 +18,20 @@ class MeetingsItemsController < ApplicationController
   end
 
   def destroy
-    if @meetings_item.destroy
-      flash[:success] = 'meetings list item was deleted.'
-    else
-      flash[:error] = 'meetings list item could not be deleted.'
-    end
+    flash[:notice] = if @meetings_item.destroy
+                       'Listenelement gelöscht.'
+                     else
+                       'Listenelement kann nicht gelöscht werden.'
+                     end
     redirect_to @meetings_list
   end
 
   def complete
     @meetings_item.update_attribute(:completed_at, Time.now)
-    redirect_to @meetings_list, notice: 'Meetings item completed'
+    redirect_to @meetings_list, notice: 'Aufgabe erledigt'
   end
 
   private
-  
 
   def set_meeting_list
     @meetings_list = MeetingsList.find(params[:meetings_list_id])

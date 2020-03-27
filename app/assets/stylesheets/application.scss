@@ -55,14 +55,30 @@ body {
     clear: both;
 }
 
-#notice {
+/* Alert styles */
+
+.alert-success {
 	text-align: center;
-	font-size: 0.6em;
+	font-size: 1em;
+	font-style: italic;
 	color: $dark;
-	font-weight: 100;
+	font-weight: 400;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert-danger {
+	text-align: center;
+	font-size: 1em;
+	font-style: italic;
+	color: white;
+	font-weight: 400;
+	background-color: rgb(235, 97, 97);
+	border-color: rgb(204, 78, 78);
 }
 
 
+/* Container styles */
 
 .container {
 	width: 50%;
