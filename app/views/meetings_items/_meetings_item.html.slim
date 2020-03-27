@@ -7,6 +7,10 @@
       p[style="opacity: 0,4;"]
         strike
           = meetings_item.date
+    .meetings_reason
+      p[style="opacity: 0,4;"]
+        strike
+          = meetings_item.reason
     .meetings_amount
       p[style="opacity: 0,4;"]
         strike
@@ -21,6 +25,9 @@
     .meetings_item
       p
         = meetings_item.date
+    .meetings_reason
+      p
+        = meetings_item.reason
     .meetings_amount
       p
         = humanized_money_with_symbol meetings_item.amount

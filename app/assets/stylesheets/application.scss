@@ -47,7 +47,8 @@ body {
 .clearfix:before,
 .clearfix:after {
     content: " ";
-    display: table;
+		display: flex;
+		margin: 0;
 }
 
 .clearfix:after {
@@ -154,9 +155,10 @@ body {
 /* Meeting Items Styles */
 
 #meetings_items_wrapper {
-
+	width: 100%;
+	padding: 50px 60px;
+	
 	.row {
-		width: 100%;
 		border-top: 1px solid rgba(250,250,250, .3);
 		border-bottom: 1px solid rgba(250,250,250, .3);
 		.complete {
@@ -168,7 +170,18 @@ body {
 			padding: 1em 0;
 		}
 		.meetings_item {
-			width: 60%;
+			width: 40%;
+			float: left;
+			p {
+				margin: 0;
+				padding: 1em;
+				color: $dark;
+				font-weight: 100;
+				border-right: 1px solid rgba(250,250,250, .3);
+			}
+		}
+		.meetings_reason {
+			width: 20%;
 			float: left;
 			p {
 				margin: 0;
@@ -207,8 +220,6 @@ body {
 	}
 
 	#form {
-		margin-top: 2em;
-		padding: 0 5%;
 		input[type="text"] {
 			width: 100%;
 			margin-right: 2%;
