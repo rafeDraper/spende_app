@@ -277,6 +277,7 @@ body {
 }
 label {
 	color: $dark;
+	margin: 0;
 }
 input[type="text"], textarea {
 	width: 100%;
@@ -349,6 +350,18 @@ input[type="submit"] {
 	}
 	.field {
 		width: 400px;
+	}
+
+	#field_checkbox {
+		display: flex;
+		align-content: center;
+		padding-bottom: 20px;
+		justify-content: left;
+
+	}
+
+	#user_remember_me {
+		margin-right: 10px;
 	}
 	input[type="submit"] {
 		background: white;
