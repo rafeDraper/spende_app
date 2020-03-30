@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get 'static_pages/help'
   get 'static_pages/contact'
-  devise_for :users
   resources :meetings_lists do
     resources :meetings_items do
       member do
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
       end
     end
   end
-  root 'meetings_lists#index'
+  root to: 'meetings_lists#index'
 end
