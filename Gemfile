@@ -3,13 +3,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby                              '2.7.0'
+ruby '2.7.0'
 gem 'activerecord-session_store'
 gem 'bootsnap',                   '1.4.5', require: false
 gem 'bootstrap-sass',             '3.4.1'
-gem 'devise'                      
-gem 'flatpickr'                   
-gem 'jbuilder',                   '2.9.1'
+gem 'devise'
+gem 'flatpickr'
+gem 'font-awesome-sass'
+gem 'jbuilder', '2.9.1'
 gem 'money-rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2',     '0.8.0'

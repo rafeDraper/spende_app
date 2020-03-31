@@ -17,5 +17,8 @@
         = f.label :remember_me
     .actions
       = f.submit "Anmelden"
+    .google_signup.actions
+      i class="fab fa-google fa-lg"
+      = link_to "Anmelden mit Google", user_google_oauth2_omniauth_authorize_path
   .last_links
     = render "devise/shared/links"

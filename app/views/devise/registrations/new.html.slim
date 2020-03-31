@@ -1,7 +1,7 @@
-= provide(:title, "Sign up")
+= provide(:title, "Registrieren")
 .devise_forms
   h2.meetings_list_title
-    | Sign up
+    | Registrieren
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
     .field
@@ -14,7 +14,7 @@
         em
           | (
           = @minimum_password_length
-          |  characters minimum)
+          |  Zeichen Minimum)
       br
       = f.password_field :password, autocomplete: "new-password"
     .field
@@ -23,5 +23,8 @@
       = f.password_field :password_confirmation, autocomplete: "new-password"
     .actions
       = f.submit "Sign up"
-  .last_links
+    .google_signup.actions
+      i class="fab fa-google fa-lg"
+      = link_to "Anmelden mit Google", user_google_oauth2_omniauth_authorize_path, class: "btn-bg-blue-500 text_white"
+/  .last_links
     = render "devise/shared/links"
