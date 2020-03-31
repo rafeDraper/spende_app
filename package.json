@@ -12,6 +12,7 @@
     "cleave.js": "^1.5.8",
     "core-js": "3",
     "jquery": "^3.4.1",
+    "kind-of": "^6.0.3",
     "minimist": "^1.2.2",
     "popper.js": "^1.16.1",
     "serialize-javascript": "^2.1.2",
