@@ -9,7 +9,7 @@ gem 'bootsnap',                   '1.4.5', require: false
 gem 'bootstrap-sass',             '3.4.1'
 gem 'devise'
 gem 'flatpickr'
-gem 'font-awesome-sass'
+gem 'font_awesome5_rails'
 gem 'jbuilder', '2.9.1'
 gem 'money-rails'
 gem 'omniauth'

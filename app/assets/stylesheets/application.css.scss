@@ -17,8 +17,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "flatpickr";
- @import "font-awesome-sprockets";
- @import "font-awesome";
+ @import 'font_awesome5_webfont';
+ @import 'font_awesome5.css';
 
 
  
@@ -459,6 +459,10 @@ input[type="submit"] {
 	}
 
 	.google_signup {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-content: center;
 		background: rgb(66, 133, 244);
 		box-shadow: 0 0.05em 0.05em 0 rgba(88, 87, 87, 0.5);
 		outline: none;
@@ -466,9 +470,6 @@ input[type="submit"] {
 		height: 40px;
 		border-radius: 4px;
 		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 		transition: all .4s ease-in-out;
 		cursor: pointer;
 		color: whitesmoke;
@@ -478,7 +479,12 @@ input[type="submit"] {
 		}
 		a {
 			color: whitesmoke;
-			margin-left: 5px;
+			display: inline-block;
+			position: relative;
+			z-index: 1;
+			padding: 10px 9em;
+			width: 100%;
+			height: 100%;
 		}
 	}
 
