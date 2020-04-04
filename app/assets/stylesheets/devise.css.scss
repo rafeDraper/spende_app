@@ -1,12 +1,15 @@
 #error_explanation {
   width: 400px;
   h2 {
+    font-size: 1.5rem;
     margin-top: 0;
-    text-align: center;
-    color: rgba($color: #e95d5d, $alpha: 1.0);
+    text-align: left;
   }
   ul {
     text-decoration: none;
     text-align: left;
+    color: rgba($color: #e95d5d, $alpha: 1.0);
+    list-style-type: none;
+    padding: 0;
   }
 }
