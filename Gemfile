@@ -20,7 +20,7 @@ gem 'rails-i18n',                 '~> 6.0.0'
 gem 'sass-rails',                 '6.0.0'
 gem 'slim-rails',                 '3.2.0'
 gem 'turbolinks',                 '5.2.0'
-gem 'webpacker',                  '4.2.2'
+gem 'webpacker',                  '5.0.1'
 
 group :development, :test do
   gem 'byebug',  '11.0.1', platforms: %i[mri mingw x64_mingw]
