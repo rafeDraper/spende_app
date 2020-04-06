@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get 'static_pages/help'
   get 'static_pages/contact'
-  get 'static_pages/home'
-  resources :meetings_lists do
-    resources :meetings_items do
-      member do
-        patch :complete
+  resources :users 
+    resources :meetings_lists do
+      resources :meetings_items do
+        member do
+          patch :complete
+        end
       end
     end
-  end
-  root to: 'meetings_lists#index'
+  root to: 'static_pages#home'
 end

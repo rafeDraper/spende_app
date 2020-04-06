@@ -63,7 +63,7 @@ body {
 .alert-success {
 	text-align: center;
 	font-size: 1em;
-	font-style: italic;
+	
 	color: $dark;
 	font-weight: 400;
 	background-color: #dff0d8;
@@ -73,7 +73,7 @@ body {
 .alert-danger {
 	text-align: center;
 	font-size: 1em;
-	font-style: italic;
+	
 	color: white;
 	font-weight: 400;
 	background-color: rgb(235, 97, 97);
@@ -115,13 +115,21 @@ body {
 	}
 }
 
-.app_tittle {
+.index_title_in {
 	text-align: center;
-	font-weight: 300;
-	font-size: 5rem;
-	text-transform: uppercase;
-	padding-top: 20px;
-	color: $shade_light;
+  p.top {
+    font-family: 'Oswald';
+    font-size: 8rem;
+    text-transform: uppercase;
+    color: $shade_dark;
+    span {
+      font-family: 'Oswald';
+      color: $shade_light;
+      font-size: 8rem;
+      text-transform: uppercase;
+      padding: 0;
+    }
+  }
 }
 
 .meetings_list_title {
@@ -151,6 +159,7 @@ body {
 .index_row {
 	padding: 2em;
 	border-bottom: 1px solid rgba(250,250,250, .3);
+	margin-bottom: 20px;
 	.todo_list_sub_title {
 		margin-bottom: 0;
 	}
