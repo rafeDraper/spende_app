@@ -4,9 +4,6 @@ class MeetingsListsController < ApplicationController
   before_action :authenticate_user!, except: :index
   before_action :set_meetings_list, only: %i[show edit update destroy]
 
-  #after_action :verify_authorized, except: :index
-  #after_action :verify_policy_scoped, only: :index
-
   # GET /meetings_lists
   # GET /meetings_lists.json
   def index
@@ -22,7 +19,6 @@ class MeetingsListsController < ApplicationController
   # GET /meetings_lists/new
   def new
     @meetings_list = MeetingsList.new
-    #authorize @meetings_list
   end
 
   # GET /meetings_lists/1/edit
@@ -79,7 +75,6 @@ class MeetingsListsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_meetings_list
     @meetings_list = MeetingsList.find(params[:id])
-    #authorize @meetings_list
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
