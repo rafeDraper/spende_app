@@ -1,6 +1,14 @@
-h1 Users Page
-p This page can only be visble to the administrator.
-.users_list
-  ul
-    li Users names
-    p permisions:
+- provide(:title, "Nutzer Konsole")
+h2.meetings_list_title
+  | Nutzer Konsole
+p.meetings_list_sub_title
+
+table.user_table
+  tbody
+    - @users.each do |user|
+      tr
+        = render  "user"
+    
+  
+.links 
+  = link_to 'Back', root_path

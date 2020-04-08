@@ -1,0 +1,9 @@
+td
+  = link_to(user.email, user)
+td
+  = form_for(user) do |f|
+    = f.select(:role, User.roles.keys.map {|role| [role.titleize,role]})
+    td
+      button = f.submit 'Change Role'
+td
+  = link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') unless user == current_user
