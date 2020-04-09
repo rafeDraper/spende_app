@@ -27,10 +27,10 @@ class UsersController < ApplicationController
 
       if @user.update_attributes(secure_params)
         flash[:success] = "Benutzer erfolgreich aktualisiert"
-        redirect_to @user
+        redirect_to @users
       else
         flash[:error] = "nicht in der Lage zu aktualisieren"
-        render "user"
+        render @users
       end
   end
 

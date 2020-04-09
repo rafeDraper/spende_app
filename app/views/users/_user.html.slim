@@ -1,5 +1,5 @@
 td
-  = link_to  current_user.email, @user 
+  = link_to  current_user.email, @user
 td
   = form_with(model: @user, class: "form_user") do |f|
     = f.select(:role, User.roles.keys.map {|role| [role.titleize,role]})
