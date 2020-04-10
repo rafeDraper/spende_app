@@ -25,13 +25,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
 
-      if @user.update_attributes(secure_params)
-        flash[:success] = "Benutzer erfolgreich aktualisiert"
-        redirect_to @users
-      else
-        flash[:error] = "nicht in der Lage zu aktualisieren"
-        render @users
-      end
+    if @user.update_attributes(secure_params)
+
+      redirect_to users_path,
+                  notice: 'Benutzer erfolgreich aktualisiert'
+    else
+      flash[:error] = 'nicht in der Lage zu aktualisieren'
+      render users_path
+    end
   end
 
   private
@@ -39,5 +40,4 @@ class UsersController < ApplicationController
   def secure_params
     params.require(:user).permit(:role)
   end
-  
 end

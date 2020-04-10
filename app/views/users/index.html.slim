@@ -1,14 +1,10 @@
 - provide(:title, "Nutzer Konsole")
 h2.meetings_list_title
   | Nutzer Konsole
-p.meetings_list_sub_title
-
 table.user_table
   tbody
     - @users.each do |user|
       tr
-      = render  "user"
-    
-  
+      = render user
 .links 
-  = link_to 'Back', root_path
+  = link_to 'Züruck nach Listen', root_path
