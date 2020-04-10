@@ -1,6 +1,7 @@
+= provide(:title, "Passwort Zurücksetzen")
 .devise_forms
   h2.meetings_list_title
-    | Forgot your password?
+    | Passwort vergessen?
   = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
     = render "devise/shared/error_messages", resource: resource
     .field
@@ -8,6 +9,6 @@
       br
       = f.email_field :email, autofocus: true, autocomplete: "email"
     .actions
-      = f.submit "Send me reset password instructions"
+      = f.submit "Schicke mir Anweisungen zum Zurücksetzen des Passworts"
   .last_links    
     = render "devise/shared/links"

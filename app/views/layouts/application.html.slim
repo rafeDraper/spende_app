@@ -2,7 +2,7 @@ doctype html
 html
   head
     title
-      | Spende App | 
+      | Spende App 
       = yield(:title)
     = csrf_meta_tags
     = csp_meta_tag
@@ -34,9 +34,9 @@ html
             - if user_signed_in?
               li
                 | Angemeldet als:   
-                strong
-                  = current_user.email
-                | .
+                p
+                  strong = current_user.email
+                  | .
               li
                 = link_to 'Profil', edit_user_registration_path
             - else
