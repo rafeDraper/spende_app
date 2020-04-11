@@ -11,6 +11,7 @@
     "bootstrap": "^4.4.1",
     "cleave.js": "^1.5.8",
     "core-js": "3",
+    "include-media": "^1.4.9",
     "jquery": "^3.4.1",
     "kind-of": "^6.0.3",
     "minimist": "^1.2.2",

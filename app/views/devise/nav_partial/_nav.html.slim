@@ -1,0 +1,25 @@
+.navigation_bar
+  ul.nav
+    - if user_signed_in?
+      li
+        | Angemeldet als:   
+        p
+          strong = current_user.email
+      li
+        = link_to 'Profil', edit_user_registration_path
+      li
+        = link_to  "Nutzerverwaltung", users_path
+      li
+        = link_to  "Listen", meetings_lists_path
+      li
+        = link_to "Abmelden", destroy_user_session_path, method: :delete
+    - else
+      li
+        = link_to "Registrieren", new_user_registration_path
+      li
+        = link_to "Anmelden", new_user_session_path
+      li.hilfe
+        = link_to "Hilfe", static_pages_help_path
+      li.kontakt
+        = link_to "Kontakt", static_pages_contact_path
+      

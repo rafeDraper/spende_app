@@ -9,15 +9,16 @@ $darker: rgb(18, 71, 67);
 
 .index_title {
   text-align: center;
+  padding-top: 150px;
   p.top {
     font-family: 'Oswald';
-    font-size: 8rem;
+    font-size: 12rem;
     text-transform: uppercase;
     color: $darker;
     span {
       font-family: 'Oswald';
       color: $dark;
-      font-size: 8rem;
+      font-size: 12rem;
       text-transform: uppercase;
       padding: 0;
     }
@@ -28,10 +29,12 @@ $darker: rgb(18, 71, 67);
 
 .initial_button {
   text-align: center;
+  padding-top: 20px;
   a {
+    width: 20%;
     color: white;
     display: inline-block;
-    background-color:#688b89;
+    background-color:#0bc0b7;
     padding: 6px 43px ;
     margin: 5px 20px;
     border-radius: 19px;
