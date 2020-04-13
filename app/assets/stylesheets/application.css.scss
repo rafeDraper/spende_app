@@ -156,7 +156,7 @@ body {
 /* Container styles */
 
 .container {
-	width: 50%;
+	width: 80%;
 	height: 70%;
 	background: $white_opaque;
 	border-radius: 7px;
@@ -438,6 +438,7 @@ input[type="submit"] {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	
 	.meetings_list_title {
 		margin-bottom: 2rem;
 	}
@@ -561,7 +562,7 @@ input[type="submit"] {
 	}
 
 	.actions {
-		margin-bottom: 2rem;
+		margin-bottom: 2em;
 	}
 	.last_links {
 		display: flex;
@@ -570,5 +571,27 @@ input[type="submit"] {
 	.last_links a {
 		padding: 10px;
 		color: inherit;
+	}
+	@include media('>=phone', '<=tablet' ) {
+		.meetings_list_title {
+			margin-bottom: 5px;
+		}
+		.field {
+			width: 80vw
+		}
+		label {
+			padding: 5px 0;
+		}
+		input[type="email"], textarea {
+			margin: 0;
+			
+		}
+		input[type="password"], textarea {
+			margin: 0;
+		}
+		.actions {
+			margin-top: 20px;
+			margin-bottom: 5px;
+		}
 	}
 }
