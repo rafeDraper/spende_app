@@ -93,18 +93,55 @@ body {
 
 .navigation_bar {
 	width: 80%;
-	background-color: $white_opaque;
+	background-color: $darker;
 	border-radius: 7px;
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
 	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
 	padding: 2px 0;
+	height: 50px;
 	margin-bottom: 20px;
+	overflow: hidden;
+	position: relative;
+	a {
+		color: white;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		display: block;
+		transition: all 1s;
+		text-decoration: none;
+		&:hover {
+			background-color: $shade_dark;
+			color: white;
+		}
+	}
+	.icon {
+		background: $darker;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		transition: all 1s;
+		text-decoration: none;
+		
+		&:hover {
+			background-color: $shade_dark;
+			color: white;
+		}
+	}
+	#mylinks {
+		display: none;
+		p {
+			padding-left: 1px;
+		}
+	}
 	@include media('>=phone', '<=tablet' ) {
 		background-color: transparent;
 		margin: 10px 10px;
 		width: 90%;
 	}
-	.nav {
+	/*.nav {
 		display: flex;
 		justify-content: center;
 		@include media('>=phone', '<=tablet' ) {
@@ -149,7 +186,7 @@ body {
 				}
 			}
 		}
-	}
+	}*/
 }
 
 
@@ -451,7 +488,6 @@ input[type="submit"] {
 		align-content: center;
 		padding-bottom: 20px;
 		justify-content: left;
-
 	}
 
 	#user_remember_me {

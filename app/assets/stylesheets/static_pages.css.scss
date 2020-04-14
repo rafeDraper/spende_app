@@ -39,16 +39,16 @@ $darker: rgb(18, 71, 67);
       margin: 0;
     }
     width: 20%;
-    color: white;
+    color: $light;
     display: inline-block;
-    background-color:#0bc0b7;
+    background-color: $darker;
     padding: 6px 43px ;
     margin: 5px 20px;
     border-radius: 19px;
     transition: all 1s;
     text-decoration: none;
     &:hover {
-      background-color: $darker;
+      background-color: $shade_dark;
       color: white;
       border: none;
       text-decoration: none;
