@@ -36,3 +36,6 @@ document.addEventListener("turbolinks:load", function(event) {
       new Cleave(el, window.__AMOUNT_INPUT_MASK__);
   });
 });
+
+import myFunction from './rd'
+window.myFunction = myFunction
