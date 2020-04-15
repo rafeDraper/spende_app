@@ -48,8 +48,8 @@ $darker: rgb(18, 71, 67);
     transition: all 1s;
     text-decoration: none;
     &:hover {
-      background-color: $shade_dark;
-      color: white;
+      background-color: $light;
+      color: $darker;
       border: none;
       text-decoration: none;
     }

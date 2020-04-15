@@ -75,6 +75,9 @@ body {
 	font-weight: 400;
 	background-color: #dff0d8;
 	border-color: #d6e9c6;
+	@include media('>=phone', '<=tablet') {
+		font-size: 10px;
+	}
 }
 
 .alert-danger {
@@ -87,6 +90,9 @@ body {
 	font-weight: 400;
 	background-color: rgb(235, 97, 97);
 	border-color: rgb(204, 78, 78);
+	@include media('>=phone', '<=tablet') {
+		font-size: 10px;
+	}
 }
 
 /* Navigation Pane Styles */
@@ -100,8 +106,13 @@ body {
 	padding: 25px 0;
 	height: auto;
 	margin-bottom: 20px;
-	overflow: hidden;
+	overflow: auto;
 	position: relative;
+	p {
+		font-size: 17px;
+		color: $light;
+		padding: 14px 16px;
+	}
 	a {
 		color: white;
 		padding: 14px 16px;
@@ -111,8 +122,8 @@ body {
 		transition: all 1s;
 		text-decoration: none;
 		&:hover {
-			background-color: $shade_dark;
-			color: white;
+			background-color: $light;
+			color: $darker;
 		}
 	}
 	.icon {
@@ -126,67 +137,30 @@ body {
 		text-decoration: none;
 		
 		&:hover {
-			background-color: $shade_dark;
-			color: white;
+			background-color: $light;
+			color: $darker;
 		}
 	}
 	#mylinks {
 		display: none;
-		p {
-			padding-left: 1px;
-		}
 	}
 	@include media('>=phone', '<=tablet' ) {
-		background-color: transparent;
 		margin: 10px 10px;
 		width: 90%;
-	}
-	/*.nav {
-		display: flex;
-		justify-content: center;
-		@include media('>=phone', '<=tablet' ) {
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			align-items: center;
+		a {
 		}
-		li {
-			padding: 10px;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			@include media('>=phone', '<=tablet' ) {
-				padding: 2px;
-				display: flex;
-				align-items: center;
-			}
+		#mylinks {
 			p {
-				margin: 0;
-				padding-left: 5px;
-			}
-		}
-		li {
-			@include media('>=phone', '<=tablet' ) {
-					width: 100%;
+				font-size: 11px;
+				color: $light;
+				padding: 8px 16px;
 			}
 			a {
-				@include media('>=phone', '<=tablet' ) {
-					width: 100%;
-					text-align: center;
-					background-color: $light;
-					border-radius: 10px;
-				}
-				color: $darker;
-				text-transform: uppercase;
-				font-weight: 700;
-				&:hover {
-					background-color: $darker;
-					color: $light;
-					border-radius: 10px;
-				}
+				font-size: 13px;
+				padding: 8px 16px;
 			}
 		}
-	}*/
+	}
 }
 
 
@@ -259,7 +233,7 @@ body {
 .total {
 	padding: 0em 2em 0em 2em;
 	text-align: center;
-	font-size: 4em;
+	font-size: 6vw;
 	color: $dark;
 	font-weight: 100;
 }
@@ -276,7 +250,6 @@ body {
 #meetings_items_wrapper {
 	width: 100%;
 	padding: 50px 60px;
-	
 	.row {
 		border-top: 1px solid rgba(250,250,250, .3);
 		border-bottom: 1px solid rgba(250,250,250, .3);
@@ -387,6 +360,11 @@ body {
 			}
 		}
 		::-webkit-input-placeholder { color: $dark; }
+	}
+	@include media('>=phone', '<=tablet' ) {
+		.row {
+			font-size: 10px;
+		}
 	}
 }
 

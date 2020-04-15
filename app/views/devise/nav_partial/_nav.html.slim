@@ -1,8 +1,8 @@
 .navigation_bar
   #mylinks
     - if user_signed_in?
-        p Angemeldet als:   
-        p
+        p 
+          | Angemeldet als:   
           strong = current_user.email
         = link_to fa_icon('home'), root_path, class: 'home_button'
         = link_to 'Profil', edit_user_registration_path
