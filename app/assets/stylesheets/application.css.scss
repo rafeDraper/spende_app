@@ -111,11 +111,11 @@ body {
 	p {
 		font-size: 17px;
 		color: $light;
-		padding: 14px 16px;
+		padding: 9px 16px;
 	}
 	a {
 		color: white;
-		padding: 14px 16px;
+		padding: 9px 16px;
 		text-decoration: none;
 		font-size: 17px;
 		display: block;
@@ -135,7 +135,9 @@ body {
 		bottom: 0;
 		transition: all 1s;
 		text-decoration: none;
-		
+		i {
+			padding-top: 7px;
+		}
 		&:hover {
 			background-color: $light;
 			color: $darker;
