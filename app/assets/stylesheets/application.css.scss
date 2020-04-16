@@ -42,6 +42,7 @@ body {
   background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
 	background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
 	background-repeat: no-repeat;
+	font-size: 16px;
 	font-family: 'Lato', sans-serif;
 	height: 100vh;
 	display: flex;
@@ -55,8 +56,7 @@ body {
 .clearfix:before,
 .clearfix:after {
     content: " ";
-		display: flex;
-		margin: 0 auto;
+	
 }
 
 .clearfix:after {
@@ -105,7 +105,7 @@ body {
 	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
 	padding: 25px 0;
 	height: auto;
-	margin-bottom: 20px;
+	margin: 20px 0;
 	overflow: auto;
 	position: relative;
 	p {
@@ -174,9 +174,11 @@ body {
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
 	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
 	padding: 1em 0;
+	margin-bottom: 20px;
 	@include media('>=phone', '<=tablet' ) {
 		width: 90%;
 		margin-bottom: 10px;
+		font-size: 11px;
 	}
 }
 
@@ -203,6 +205,7 @@ body {
 	font-size: 3rem;
 	text-transform: uppercase;
 	color: $shade_dark;
+	padding-bottom: 15px;
 	a {
 		text-decoration: none;
 		color: $shade_dark;
@@ -231,9 +234,9 @@ body {
 }
 
 .total {
-	padding: 0em 2em 0em 2em;
+	padding: 20px 0;
 	text-align: center;
-	font-size: 6vw;
+	font-size: 7vw;
 	color: $dark;
 	font-weight: 100;
 }
@@ -248,9 +251,19 @@ body {
 /* Meeting Items Styles */
 
 #meetings_items_wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-items: center;
 	width: 100%;
-	padding: 50px 60px;
+	#form {
+		width: 400px;
+	}
+	.items_container {
+		width: 80%;
+	}
 	.row {
+		margin: 0;
 		border-top: 1px solid rgba(250,250,250, .3);
 		border-bottom: 1px solid rgba(250,250,250, .3);
 		.complete {
@@ -309,9 +322,6 @@ body {
 				color: $dark;
 			}
 		}
-	}
-
-	#form {
 		input[type="text"] {
 			width: 100%;
 			margin-right: 2%;
@@ -362,8 +372,32 @@ body {
 		::-webkit-input-placeholder { color: $dark; }
 	}
 	@include media('>=phone', '<=tablet' ) {
-		.row {
-			font-size: 10px;
+		#form {
+			width: 90%;
+		}
+		.items_container {
+			width: 90%;
+			height: 160px;
+			overflow: scroll;
+			padding: 0 10px;
+			.row {
+				font-size: 11px;
+			}
+
+			input[type="submit"] {
+				background: rgb(255, 255, 255);
+				outline: none;
+				border: none;
+				height: 40px;
+				border-radius: 4px;
+				width: 100%;
+				display: inline-block;
+				transition: all .4s ease-in-out;
+				cursor: pointer;
+				&:hover {
+					background: $dark;
+				}
+			}
 		}
 	}
 }
@@ -435,7 +469,7 @@ input[type="submit"] {
 	border: none;
 	height: 40px;
 	border-radius: 4px;
-	width: 25%;
+	width: 100%;
 	display: inline-block;
 	transition: all .4s ease-in-out;
 	cursor: pointer;
@@ -454,9 +488,7 @@ input[type="submit"] {
 	flex-direction: column;
 	align-items: center;
 	
-	.meetings_list_title {
-		margin-bottom: 2rem;
-	}
+
 	.field {
 		width: 400px;
 	}
@@ -576,7 +608,7 @@ input[type="submit"] {
 	}
 
 	.actions {
-		margin-bottom: 2em;
+		margin-bottom: 8px;
 	}
 	.last_links {
 		display: flex;
@@ -587,6 +619,8 @@ input[type="submit"] {
 		color: inherit;
 	}
 	@include media('>=phone', '<=tablet' ) {
+		overflow: scroll;
+		height: 100%;
 		.meetings_list_title {
 			margin-bottom: 5px;
 		}

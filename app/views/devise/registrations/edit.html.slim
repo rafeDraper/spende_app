@@ -33,6 +33,6 @@
     .actions
       = f.submit "Aktualisierung"
     p
-      = button_to "Konto löschen", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+      = button_to "Konto löschen", registration_path(resource_name), data: { confirm: "Bist du sicher?" }, method: :delete
     .last_links
       = link_to "Back", :back

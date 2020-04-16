@@ -6,7 +6,7 @@ p.meetings_list_sub_title
 .total
   = "total: #{ humanized_money_with_symbol @show_total }"
 #meetings_items_wrapper
-  #form
+  .items_container
     = render  @meetings_list.meetings_items
 .links
   = link_to "New entry", new_meetings_list_meetings_item_path(@meetings_list)

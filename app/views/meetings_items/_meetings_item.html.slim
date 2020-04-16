@@ -16,7 +16,7 @@
         strike
           = humanized_money_with_symbol meetings_item.amount
     .trash
-      = link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do
+      = link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Bist du sicher diesen Eintrag zu löschen?" } do
         i.fa.fa-trash
   - else
     .complete
@@ -32,5 +32,5 @@
       p
         = humanized_money_with_symbol meetings_item.amount
     .trash
-      = link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Are you sure?" } do
+      = link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Bist du sicher?" } do
         i.fa.fa-trash
