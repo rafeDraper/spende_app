@@ -16,19 +16,19 @@
     .field
       = f.label :password
       p
-        | ( leer lassen, wenn du nicht ändern möchtest. )
+        | leer lassen, wenn du nicht ändern möchtest.
       = f.password_field :password, autocomplete: "new-password"
       - if @minimum_password_length
     .field
       = f.label :password_confirmation
       p
         = @minimum_password_length
-        |  Zeichen Minimum.
+        | Zeichen Minimum.
       = f.password_field :password_confirmation, autocomplete: "new-password"
     .field
       = f.label :current_password
       p
-        | ( aktuelles Passwort zur Bestätigung der Änderungen. )
+        | aktuelles Passwort zur Bestätigung der Änderungen.
       = f.password_field :current_password, autocomplete: "current-password"
     .actions
       = f.submit "Aktualisierung"

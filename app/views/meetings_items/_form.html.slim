@@ -1,5 +1,6 @@
 - provide(:title, "#{@meetings_list.title}")
 = form_for [@meetings_list, @meetings_list.meetings_items.build] do |f|
+  = render 'eintrag_errors'
   .date_wrapper
     = f.label :date, "Datum:"
     = f.text_field :date, data: {controller: "flatpickr", 
