@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   def set_default_role
     self.role = :user
-    #self.role ||= :user this method was not working on production
+    # self.role ||= :user this method was not working on production
   end
 
   def self.from_omniauth(provider_data)
