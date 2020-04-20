@@ -12,4 +12,12 @@ class MeetingsListPolicy < ApplicationPolicy
   def new?
     user.admin?
   end
+
+  def destroy?
+    user.admin?
+  end
+
+  def show?
+    user.admin? || user.editor?
+  end
 end

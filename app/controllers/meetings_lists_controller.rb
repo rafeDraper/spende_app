@@ -62,10 +62,11 @@ class MeetingsListsController < ApplicationController
   # DELETE /meetings_lists/1.json
   def destroy
     @meetings_list.destroy
+    authorize(@meetings_list.destroy)
     respond_to do |format|
       format.html do
         redirect_to root_url,
-                    notice: 'Meetings list was successfully destroyed.'
+                    notice: 'Liste erfolgreich vernichtet.'
       end
       format.json { head :no_content }
     end

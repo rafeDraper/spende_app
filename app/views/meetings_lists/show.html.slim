@@ -9,10 +9,11 @@ p.meetings_list_sub_title
   .items_container
     = render  @meetings_list.meetings_items
 .links
-  = link_to "New entry", new_meetings_list_meetings_item_path(@meetings_list)
-  |  | 
-  = link_to 'Edit', edit_meetings_list_path(@meetings_list)
-  |  | 
-  = link_to "Delete", meetings_list_path(@meetings_list), method: :delete, data: { confirm: "Are you sure?" }
-  |  | 
-  = link_to 'Back', meetings_lists_path
+  - if policy(@meetings_list).show?
+    = link_to "New entry", new_meetings_list_meetings_item_path(@meetings_list)
+    |  | 
+    = link_to 'Edit', edit_meetings_list_path(@meetings_list)
+    |  | 
+    = link_to "Delete", meetings_list_path(@meetings_list), method: :delete, data: { confirm: "Bist du sicher?" }
+    |  | 
+    = link_to 'Back', meetings_lists_path
