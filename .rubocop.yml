@@ -2653,7 +2653,7 @@ Style/DisableCopsWithinSourceCodeDirective:
 
 Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.9'
   Exclude:
     - 'spec/**/*'

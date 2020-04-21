@@ -3,7 +3,7 @@
 class MeetingsListsController < ApplicationController
   before_action :authenticate_user!, except: :index
   before_action :set_meetings_list, only: %i[show edit update destroy]
-  
+
   # GET /meetings_lists
   # GET /meetings_lists.json
   def index

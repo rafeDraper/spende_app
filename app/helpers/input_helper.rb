@@ -1,3 +1,2 @@
 module InputHelper
-  
 end

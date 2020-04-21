@@ -1,4 +1,3 @@
-
 class CreateMeetingsItems < ActiveRecord::Migration[6.0]
   def change
     create_table :meetings_items do |t|
