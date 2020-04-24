@@ -20,15 +20,12 @@ require("packs/rd")
 
 // Stimulus set up
 
-import { Application } from 'stimulus'
+import "controllers"
 
 
-import { definitionsFromContext } from 'stimulus/webpack-helpers'
-const application = Application.start()
-const context = require.context('../controllers', true, /\.js$/)
-application.load(definitionsFromContext(context))
 
 // Cleave setup
+import Cleave from "cleave.js"
 
 document.addEventListener("turbolinks:load", function(event) {
   // Input Mask
@@ -39,3 +36,4 @@ document.addEventListener("turbolinks:load", function(event) {
 
 import myFunction from './rd'
 window.myFunction = myFunction
+
