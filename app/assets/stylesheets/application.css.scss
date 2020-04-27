@@ -103,11 +103,8 @@ body {
 	border-radius: 7px;
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
 	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
-	padding: 25px 0;
-	height: auto;
+	padding: 10px 0;
 	margin: 20px 0;
-	overflow: auto;
-	position: relative;
 	p {
 		font-size: 17px;
 		color: $light;
@@ -119,39 +116,46 @@ body {
 		text-decoration: none;
 		font-size: 17px;
 		display: block;
-		transition: all 1s;
+		transition: all 0.6s ease-in-out;
 		text-decoration: none;
 		&:hover {
 			background-color: $light;
 			color: $darker;
+			border-radius: 4px;
 		}
 	}
 	.icon {
-		background: $darker;
-		display: block;
-		position: absolute;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		transition: all 1s;
-		text-decoration: none;
-		i {
-			padding-top: 7px;
-		}
-		&:hover {
-			background-color: $light;
-			color: $darker;
-		}
-	}
-	#mylinks {
 		display: none;
 	}
+	#mylinks {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+	}
 	@include media('>=phone', '<=tablet' ) {
-		margin: 10px 10px;
+		margin: 15px 10px;
 		width: 90%;
-		a {
+		padding: 25px 0;
+		.icon {
+			display: block;
+			background: $darker;
+			position: absolute;
+			right: 1px;
+			top: 2px;
+			text-decoration: none;
+			border-radius: 7px;
+			i {
+				padding-top: 7px;
+			}
+			&:hover {
+				background-color: $light;
+				color: $darker;
+			}
 		}
 		#mylinks {
+			display: none;
+			text-align: center;
 			p {
 				font-size: 11px;
 				color: $light;
