@@ -1,5 +1,5 @@
-.navigation_bar
-  #mylinks
+.navigation_bar data-controller="navbar"
+  #mylinks 
     - if user_signed_in?
         p 
           | Angemeldet als:   
@@ -14,6 +14,6 @@
         = link_to "Anmelden", new_user_session_path
         = link_to "Hilfe", static_pages_help_path
         = link_to "Kontakt", static_pages_contact_path
-  a href="javascript:void(0);" class="icon" onclick="myFunction()"
+  a href="javascript:void(0);" class="icon" data-action="click->navbar#nav_extend"
     i.fa.fa-bars
   

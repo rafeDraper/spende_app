@@ -9,7 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 require("cleave.js")
-require("packs/rd")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -33,7 +32,4 @@ document.addEventListener("turbolinks:load", function(event) {
       new Cleave(el, window.__AMOUNT_INPUT_MASK__);
   });
 });
-
-import myFunction from './rd'
-window.myFunction = myFunction
 
