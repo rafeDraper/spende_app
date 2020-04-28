@@ -11,20 +11,34 @@ $darker: rgb(18, 71, 67);
 .index_title {
   text-align: center;
   padding-top: 150px;
+
   p.top {
-    @include media('>=phone', '<=tablet' ) {
-      font-size: 10vw;
-    }
+    font-size: 10vw;
+
     font-family: 'Oswald';
     text-transform: uppercase;
     color: $darker;
-    font-size: 10vw;
     span {
       font-family: 'Oswald';
       color: $dark;
       text-transform: uppercase;
       padding: 0;
     }
+
+    @include media('>=phone', '<=tablet') {
+
+      font-family: 'Oswald';
+      text-transform: uppercase;
+      color: $darker;
+
+      span {
+        font-family: 'Oswald';
+        color: $dark;
+        text-transform: uppercase;
+        padding: 0;
+      }
+    }
+
   }
 }
 
@@ -33,32 +47,54 @@ $darker: rgb(18, 71, 67);
 .initial_button {
   text-align: center;
   padding-top: 20px;
+
   a {
-    @include media('>=phone', '<=tablet' ) {
-      width: 80%;
-      margin: 0;
-    }
+    border-radius: 13px;
+    background: #a9dad6;
+    box-shadow: 8px -8px 16px #91bbb8,
+      -8px 8px 16px #c1f9f4;
     width: 20%;
-    color: $light;
+    color: $dark;
     display: inline-block;
-    background-color: $darker;
-    padding: 6px 43px ;
+    padding: 6px 43px;
     margin: 5px 20px;
     border-radius: 19px;
-    transition: all 1s;
     text-decoration: none;
+    font-size: 1vw;
+    transition: all 1s ease;
     &:hover {
-      background-color: $light;
+      width: 21%;
       color: $darker;
-      border: none;
+      background-color: $white_opaque;
       text-decoration: none;
     }
+  }
+
+  @include media('>=phone', '<=tablet') {
+    a {
+      width: 30%;
+      border-radius: 13px;
+      background: $white_opaque;
+      box-shadow: -4px 4px 7px #91bbb8,
+        4px -4px 7px #c1f9f4;
+      font-size: 2vw;
+      transition: all 1s ease;
+      padding: 5px;
+      &:hover {
+        width: 31%;
+        color: $darker;
+        background-color: $white_opaque;
+        text-decoration: none;
+    }
+    }
+    
   }
 }
 
 .back_link {
   padding-top: 20px;
+
   a {
-    color:$darker;
+    color: $darker;
   }
 }

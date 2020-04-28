@@ -121,7 +121,6 @@ body {
 		&:hover {
 			background-color: $light;
 			color: $darker;
-			border-radius: 4px;
 		}
 	}
 	.icon {
@@ -157,6 +156,8 @@ body {
 		#mylinks {
 			display: none;
 			text-align: center;
+			position: relative;
+			top: 23px;
 			p {
 				font-size: 11px;
 				color: $light;
