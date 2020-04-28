@@ -127,13 +127,8 @@ body {
 		text-decoration: none;
 		font-size: 17px;
 		display: block;
-		transition: all 0.6s ease-in-out;
 		text-decoration: none;
 
-		&:hover {
-			background-color: $light;
-			color: $darker;
-		}
 	}
 
 	.icon {
@@ -165,12 +160,13 @@ body {
 			margin: 0 15px;
 			font-size: 15px;
 			display: block;
-			transition: all 0.6s ease-in-out;
+			transition: all 0.4s ease-in-out;
 			text-decoration: none;
 
 			&:hover {
-				background-color: $light;
-				color: $darker;
+				box-shadow:  0px 0px 0px #0c2f2c, 
+             			0px 0px 0px #185f5a;
+				color: $shade_light;
 			}
 		}
 
@@ -186,18 +182,13 @@ body {
 			display: block;
 			background: $darker;
 			position: absolute;
-			right: 1px;
+			right: 6px;
 			top: 2px;
 			text-decoration: none;
-			border-radius: 7px;
+			border-radius: 50%;
 
 			i {
 				padding-top: 7px;
-			}
-
-			&:hover {
-				background-color: $light;
-				color: $darker;
 			}
 		}
 
