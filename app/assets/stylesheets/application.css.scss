@@ -63,9 +63,14 @@ body {
     clear: both;
 }
 
-/* Alert styles */
+/* Custom Alert styles */
 
-.alert-success {
+.alert {
+	border-radius: 0;
+	margin: 0;
+	border: none;
+}
+.alert.alert-success {
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -73,6 +78,7 @@ body {
 	font-size: 14px;
 	color: $dark;
 	font-weight: 400;
+	padding: 9px;
 	background-color: #dff0d8;
 	border-color: #d6e9c6;
 	@include media('>=phone', '<=tablet') {
@@ -80,12 +86,13 @@ body {
 	}
 }
 
-.alert-danger {
+.alert.alert-danger {
 	position: fixed;
 	top: 0;
 	width: 100%;
 	text-align: center;
 	font-size: 14px;
+	padding: 9px;
 	color: white;
 	font-weight: 400;
 	background-color: rgb(235, 97, 97);
