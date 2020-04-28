@@ -13,21 +13,21 @@
  *= require_tree
  *= require_self
  */
- 
- @import "bootstrap-sprockets";
- @import 'bootstrap';
- @import "flatpickr";
- @import 'font_awesome5_webfont';
- @import 'font_awesome5.css';
- @import './breakpoints/include-media';
 
- 
- $white_opaque: rgba(250, 250, 250, .3);
- $shade_dark: #4B5E5B;
- $shade_light: #7E9E99;
- $light: #d4e7e3;
- $dark: #1F7972;
- $darker: rgb(18, 71, 67);
+@import "bootstrap-sprockets";
+@import 'bootstrap';
+@import "flatpickr";
+@import 'font_awesome5_webfont';
+@import 'font_awesome5.css';
+@import './breakpoints/include-media';
+
+
+$white_opaque: rgba(250, 250, 250, .3);
+$shade_dark: #4B5E5B;
+$shade_light: #7E9E99;
+$light: #d4e7e3;
+$dark: #1F7972;
+$darker: rgb(18, 71, 67);
 
 * {
 	box-sizing: border-box;
@@ -36,17 +36,17 @@
 
 body {
 	background-attachment: fixed;
-  background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-	background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+	background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+	background: -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+	background: -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+	background: -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+	background: linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
 	background-repeat: no-repeat;
 	font-size: 16px;
 	font-family: 'Lato', sans-serif;
 	height: 100vh;
 	display: flex;
-  justify-content: center;
+	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
@@ -55,12 +55,12 @@ body {
 
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-	
+	content: " ";
+
 }
 
 .clearfix:after {
-    clear: both;
+	clear: both;
 }
 
 /* Custom Alert styles */
@@ -70,6 +70,7 @@ body {
 	margin: 0;
 	border: none;
 }
+
 .alert.alert-success {
 	position: fixed;
 	top: 0;
@@ -81,6 +82,7 @@ body {
 	padding: 9px;
 	background-color: #dff0d8;
 	border-color: #d6e9c6;
+
 	@include media('>=phone', '<=tablet') {
 		font-size: 10px;
 	}
@@ -97,6 +99,7 @@ body {
 	font-weight: 400;
 	background-color: rgb(235, 97, 97);
 	border-color: rgb(204, 78, 78);
+
 	@include media('>=phone', '<=tablet') {
 		font-size: 10px;
 	}
@@ -107,42 +110,78 @@ body {
 .navigation_bar {
 	width: 80%;
 	background-color: $darker;
-	border-radius: 7px;
-	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
-	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
-	padding: 10px 0;
+	border-radius: 40px;
+	-webkit-box-shadow: 0 0 4px 3px rgba(0, 0, 0, .3);
+	box-shadow: 0 0 4px 4px rgba(0, 0, 0, .03);
+	padding: 14px 0;
 	margin: 20px 0;
+	p {
+		font-size: 17px;
+		color: $light;
+		padding: 9px 16px;
+	}
+
+	a {
+		color: white;
+		padding: 9px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		display: block;
+		transition: all 0.6s ease-in-out;
+		text-decoration: none;
+
+		&:hover {
+			background-color: $light;
+			color: $darker;
+		}
+	}
+
 	.icon {
 		display: none;
 	}
+
 	#mylinks {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
 		p {
 			font-size: 17px;
 			color: $light;
 			padding: 9px 16px;
+			margin: 0;
 		}
+
 		a {
+			border-radius: 30px;
+			background: linear-gradient(145deg, #134c48, #10403c);
+			box-shadow:  7px 7px 10px #0c2f2c, 
+             			-7px -7px 10px #185f5a;
 			color: white;
-			padding: 7px;
+			padding: 9px 16px;
 			text-decoration: none;
+			width: 120px;
+			text-align: center;
+			margin: 0 15px;
 			font-size: 15px;
+			display: block;
 			transition: all 0.6s ease-in-out;
 			text-decoration: none;
+
 			&:hover {
 				background-color: $light;
 				color: $darker;
 			}
 		}
-		
+
 	}
-	@include media('>=phone', '<=tablet' ) {
+
+	@include media('>=phone', '<=tablet') {
 		margin: 15px 10px;
 		width: 90%;
 		padding: 25px 0;
 		position: relative;
+
 		.icon {
 			display: block;
 			background: $darker;
@@ -151,27 +190,36 @@ body {
 			top: 2px;
 			text-decoration: none;
 			border-radius: 7px;
+
 			i {
 				padding-top: 7px;
 			}
+
 			&:hover {
 				background-color: $light;
 				color: $darker;
 			}
 		}
+
 		#mylinks {
 			display: none;
 			text-align: center;
 			position: relative;
 			top: 23px;
+
 			p {
 				font-size: 11px;
 				color: $light;
 				padding: 8px 16px;
 			}
+
 			a {
 				font-size: 13px;
-				padding: 8px 16px;
+				width: 100%;
+				margin: 0;
+				border-radius: 0;
+				background: none;
+				box-shadow: none;
 			}
 		}
 	}
@@ -185,11 +233,12 @@ body {
 	height: 80%;
 	background: $white_opaque;
 	border-radius: 7px;
-	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
-	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
+	-webkit-box-shadow: 0 0 4px 3px rgba(0, 0, 0, .3);
+	box-shadow: 0 0 4px 4px rgba(0, 0, 0, .03);
 	padding: 1em 0;
 	margin-bottom: 20px;
-	@include media('>=phone', '<=tablet' ) {
+
+	@include media('>=phone', '<=tablet') {
 		width: 90%;
 		margin-bottom: 10px;
 		font-size: 11px;
@@ -198,19 +247,21 @@ body {
 
 .index_title_in {
 	text-align: center;
-  p.top {
-    font-family: 'Oswald';
-    font-size: 8rem;
-    text-transform: uppercase;
-    color: $shade_dark;
-    span {
-      font-family: 'Oswald';
-      color: $shade_light;
-      font-size: 8rem;
-      text-transform: uppercase;
-      padding: 0;
-    }
-  }
+
+	p.top {
+		font-family: 'Oswald';
+		font-size: 8rem;
+		text-transform: uppercase;
+		color: $shade_dark;
+
+		span {
+			font-family: 'Oswald';
+			color: $shade_light;
+			font-size: 8rem;
+			text-transform: uppercase;
+			padding: 0;
+		}
+	}
 }
 
 .meetings_list_title {
@@ -220,10 +271,12 @@ body {
 	text-transform: uppercase;
 	color: $shade_dark;
 	padding-bottom: 15px;
+
 	a {
 		text-decoration: none;
 		color: $shade_dark;
 		transition: all .4s ease-in-out;
+
 		&:hover {
 			opacity: 0.4;
 		}
@@ -240,8 +293,9 @@ body {
 
 .index_row {
 	padding: 2em;
-	border-bottom: 1px solid rgba(250,250,250, .3);
+	border-bottom: 1px solid rgba(250, 250, 250, .3);
 	margin-bottom: 20px;
+
 	.todo_list_sub_title {
 		margin-bottom: 0;
 	}
@@ -270,49 +324,59 @@ body {
 	align-items: center;
 	justify-items: center;
 	width: 100%;
+
 	#form {
 		width: 400px;
 	}
+
 	.items_container {
 		width: 80%;
 	}
+
 	.row {
 		margin: 0;
-		border-top: 1px solid rgba(250,250,250, .3);
-		border-bottom: 1px solid rgba(250,250,250, .3);
+		border-top: 1px solid rgba(250, 250, 250, .3);
+		border-bottom: 1px solid rgba(250, 250, 250, .3);
+
 		.complete {
 			width: 10%;
 			float: left;
 			text-align: center;
-			border-right: 1px solid rgba(250,250,250, .3);
-			border-left: 1px solid rgba(250,250,250, .3);
+			border-right: 1px solid rgba(250, 250, 250, .3);
+			border-left: 1px solid rgba(250, 250, 250, .3);
 			padding: 1em 0;
 		}
+
 		.meetings_item {
 			width: 40%;
 			float: left;
+
 			p {
 				margin: 0;
 				padding: 1em;
 				color: $dark;
 				font-weight: 100;
-				border-right: 1px solid rgba(250,250,250, .3);
+				border-right: 1px solid rgba(250, 250, 250, .3);
 			}
 		}
+
 		.meetings_reason {
 			width: 20%;
 			float: left;
+
 			p {
 				margin: 0;
 				padding: 1em;
 				color: $dark;
 				font-weight: 100;
-				border-right: 1px solid rgba(250,250,250, .3);
+				border-right: 1px solid rgba(250, 250, 250, .3);
 			}
 		}
+
 		.meetings_amount {
 			width: 20%;
 			float: left;
+
 			p {
 				margin: 0;
 				padding: 1em;
@@ -320,55 +384,61 @@ body {
 				font-weight: 100;
 			}
 		}
-		
+
 		.trash {
 			width: 10%;
 			float: left;
 			text-align: center;
-			border-left: 1px solid rgba(250,250,250, .3);
-			border-right: 1px solid rgba(250,250,250, .3);
+			border-left: 1px solid rgba(250, 250, 250, .3);
+			border-right: 1px solid rgba(250, 250, 250, .3);
 			padding: 1em 0;
 		}
+
 		i {
 			color: white;
 			transition: all .4s ease-in-out;
+
 			&:hover {
 				color: $dark;
 			}
 		}
+
 		input[type="text"] {
 			width: 100%;
 			margin-right: 2%;
 			display: inline-block;
 			outline: none;
-			background: rgba(250,250,250,.4);
+			background: rgba(250, 250, 250, .4);
 			border: none;
 			height: 50px;
 			border-radius: 4px;
 			padding: 1em 2em;
 		}
+
 		input[type="number"] {
 			width: 100%;
 			margin-right: 2%;
 			display: inline-block;
 			outline: none;
-			background: rgba(250,250,250,.4);
+			background: rgba(250, 250, 250, .4);
 			border: none;
 			height: 50px;
 			border-radius: 4px;
 			padding: 1em 2em;
 		}
+
 		input[type="date"] {
 			width: 100%;
 			margin-right: 2%;
 			display: inline-block;
 			outline: none;
-			background: rgba(250,250,250,.4);
+			background: rgba(250, 250, 250, .4);
 			border: none;
 			height: 50px;
 			border-radius: 4px;
 			padding: 1em 2em;
 		}
+
 		input[type="submit"] {
 			background: rgb(255, 255, 255);
 			outline: none;
@@ -379,21 +449,28 @@ body {
 			display: inline-block;
 			transition: all .4s ease-in-out;
 			cursor: pointer;
+
 			&:hover {
 				background: $dark;
 			}
 		}
-		::-webkit-input-placeholder { color: $dark; }
+
+		::-webkit-input-placeholder {
+			color: $dark;
+		}
 	}
-	@include media('>=phone', '<=tablet' ) {
+
+	@include media('>=phone', '<=tablet') {
 		#form {
 			width: 90%;
 		}
+
 		.items_container {
 			width: 90%;
 			height: 160px;
 			overflow: scroll;
 			padding: 0 10px;
+
 			.row {
 				font-size: 11px;
 			}
@@ -408,6 +485,7 @@ body {
 				display: inline-block;
 				transition: all .4s ease-in-out;
 				cursor: pointer;
+
 				&:hover {
 					background: $dark;
 				}
@@ -422,6 +500,7 @@ body {
 	text-align: center;
 	font-size: 0.8em;
 	color: white;
+
 	a {
 		color: $shade_dark;
 		font-size: 1.3rem;
@@ -431,52 +510,63 @@ body {
 .forms {
 	padding: 0 5%;
 }
+
 label {
 	color: $dark;
 	margin: 0;
 }
-input[type="text"], textarea {
+
+input[type="text"],
+textarea {
 	width: 100%;
 	margin: .5em 2% 1em 0;
 	display: inline-block;
 	outline: none;
-	background: rgba(250,250,250,.4);
+	background: rgba(250, 250, 250, .4);
 	border: none;
 	height: 40px;
 	border-radius: 4px;
 	padding: 1em 2em;
 }
+
 textarea {
 	height: 200px;
 }
-input[type="number"], textarea {
+
+input[type="number"],
+textarea {
 	width: 100%;
 	margin: .5em 2% 1em 0;
 	display: inline-block;
 	outline: none;
-	background: rgba(250,250,250,.4);
+	background: rgba(250, 250, 250, .4);
 	border: none;
 	height: 40px;
 	border-radius: 4px;
 	padding: 1em 2em;
 }
+
 textarea {
 	height: 200px;
 }
-input[type="date"], textarea {
+
+input[type="date"],
+textarea {
 	width: 100%;
 	margin: .5em 2% 1em 0;
 	display: inline-block;
 	outline: none;
-	background: rgba(250,250,250,.4);
+	background: rgba(250, 250, 250, .4);
 	border: none;
 	height: 40px;
 	border-radius: 4px;
 	padding: 1em 2em;
 }
+
 textarea {
 	height: 200px;
 }
+
 input[type="submit"] {
 	background: white;
 	outline: none;
@@ -488,12 +578,16 @@ input[type="submit"] {
 	transition: all .4s ease-in-out;
 	cursor: pointer;
 	color: $dark;
+
 	&:hover {
 		background: $dark;
 		color: white;
 	}
 }
-::-webkit-input-placeholder { color: $dark; }
+
+::-webkit-input-placeholder {
+	color: $dark;
+}
 
 /* Devise Forms Makeup */
 
@@ -501,7 +595,7 @@ input[type="submit"] {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
+
 
 	.field {
 		width: 400px;
@@ -517,6 +611,7 @@ input[type="submit"] {
 	#user_remember_me {
 		margin-right: 10px;
 	}
+
 	input[type="submit"] {
 		box-shadow: 0 0.05em 0.05em 0 rgba(88, 87, 87, 0.5);
 		background: white;
@@ -529,6 +624,7 @@ input[type="submit"] {
 		transition: all .4s ease-in-out;
 		cursor: pointer;
 		color: $dark;
+
 		&:hover {
 			background: $dark;
 			color: white;
@@ -546,37 +642,44 @@ input[type="submit"] {
 		transition: all .4s ease-in-out;
 		cursor: pointer;
 		color: $dark;
+
 		&:hover {
 			background: rgb(235, 97, 97);
 			color: white;
 		}
 	}
-	input[type="password"], textarea {
+
+	input[type="password"],
+	textarea {
 		width: 100%;
 		margin: .5em 2% 1em 0;
 		display: inline-block;
 		outline: none;
-		background: rgba(250,250,250,.4);
+		background: rgba(250, 250, 250, .4);
 		border: none;
 		height: 40px;
 		border-radius: 4px;
 		padding: 1em 2em;
 		transition: all .4s ease-in-out;
+
 		&:focus {
 			background-color: $light;
 		}
 	}
-	input[type="email"], textarea {
+
+	input[type="email"],
+	textarea {
 		width: 100%;
 		margin: .5em 2% 1em 0;
 		display: inline-block;
 		outline: none;
-		background: rgba(250,250,250,.4);
+		background: rgba(250, 250, 250, .4);
 		border: none;
 		height: 40px;
 		border-radius: 4px;
 		padding: 1em 2em;
 		transition: all .4s ease-in-out;
+
 		&:focus {
 			background-color: $light;
 		}
@@ -597,10 +700,12 @@ input[type="submit"] {
 		transition: all .4s ease-in-out;
 		cursor: pointer;
 		color: whitesmoke;
+
 		&:hover {
 			background: rgb(44, 92, 170);
 			color: white;
 		}
+
 		a {
 			text-align: center;
 			color: whitesmoke;
@@ -624,33 +729,44 @@ input[type="submit"] {
 	.actions {
 		margin-bottom: 8px;
 	}
+
 	.last_links {
 		display: flex;
 		align-items: center;
 	}
+
 	.last_links a {
 		padding: 10px;
 		color: inherit;
 	}
-	@include media('>=phone', '<=tablet' ) {
+
+	@include media('>=phone', '<=tablet') {
 		overflow: scroll;
 		height: 100%;
+
 		.meetings_list_title {
 			margin-bottom: 5px;
 		}
+
 		.field {
 			width: 80vw
 		}
+
 		label {
 			padding: 5px 0;
 		}
-		input[type="email"], textarea {
+
+		input[type="email"],
+		textarea {
 			margin: 0;
-			
+
 		}
-		input[type="password"], textarea {
+
+		input[type="password"],
+		textarea {
 			margin: 0;
 		}
+
 		.actions {
 			margin-top: 20px;
 			margin-bottom: 5px;
