@@ -31,5 +31,13 @@ document.addEventListener("turbolinks:load", function (event) {
   document.querySelectorAll("input.currency-input-mask").forEach(function (el) {
     new Cleave(el, window.__AMOUNT_INPUT_MASK__);
   });
-});
 
+  const currentLocation = location.href;
+  const navItem = document.querySelectorAll('a');
+  const navLength = navItem.length;
+  for (let i = 0; i < navLength; i++) {
+    if (navItem[i].href === currentLocation) {
+      navItem[i].className = "active";
+    }
+  }
+});
