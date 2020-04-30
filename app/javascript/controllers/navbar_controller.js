@@ -10,4 +10,6 @@ export default class extends Controller {
       link.style.display = "block";
     }
   }
+
+  
 }
