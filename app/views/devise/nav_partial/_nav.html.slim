@@ -5,10 +5,10 @@
         | Angemeldet als:   
         strong = current_user.email
       = link_to fa_icon('home', text: "Home"), root_path
-      = link_to 'Profil', edit_user_registration_path
-      = link_to  "Nutzer", users_path
-      = link_to  "Listen", meetings_lists_path
-      = link_to "Abmelden", destroy_user_session_path
+      = link_to fa_icon('id-card', text: "Profil"), edit_user_registration_path
+      = link_to fa_icon('users-cog', text: "Nutzer"), users_path
+      = link_to fa_icon('list-ul', text: "Listen"), meetings_lists_path
+      = link_to fa_icon('sign-out-alt', text: "Abmelden"), destroy_user_session_path
     - else
       = link_to "Registrieren", new_user_registration_path
       = link_to "Anmelden", new_user_session_path
