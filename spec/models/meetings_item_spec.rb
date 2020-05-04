@@ -1,24 +1,30 @@
 require 'rails_helper'
 
 RSpec.describe MeetingsItem, type: :model do
-  subject { described_class.new }
+  subject do
+    described_class.new(
+      date: '2020-19-04',
+      reason: 'spende',
+      amount: 20,
+      meetings_list_id: 2,
+      created_at: '2020-05-04 14:20:53',
+      updated_at: '2020-05-04 15:20:53',
+      completed_at: '2020-05-11 14:20:53',
+      amount_cents: 21,
+      amount_currency: 'EUR'
+    )
+  end
 
   it 'is valid with valid attributes' do
-    subject.date = "2020-19-04"
-    subject.reason = 'Spende'
-    subject.meetings_list_id = 2
-    subject.created_at = DateTime.now
-    subject.completed_at = DateTime.now + 1.week
-    subject.updated_at = DateTime.now + 1.hour
-    subject.amount_cents = 21
-    subject.amount_currency = 'EUR'
     expect(subject).to be_valid
   end
+
   it 'is not valid without a date' do
-    item = MeetingsItem.new(date: nil)
-    expect(item).to_not be_valid
+    subject.date = nil
+    expect(subject).to_not be_valid
   end
-  it 'is not valid without a description'
-  it 'is not valid without a start_date'
-  it 'is not valid without a end_date'
+  it 'is not valid without a reason' do
+    subject.reason = nil
+    expect(subject).to_not be_valid
+  end
 end
