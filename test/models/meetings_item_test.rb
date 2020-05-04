@@ -6,10 +6,10 @@ class MeetingsItemTest < ActiveSupport::TestCase
   def setup
     @item = MeetingsItem.new(date: '11.11.2020',
                              reason: 'example_reason',
-                             amount: 12)
+                             amount_cents: 22)
   end
 
-  test 'should be valid' do
-    assert @item.valid?
+  test 'saving item should be valid' do
+    assert_not @item.valid?
   end
 end
