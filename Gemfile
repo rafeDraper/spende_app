@@ -24,8 +24,9 @@ gem 'turbolinks',                 '5.2.1'
 gem 'webpacker',                  '5.1.1'
 
 group :development, :test do
-  gem 'byebug',  '11.0.1', platforms: %i[mri mingw x64_mingw]
-  gem 'sqlite3', '1.4.1'
+  gem 'byebug',      '11.0.1', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 4.0.0'
+  gem 'sqlite3',     '1.4.1'
 end
 
 group :development do
@@ -38,9 +39,6 @@ end
 group :test do
   gem 'capybara',                 '3.28.0'
   gem 'guard',                    '2.16.2'
-  gem 'guard-minitest',           '2.4.6'
-  gem 'minitest',                 '5.11.3'
-  gem 'minitest-reporters',       '1.3.8'
   gem 'rails-controller-testing', '1.0.4'
   gem 'selenium-webdriver',       '3.142.4'
   gem 'webdrivers',               '4.1.2'
