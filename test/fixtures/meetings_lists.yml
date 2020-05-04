@@ -7,3 +7,7 @@ one:
 two:
   title: MyString
   responsible: MyText
+
+three:
+  title: MyString
+  responsible: MyText
