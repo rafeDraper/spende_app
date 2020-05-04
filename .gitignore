@@ -35,3 +35,6 @@ yarn-debug.log*
 .yarn-integrity
 
 /config/credentials/production.key
+
+# Ignore db test files.
+db/test.*
