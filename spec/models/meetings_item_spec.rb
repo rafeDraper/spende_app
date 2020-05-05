@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe MeetingsItem, type: :model do
+
+  describe 'associations' do
+    it { should belong_to(:meetings_list) }
+  end
+
   subject do
     described_class.new(
       meetings_list_id: 2,
