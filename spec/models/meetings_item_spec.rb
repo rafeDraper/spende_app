@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'factories/meetings_item'
 
 RSpec.describe MeetingsItem, type: :model do
   describe 'associations' do
