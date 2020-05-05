@@ -1,0 +1,15 @@
+current directory: /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+/home/rd/.rbenv/versions/2.7.1/bin/ruby -I /home/rd/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200505-6087-y7nq7k.rb extconf.rb
+creating Makefile
+
+current directory: /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20200505-6087-w6dgzp

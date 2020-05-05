@@ -1,0 +1,5 @@
+current directory: /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/childprocess-2.0.0/ext
+/home/rd/.rbenv/versions/2.7.1/bin/ruby mkrf_conf.rb
+
+current directory: /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/childprocess-2.0.0/ext
+/home/rd/.rbenv/versions/2.7.1/bin/ruby -I/home/rd/.rbenv/versions/2.7.1/lib/ruby/2.7.0/rubygems -rrubygems /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/rake-12.3.3/exe/rake RUBYARCHDIR\=/home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/extensions/x86_64-linux/2.7.0/childprocess-2.0.0 RUBYLIBDIR\=/home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/extensions/x86_64-linux/2.7.0/childprocess-2.0.0

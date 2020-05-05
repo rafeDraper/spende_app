@@ -1,0 +1,12 @@
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/flatpickr_source/
+/node_modules/
+package-lock.json

@@ -1,0 +1,66 @@
+current directory: /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/byebug-11.0.1/ext/byebug
+/home/rd/.rbenv/versions/2.7.1/bin/ruby -I /home/rd/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200505-6087-1k0twov.rb extconf.rb
+creating Makefile
+
+current directory: /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+context.c: In function ‘call_with_debug_inspector’:
+context.c:190:20: warning: passing argument 1 of ‘rb_ensure’ from incompatible pointer type [-Wincompatible-pointer-types]
+   return rb_ensure(open_debug_inspector, (VALUE)data, close_debug_inspector,
+                    ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby.h:33:0,
+                 from byebug.h:4,
+                 from context.c:1:
+/home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1990:7: note: expected ‘VALUE (*)(VALUE) {aka long unsigned int (*)(long unsigned int)}’ but argument is of type ‘VALUE (*)(struct call_with_inspection_data *) {aka long unsigned int (*)(struct call_with_inspection_data *)}’
+ VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+       ^~~~~~~~~
+context.c:190:55: warning: passing argument 3 of ‘rb_ensure’ from incompatible pointer type [-Wincompatible-pointer-types]
+   return rb_ensure(open_debug_inspector, (VALUE)data, close_debug_inspector,
+                                                       ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby.h:33:0,
+                 from byebug.h:4,
+                 from context.c:1:
+/home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1990:7: note: expected ‘VALUE (*)(VALUE) {aka long unsigned int (*)(long unsigned int)}’ but argument is of type ‘VALUE (*)(struct call_with_inspection_data *) {aka long unsigned int (*)(struct call_with_inspection_data *)}’
+ VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+       ^~~~~~~~~
+In file included from /home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2148:0,
+                 from /home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby.h:33,
+                 from byebug.h:4,
+                 from context.c:1:
+context.c: In function ‘Init_byebug_context’:
+/home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/intern.h:1218:137: warning: passing argument 3 of ‘rb_define_singleton_method1’ from incompatible pointer type [-Wincompatible-pointer-types]
+ #define rb_define_singleton_method(klass, mid, func, arity) rb_define_singleton_method_choose_prototypem3((arity),(func))((klass),(mid),(func),(arity));
+                                                                                                                                         ^
+context.c:672:3: note: in expansion of macro ‘rb_define_singleton_method’
+   rb_define_singleton_method(cDebugThread, "inherited", dt_inherited, 1);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/intern.h:1195:27: note: expected ‘VALUE (*)(VALUE,  VALUE) {aka long unsigned int (*)(long unsigned int,  long unsigned int)}’ but argument is of type ‘VALUE (*)(VALUE) {aka long unsigned int (*)(long unsigned int)}’
+ RB_METHOD_DEFINITION_DECL(rb_define_singleton_method, (2,3), (VALUE klass, const char *name), (klass, name))
+                           ^
+/home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/intern.h:1042:82: note: in definition of macro ‘RB_METHOD_DEFINITION_DECL_C’
+     __attribute__((__unused__,__weakref__(#def),__nonnull__ nonnull))static void defname(RB_UNWRAP_MACRO decl,VALUE(*func)funcargs,int arity);
+                                                                                  ^~~~~~~
+/home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/intern.h:1075:1: note: in expansion of macro ‘RB_METHOD_DEFINITION_DECL_1’
+ RB_METHOD_DEFINITION_DECL_1(def,nonnull,def##1 ,1 ,decl,vars,(VALUE,VALUE)) \
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/rd/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/intern.h:1195:1: note: in expansion of macro ‘RB_METHOD_DEFINITION_DECL’
+ RB_METHOD_DEFINITION_DECL(rb_define_singleton_method, (2,3), (VALUE klass, const char *name), (klass, name))
+ ^~~~~~~~~~~~~~~~~~~~~~~~~
+context.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-cast-function-type’
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/rd/Rails/spende/vendor/bundle/ruby/2.7.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20200505-6087-16dwy0k/byebug

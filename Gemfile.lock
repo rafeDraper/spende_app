@@ -264,6 +264,8 @@ GEM
       rubyzip (~> 1.2, >= 1.2.2)
     semantic_range (2.3.0)
     shellany (0.0.1)
+    shoulda-matchers (4.3.0)
+      activesupport (>= 4.2.0)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -342,6 +344,7 @@ DEPENDENCIES
   rspec-rails (~> 4.0.0)
   sass-rails (= 6.0.0)
   selenium-webdriver (= 3.142.4)
+  shoulda-matchers
   slim-rails (= 3.2.0)
   spring (= 2.1.0)
   spring-watcher-listen (= 2.0.1)
