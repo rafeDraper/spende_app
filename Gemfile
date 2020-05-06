@@ -24,10 +24,10 @@ gem 'turbolinks',                 '5.2.1'
 gem 'webpacker',                  '5.1.1'
 
 group :development, :test do
-  gem 'byebug',      '11.0.1', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails', '~> 4.0.0'
-  gem 'sqlite3',     '1.4.1'
+  gem 'byebug', '11.0.1', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 4.0.0'
+  gem 'sqlite3', '1.4.1'
 end
 
 group :development do

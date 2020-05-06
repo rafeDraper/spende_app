@@ -1,9 +1,13 @@
 FactoryBot.define do
+  factory :meetings_list do
+    title       { 'Test Name' }
+    responsible { 'Test Responsible' }
+  end
+
   factory :meetings_item do
-    id     { 2 }
+    meetings_list
     date   { 'Date of Today' }
     reason { 'Spende' }
     amount { 22 }
-    meetings_list_id { 2 }
   end
 end
