@@ -7,8 +7,7 @@ if Rails.env.production?
   abort('The Rails environment is running in production mode!')
 end
 require 'rspec/rails'
-# require 'support/factory_bot'
-Dir[Rails.root.join('spec/support/**/*')].each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*')].sort.each { |f| require f }
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
