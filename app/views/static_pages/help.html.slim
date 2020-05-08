@@ -1,14 +1,30 @@
 = provide(:title, "Hilfe")
 h1.meetings_list_title
- | Bitte folge diese regeln:
-#contact_style
-  .contact_box
-    p.inner_text 
-      | Nur Administratoren stehen zur Verfügung,
-      | um Änderungen an den allgemeinen Budgets vorzunehmen.
-      | Um einer dieser Administratoren zu werden, wenden Sie
-      | sich bitte an Ihren lokalen Administrator und fragen Sie
-      | nach den Genehmigungen.
-  .back_link
-    = link_to fa_icon('chevron-circle-left', type: :solid, text: "Zurück nach Home"), root_path
+ | Wie benutzen die App:
+.static_container
+  .inner_text
+    p
+      h3 Erstellen einer neuen Liste:
+      p
+        | Klicke den Button "Neue Liste" an und gebe den Namen und den Verantwortlichen ein.
+      i
+        | * Funktion nur für Administratoren verfügbar.
+      h3 Erstellen eines neuen Eintrags:
+
+      p 
+        | Sobald eine Liste von einem Administrator erstellt wurde, sind neue Einträge erlaubt,
+        | damit die Einnahmen und Ausgaben verfolgt werden können. Um einen neuen Eintrag zu erstellen, 
+        | klicke den Button "Neuer Eintrag" unten auf der Liste an und fülle dann alle erforderlichen 
+        | Felder aus: (Datum, Betrag, Grund). Speichere die Eingabe und diese wird auf der ersten Seite 
+        | der Liste verfügbar sein.
+
+      i
+        | * Funktion nur für Redakteure und Administratoren verfügbar.
+      h3 Für den Rest der Benutzer:
+      p 
+       | Jeder registrierte Benutzer der App wird alle verfügbaren Einträge sehen können, 
+       | kann aber keine neuen Einträge bearbeiten oder hinzufügen. Bitte kontaktier den  
+       | Administrator für weitere Berechtigungen.
+      .back_link
+        = link_to fa_icon('chevron-circle-left', type: :solid, text: "Zurück"), root_path
       

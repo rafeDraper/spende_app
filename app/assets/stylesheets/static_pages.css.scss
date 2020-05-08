@@ -8,6 +8,7 @@ $light: #fbfffe;
 $dark: #1F7972;
 $darker: rgb(18, 71, 67);
 
+/* Static Home Page */
 .index_title {
   text-align: center;
   padding-top: 150px;
@@ -41,8 +42,6 @@ $darker: rgb(18, 71, 67);
 
   }
 }
-
-
 
 .initial_button {
   text-align: center;
@@ -91,10 +90,25 @@ $darker: rgb(18, 71, 67);
   }
 }
 
+/*common style back button for static pages*/
+
 .back_link {
   padding-top: 20px;
 
   a {
     color: $darker;
+  }
+}
+
+/* Static Help Page */
+
+.static_container {
+
+  .inner_text {
+    margin: 0 auto;
+    background-color: $white_opaque;
+    padding: 40px 80px;
+    width: 50vw;
+    border-radius: 5px;
   }
 }
