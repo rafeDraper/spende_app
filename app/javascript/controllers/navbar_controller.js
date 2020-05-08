@@ -11,5 +11,7 @@ export default class extends Controller {
     }
   }
 
-  
+  button_style_hold() {
+
+  }
 }
