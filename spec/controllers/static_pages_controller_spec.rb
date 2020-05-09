@@ -6,6 +6,15 @@ RSpec.describe StaticPagesController, type: :controller do
       it 'render the home page' do
         get :help
       end
+
+      it 'render the help page' do
+        get :help
+      end
+
+      it 'render the contact page' do
+        get :contact
+      end
+
     end
   end
 end
