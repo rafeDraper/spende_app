@@ -4,7 +4,9 @@ RSpec.describe StaticPagesController, type: :controller do
   describe 'Static Pages routes working' do
     context 'geting static pages' do
       it 'render the home page' do
-        get :help
+        get :home
+        expect(response).to render_template("static_pages/home")
+        expect(response.body).to eq ""
       end
 
       it 'render the help page' do
