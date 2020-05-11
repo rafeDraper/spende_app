@@ -1,9 +1,13 @@
-# Feature: Home Page
-#   As a visitor
-#   I want to visit a home page
-#   So I can learn more about the website
+feature 'Static Pages' do
+  scenario 'Vist the Home Page' do
+    visit root_path
+    expect(page).to have_css('.initial_button')
+    expect(page.has_css?('p.top', text: 'SpendeKollektor')).to eq(true)
+    expect(page.title).to eq('Spende App | Home')
+  end
 
-# Scenario: Visit the Home Page
-#   Given I am a visitor
-#   When I visit the home page
-#   Then I should see "Welcome"
+  scenario 'Visit the Help Page' do
+    visit static_pages_help_url
+    expect(page.title).to eq('Spende App | Hilfe')
+  end
+end
