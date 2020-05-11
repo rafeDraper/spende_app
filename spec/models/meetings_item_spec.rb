@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe MeetingsItem, type: :model do
   let(:meetings_item) { build(:meetings_item) }
 

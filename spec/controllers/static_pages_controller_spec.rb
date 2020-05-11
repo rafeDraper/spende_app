@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe StaticPagesController, type: :controller do
   describe 'Static pages controller' do
     render_views

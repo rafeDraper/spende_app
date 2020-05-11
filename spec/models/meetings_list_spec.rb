@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe MeetingsList, type: :model do
   let(:meetings_list) { build(:meetings_list) }
 
