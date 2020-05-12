@@ -10,4 +10,14 @@ feature 'Static Pages' do
     visit static_pages_help_url
     expect(page.title).to eq('Spende App | Hilfe')
   end
+
+  scenario 'Visit the Contact Page' do
+    visit static_pages_contact_url
+    expect(page.title).to eq('Spende App | Kontakt')
+  end
+  
+  #scenario 'Visit the Home Page with save & open' do
+    # visit(root_path)
+    # save_and_open_page
+  #end
 end

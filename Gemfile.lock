@@ -88,6 +88,7 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
+    database_cleaner (1.8.5)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -126,6 +127,8 @@ GEM
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jwt (2.2.1)
+    launchy (2.5.0)
+      addressable (~> 2.7)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -331,12 +334,14 @@ DEPENDENCIES
   bootstrap-sass (= 3.4.1)
   byebug (= 11.0.1)
   capybara (= 3.28.0)
+  database_cleaner
   devise (= 4.7.1)
   factory_bot_rails
   flatpickr (= 4.6.3.1)
   font_awesome5_rails (= 1.1.1)
   guard (= 2.16.2)
   jbuilder (= 2.9.1)
+  launchy
   listen (= 3.1.5)
   money-rails (= 1.13.3)
   omniauth (= 1.9.1)

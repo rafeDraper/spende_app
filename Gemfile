@@ -39,6 +39,8 @@ end
 
 group :test do
   gem 'capybara',                 '3.28.0'
+  gem 'database_cleaner'
+  gem 'launchy'
   gem 'guard',                    '2.16.2'
   gem 'rails-controller-testing', '1.0.4'
   gem 'selenium-webdriver',       '3.142.4'
