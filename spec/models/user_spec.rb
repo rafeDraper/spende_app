@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
   end
 
   it '#methods return a string' do
-    expect(user_test.email).to match('example@example.com')
+    expect(user_test.email).to match('user@example.com')
     expect(user_test.role).to match('user')
     expect(user_test.encrypted_password).to match('')
   end
