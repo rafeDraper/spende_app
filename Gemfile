@@ -16,7 +16,7 @@ gem 'omniauth',                   '1.9.1'
 gem 'omniauth-google-oauth2',     '0.8.0'
 gem 'puma',                       '4.3.3'
 gem 'pundit',                     '2.1.0'
-gem 'rails',                      '6.0.3'
+gem 'rails',                      '6.0.3.1'
 gem 'rails-i18n',                 '~> 6.0.0'
 gem 'sass-rails',                 '6.0.0'
 gem 'slim-rails',                 '3.2.0'
@@ -38,7 +38,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '3.28.0'
+  gem 'capybara', '3.32.2'
   gem 'database_cleaner'
   gem 'guard', '2.16.2'
   gem 'launchy'
