@@ -1,5 +1,5 @@
 feature 'Sign in', :devise do
-  
+
   scenario 'user cannot sign in if not registered' do
     signin('example@example.com', 'password')
     expect(page).to have_content 'E-Mail oder Passwort ungültig.'
@@ -8,7 +8,7 @@ feature 'Sign in', :devise do
   scenario 'user can sign in with valid credentials' do
     user = FactoryBot.create(:user)
     signin(user.email, user.password)
-    expect(page).to have_content 'Signed in successfuly'
+    expect(page).to have_content 'Erfolgreich angemeldet'
   end
 
   scenario 'user cannot sign in with invalid email' do
