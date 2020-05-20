@@ -8,6 +8,7 @@ gem 'activerecord-session_store'
 gem 'bootsnap',                   '1.4.5', require: false
 gem 'bootstrap-sass',             '3.4.1'
 gem 'devise',                     '4.7.1'
+gem 'faker',                      '2.11.0'
 gem 'flatpickr',                  '4.6.3.1'
 gem 'font_awesome5_rails',        '1.1.1'
 gem 'jbuilder',                   '2.9.1'

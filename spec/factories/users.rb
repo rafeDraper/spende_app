@@ -2,8 +2,8 @@ FactoryBot.define do
   factory :user do
     id                 { nil }
     email              { 'user@example.com' }
-    password           { 'encrypted_password' }
-    encrypted_password { 'password' }
+    password           { 'encrypted123' }
+    encrypted_password { 'encrypted_password123' }
     created_at         { nil }
     updated_at         { nil }
     provider           { '' }

@@ -21,7 +21,7 @@
       br
       = f.password_field :password_confirmation, autocomplete: "new-password"
     .actions
-      = f.submit "Sign up"
+      = f.submit "Anmelden"
     .google_signup.actions
       = link_to fa_icon('google', type: :brand, text: "Google Anmelden"), user_google_oauth2_omniauth_authorize_path
   .last_links

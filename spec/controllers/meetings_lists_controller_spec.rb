@@ -1,4 +1,6 @@
 RSpec.describe MeetingsListsController, type: :controller do
+  login_user
+
   describe 'GET #index' do
     it 'renders #index' do
       get(:index)
@@ -6,10 +8,11 @@ RSpec.describe MeetingsListsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
+  xdescribe 'GET #new' do
+
     it 'renders #new' do
       get(:new)
-      expect(response).to render_template(:new)  
+      expect(response).to render_template(:new)
     end
   end
 end

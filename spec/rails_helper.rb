@@ -1,13 +1,19 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
+require 'spec_helper'
 require File.expand_path('../config/environment', __dir__)
+require 'rspec/rails'
+require 'devise'
+require 'capybara/rspec'
+require 'shoulda/matchers'
+require 'database_cleaner'
+require 'pundit/rspec'
+require_relative 'support/controller_macros'
 # Prevent database truncation if the environment is production
 if Rails.env.production?
   abort('The Rails environment is running in production mode!')
 end
-require 'rspec/rails'
-require 'devise'
+
 Dir[Rails.root.join('spec/support/**/*')].sort.each { |f| require f }
 
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -36,6 +42,12 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  config.include Features::SessionHelpers, type: :feature
+  # For Devise > 4.1.1
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  # Use the following instead if you are on Devise <= 4.1.1
+  # config.include Devise::TestHelpers, :type => :controller
+  config.extend ControllerMacros, type: :controller
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
