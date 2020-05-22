@@ -43,6 +43,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   config.include Features::SessionHelpers, type: :feature
+  config.include Warden::Test::Helpers
   # For Devise > 4.1.1
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view

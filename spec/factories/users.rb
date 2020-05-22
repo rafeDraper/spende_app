@@ -3,6 +3,10 @@ FactoryBot.define do
     email              { 'user@example.com' }
     password           { 'encrypted_password123' }
     role               { 0 }
+
+    trait :admin do
+      role             { 'admin' }
+    end
   end
 
   factory :editor do
@@ -11,9 +15,9 @@ FactoryBot.define do
     role               { 1 }
   end
 
-  factory :admin do
-    email              { 'admin@example.com' }
-    password           { 'encrypted_password123' }
-    role               { 2 }
-  end
+  # factory :admin do
+  #  email              { 'admin@example.com' }
+  #  password           { 'encrypted_password123' }
+  #  role               { 2 }
+  # end
 end

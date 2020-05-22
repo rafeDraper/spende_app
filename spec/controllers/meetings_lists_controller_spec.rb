@@ -1,5 +1,5 @@
 RSpec.describe MeetingsListsController, type: :controller do
-  login_user
+  render_views
 
   describe 'GET #index' do
     it 'renders #index' do
@@ -8,9 +8,9 @@ RSpec.describe MeetingsListsController, type: :controller do
     end
   end
 
-  xdescribe 'GET #new' do
-
+  skip describe 'GET #new' do
     it 'renders #new' do
+      sign_in(FactoryBot.create(:user))
       get(:new)
       expect(response).to render_template(:new)
     end
