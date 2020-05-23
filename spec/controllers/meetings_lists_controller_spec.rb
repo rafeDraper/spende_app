@@ -8,8 +8,9 @@ RSpec.describe MeetingsListsController, type: :controller do
 
   describe 'GET #new' do
     context 'when user is administrator' do
-      login_admin
-      it 'should display the #new page' do 
+      login_user
+      render_views
+      it 'should display the #new page' do
         get(:new)
         expect(response).to render_template(:new)
       end
