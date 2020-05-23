@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :meetings_list do
-    title       { 'Test Name' }
-    responsible { 'Test Responsible' }
+    sequence(:title)       { |n| "Title#{n}" }
+    sequence(:responsible) { |n| "Responsible#{n}" }
   end
 
   factory :meetings_item do
