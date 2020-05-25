@@ -4,20 +4,12 @@ FactoryBot.define do
     password           { 'encrypted_password123' }
     role               { 0 }
 
-    trait :admin do
-      role { 'admin' }
+    trait :editor do
+      role { 1 }
     end
-  end
-
-  factory :admin do
-    email                 { 'admin@example.com' }
-    password              { 'encrypted_password123' }
-    password_confirmation { 'encrypted_password123' }
-    confirmed_at          { Date.today }
-    role                  { 2 }
 
     trait :admin do
-      role { 'admin' }
+      role { 2 }
     end
   end
 end

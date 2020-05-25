@@ -8,8 +8,7 @@ RSpec.describe MeetingsListsController, type: :controller do
 
   describe 'GET #new' do
     context 'when user is administrator' do
-      login_user
-      render_views
+      login_admin
       it 'should display the #new page' do
         get(:new)
         expect(response).to render_template(:new)
@@ -17,13 +16,18 @@ RSpec.describe MeetingsListsController, type: :controller do
     end
 
     context 'when user is editor' do
-      it 'should display the #new page'
+      login_editor
+      it 'should not allow and redirect to the root' do
+        get(:new)
+        expect(response).to redirect_to(root_url)
+      end
     end
 
     context 'when user is visitor' do
-      it 'should ask for registration or logging in' do
+      login_user
+      it 'should not allow and redirect to the root' do
         get(:new)
-        expect(response).to redirect_to(new_user_session_path)
+        expect(response).to redirect_to(root_url)
       end
     end
   end
