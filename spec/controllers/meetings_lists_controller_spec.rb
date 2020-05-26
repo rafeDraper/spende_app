@@ -45,11 +45,16 @@ RSpec.describe MeetingsListsController, type: :controller do
       it 'renders the :show template' do
         get(:show, params: { id: meeting.id })
         expect(response.status).to eq(200)
+        expect(response).to render_template(:show)
       end
     end
 
     context 'when user unregistered' do
-      it 'redirects to the user sign in page'
+      it 'redirects to the user sign in page' do
+        get(:show, params: { id: meeting.id })
+        expect(response.status).to eq(302)
+        expect(response).to redirect_to(new_user_session_url)
+      end
     end
   end
 
