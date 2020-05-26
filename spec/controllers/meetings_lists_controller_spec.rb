@@ -41,9 +41,10 @@ RSpec.describe MeetingsListsController, type: :controller do
 
   describe 'GET #show' do
     context 'when user registered' do
+      login_user
       it 'renders the :show template' do
-        get(:show)
-        expect(response).to render_template(:show)
+        get(:show, params: { id: meeting.id })
+        expect(response.status).to eq(200)
       end
     end
 
