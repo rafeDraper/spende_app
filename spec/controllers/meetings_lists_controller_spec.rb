@@ -1,8 +1,15 @@
 RSpec.describe MeetingsListsController, type: :controller do
+  let(:meeting) { create(:meetings_list) }
+
   describe 'GET #index' do
     it 'renders #index' do
       get(:index)
       expect(response).to render_template(:index)
+    end
+
+    it 'populates an array of meetings' do
+      get(:index)
+      expect(assigns(:meetings_lists)).to eq([meeting])
     end
   end
 
@@ -34,13 +41,14 @@ RSpec.describe MeetingsListsController, type: :controller do
 
   describe 'GET #show' do
     context 'when user registered' do
-      it 'renders the meetings_lists#show page' do
+      it 'renders the :show template' do
+        get(:show)
+        expect(response).to render_template(:show)
       end
     end
 
     context 'when user unregistered' do
-      it 'redirects to index with a warning' do
-      end
+      it 'redirects to the user sign in page'
     end
   end
 
@@ -58,7 +66,7 @@ RSpec.describe MeetingsListsController, type: :controller do
 
   describe 'POST #create' do
     context 'when user is registered' do
-      it 'should save the new meeting list' do
+      it 'should save the new meeting list with proper attributes' do
       end
       it 'should redirect to meetings_lists#index page' do
       end

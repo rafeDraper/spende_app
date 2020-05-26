@@ -8,6 +8,7 @@ require 'capybara/rspec'
 require 'shoulda/matchers'
 require 'database_cleaner'
 require 'pundit/rspec'
+require 'faker'
 require_relative 'support/controller_macros'
 # Prevent database truncation if the environment is production
 if Rails.env.production?
