@@ -60,19 +60,30 @@ RSpec.describe MeetingsListsController, type: :controller do
 
   describe 'GET #edit' do
     context 'when user registered' do
+      login_user
       it 'renders the meetings_lists#edit page' do
+        get(:edit, params: { id: meeting.id })
+        expect(response.status).to eq(200)
+        expect(response).to render_template(:edit)
       end
     end
 
     context 'when user unregistered' do
       it 'redirects to index with a warning' do
+        get(:edit, params: { id: meeting.id })
+        expect(response.status).to eq(302)
+        expect(response).to redirect_to(new_user_session_url)
       end
     end
   end
 
   describe 'POST #create' do
     context 'when user is registered' do
+      login_user
       it 'should save the new meeting list with proper attributes' do
+        expect{
+          post :create, meetings_lists: FactoryBot.attributes_for(:meetings_list)
+        }.to change(MeetingsList, :count).by(1)
       end
       it 'should redirect to meetings_lists#index page' do
       end
