@@ -81,9 +81,12 @@ RSpec.describe MeetingsListsController, type: :controller do
     context 'when user is registered' do
       login_user
       it 'should save the new meeting list with proper attributes' do
-        expect{
-          post :create, meetings_lists: FactoryBot.attributes_for(:meetings_list)
-        }.to change(MeetingsList, :count).by(1)
+        expect do
+          post(:create, params: { meetings_list: {
+                 title: meeting.title,
+                 responsible: meeting.responsible
+               } })
+        end.to change(MeetingsList, :count).by(2)
       end
       it 'should redirect to meetings_lists#index page' do
       end
