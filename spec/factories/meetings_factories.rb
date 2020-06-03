@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :meetings_list do 
+  factory :meetings_list do
     title       { Faker::Team.name }
     responsible { Faker::TvShows::SouthPark.character }
   end

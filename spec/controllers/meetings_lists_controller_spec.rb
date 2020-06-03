@@ -86,7 +86,7 @@ RSpec.describe MeetingsListsController, type: :controller do
                  title: meeting.title,
                  responsible: meeting.responsible
                } })
-        end.to change(MeetingsList, :count).by(2)
+        end.to change { MeetingsList.count }.by(1)
       end
       it 'should redirect to meetings_lists#index page' do
       end
