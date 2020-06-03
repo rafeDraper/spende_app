@@ -16,14 +16,15 @@
     .field
       = f.label :password
       p
-        | Leer lassen, wenn du nicht ändern möchtest.
+        = @minimum_password_length
+        |  Zeichen Minimum. Bitte gib dein neues Passwort ein
       = f.password_field :password, autocomplete: "new-password"
       - if @minimum_password_length
     .field
       = f.label :password_confirmation
       p
         = @minimum_password_length
-        |  Zeichen Minimum.
+        |  Zeichen Minimum. Bitte gib dein neues Passwort ein
       = f.password_field :password_confirmation, autocomplete: "new-password"
     .field
       = f.label :current_password
@@ -32,7 +33,7 @@
       = f.password_field :current_password, autocomplete: "current-password"
     .actions
       = f.submit "Aktualisierung"
-    p
-      = button_to "Konto löschen", registration_path(resource_name), data: { confirm: "Bist du sicher?" }, method: :delete
-    .last_links
-      = link_to "Back", :back
+  p
+    = button_to "Konto löschen", registration_path(resource_name), data: { confirm: "Bist du sicher?" }, method: :delete
+  .last_links
+    = link_to "Back", :back

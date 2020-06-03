@@ -6,7 +6,6 @@ require 'rspec/rails'
 require 'devise'
 require 'capybara/rspec'
 require 'shoulda/matchers'
-require 'database_cleaner'
 require 'pundit/rspec'
 require 'faker'
 require_relative 'support/controller_macros'
@@ -57,7 +56,7 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = false
+  config.use_transactional_fixtures = true
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
