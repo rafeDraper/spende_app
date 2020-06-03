@@ -45,6 +45,7 @@ group :test do
   gem 'rails-controller-testing', '1.0.4'
   gem 'selenium-webdriver',       '3.142.4'
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false
   gem 'webdrivers', '4.1.2'
 end
 
