@@ -1,7 +1,9 @@
-feature 'User edits the data on his profile', :devise do
+feature 'User edits the data on his profile' do
+
   before(:example) do
     @user = create(:user)
   end
+  
   scenario 'user gets an updated message' do
     login_as(@user)
     visit(users_edit_path)
