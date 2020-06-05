@@ -15,41 +15,44 @@ RSpec.describe MeetingsListsController, type: :controller do
 
   describe 'GET #new' do
     context 'when user is administrator' do
-      before(login_admin) do
-        it 'should display the #new page' do
-          get(:new)
-          expect(response).to render_template(:new)
-        end
+      login_admin
+      it 'should display the #new page' do
+        get(:new)
+        expect(response).to render_template(:new)
+      end
+
+      it 'should initiate instance of @meetings_list' do
+        get(:new)
+        expect(assigns(:meetings_list)).to be_a_new(MeetingsList)
       end
     end
 
     context 'when user is editor' do
-      before(login_editor) do
-        it 'should not allow and redirect to the root' do
-          get(:new)
-          expect(response).to redirect_to(root_url)
-        end
+      login_editor
+      it 'should not allow and redirect to the root' do
+        get(:new)
+        expect(response).to redirect_to(root_url)
       end
     end
 
-    context 'when user is visitor' do
-      before(login_user) do
-        it 'should not allow and redirect to the root' do
-          get(:new)
-          expect(response).to redirect_to(root_url)
-        end
+    context 'when loged in but is a user' do
+      login_user
+      it 'should not allow and redirect to the root' do
+        get(:new)
+        expect(response).to redirect_to(root_url)
       end
     end
   end
 
   describe 'GET #show' do
     context 'when user registered' do
-      before(login_user) do
-        it 'renders the :show template' do
-          get(:show, params: { id: meeting.id })
-          expect(response.status).to eq(200)
-          expect(response).to render_template(:show)
-        end
+      login_user
+      render_views
+      it 'renders the :show template' do
+        get(:show, params: { id: meeting.id })
+        expect(response.status).to eq(200)
+        expect(response).to render_template(:show)
+        expect(response.body).to match(/<div class="total">total: €0,00/)
       end
     end
 
@@ -64,12 +67,11 @@ RSpec.describe MeetingsListsController, type: :controller do
 
   describe 'GET #edit' do
     context 'when user registered' do
-      before(login_user) do
-        it 'renders the meetings_lists#edit page' do
-          get(:edit, params: { id: meeting.id })
-          expect(response.status).to eq(200)
-          expect(response).to render_template(:edit)
-        end
+      login_user
+      it 'renders the meetings_lists#edit page' do
+        get(:edit, params: { id: meeting.id })
+        expect(response.status).to eq(200)
+        expect(response).to render_template(:edit)
       end
     end
 
@@ -84,17 +86,16 @@ RSpec.describe MeetingsListsController, type: :controller do
 
   describe 'POST #create' do
     context 'when user is registered' do
-      before(login_user) do
-        it 'should save the new meeting list with proper attributes' do
-          expect do
-            post(:create, params: { meetings_list: {
-                   title: meeting.title,
-                   responsible: meeting.responsible
-                 } })
-          end.to change { MeetingsList.count }.by(1)
-        end
-        it 'should redirect to meetings_lists#index page' do
-        end
+      login_user
+      it 'should save the new meeting list with proper attributes' do
+        expect do
+          post(:create, params: { meetings_list: {
+                 title: meeting.title,
+                 responsible: meeting.responsible
+               } })
+        end.to change { MeetingsList.count }.by(2)
+      end
+      it 'should redirect to meetings_lists#index page' do
       end
     end
 

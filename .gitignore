@@ -41,3 +41,6 @@ db/test.*
 
 # Ignore the vendor/bundler folder
 vendor/bundle
+
+# Ignore coverage from simplecov
+echo "coverage" >> .gitignore
