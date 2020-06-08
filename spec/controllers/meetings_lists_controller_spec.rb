@@ -108,4 +108,73 @@ RSpec.describe MeetingsListsController, type: :controller do
       end
     end
   end
+
+  describe 'PUT #update,' do
+    before(:example) do
+      @meeting_list_update = create(:meetings_list,
+                                    title: 'Edited Title',
+                                    responsible: 'Edited Responsible')
+    end
+
+    context 'with valid attributes,' do
+      login_user
+      it 'locates the requested @meetings_list_update' do
+        put(:update, params: { id: @meeting_list_update,
+                               meetings_list:
+                                FactoryBot.attributes_for(:meetings_list) })
+        expect(assigns(:meetings_list)).to eq(@meeting_list_update)
+      end
+
+      it 'changes @meetings_list_update attributes' do
+        put(:update, params: { id: @meeting_list_update,
+                               meetings_list:
+                                FactoryBot.attributes_for(:meetings_list, title: 'Edited', responsible: 'Editor') })
+        @meeting_list_update.reload
+        expect(@meeting_list_update.title).to eq('Edited')
+        expect(@meeting_list_update.responsible).to eq('Editor')
+      end
+    end
+
+    context 'invalid attributes' do
+      login_user
+      it 'locates the requested @meetings_list_update' do
+        put(:update, params: { id: @meeting_list_update,
+                               meetings_list:
+                                FactoryBot.attributes_for(:invalid_meeting) })
+        expect(assigns(:meetings_list)).to eq(@meeting_list_update)
+      end
+
+      it 'does not changes @meetings_list_update attributes' do
+        put(:update, params: { id: @meeting_list_update,
+                               meetings_list:
+                                FactoryBot.attributes_for(:meetings_list, title: nil, responsible: 'Editor') })
+        @meeting_list_update.reload
+        expect(@meeting_list_update.title).to eq('Edited Title')
+        expect(@meeting_list_update.responsible).to_not eq('Editor')
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    before(:example) do
+      @meeting_list_delete = create(:meetings_list)
+    end
+
+    context 'when user is an administrator' do
+      login_admin
+      it 'deletes the meetings_list' do
+        expect do
+          delete(:destroy, params: { id: @meeting_list_delete })
+        end.to change(MeetingsList, :count).by(-1)
+      end
+    end
+
+    context 'when user is not authorized' do
+      it 'do not allow action' do
+        expect do
+          delete(:destroy, params: { id: @meeting_list_delete })
+        end.to change(MeetingsList, :count).by(0)
+      end
+    end
+  end
 end
