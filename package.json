@@ -20,7 +20,8 @@
     "stimulus": "^1.1.1",
     "stimulus-flatpickr": "^1.2.1",
     "turbolinks": "^5.2.0",
-    "webpack": "^4.0.0"
+    "webpack": "^4.0.0",
+    "websocket-extensions": "^0.1.4"
   },
   "version": "0.1.0",
   "devDependencies": {
