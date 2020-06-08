@@ -804,10 +804,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@popperjs/core@^2.1.1":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.3.2.tgz#1e56eb99bccddbda6a3e29aa4f3660f5b23edc43"
-  integrity sha512-18Tz3QghwsuHUC4gTNoxcEw1ClsrJ+lRypYpm+aucQonYNnmskQYvDZZKLHMPvQ7OwthWJl715UEX+Tg2fJkJw==
+"@popperjs/core@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.4.0.tgz#0e1bdf8d021e7ea58affade33d9d607e11365915"
+  integrity sha512-NMrDy6EWh9TPdSRiHmHH2ye1v5U0gBD7pRYwSwJvomx7Bm4GG04vu63dYiVzebLOx2obPpJugew06xVP0Nk7hA==
 
 "@rails/actioncable@^6.0.0-alpha":
   version "6.0.2"
