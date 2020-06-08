@@ -87,20 +87,24 @@ RSpec.describe MeetingsListsController, type: :controller do
   describe 'POST #create' do
     context 'when user is registered' do
       login_user
+      render_views
       it 'should save the new meeting list with proper attributes' do
         expect do
-          post(:create, params: { meetings_list: {
-                 title: meeting.title,
-                 responsible: meeting.responsible
-               } })
-        end.to change { MeetingsList.count }.by(2)
+          post(:create, params: { meetings_list:
+                                  FactoryBot.attributes_for(:meetings_list) })
+        end.to change { MeetingsList.count }.by(1)
       end
-      it 'should redirect to meetings_lists#index page' do
+      it 'should redirect to the latest meeting list' do
+        post(:create, params: { meetings_list:
+                                  FactoryBot.attributes_for(:meetings_list) })
+        expect(response).to redirect_to(MeetingsList.first)
       end
-    end
 
-    context 'when user unregistered' do
-      it 'is unavailable to unauthorized users' do
+      it 'should fail with invalid parameters' do
+        post(:create, params: { meetings_list:
+                                FactoryBot.attributes_for(:invalid_meeting) })
+        expect(response).to render_template(:new)
+        expect(response.body).to match(/Title muss ausgefüllt werden/)
       end
     end
   end
