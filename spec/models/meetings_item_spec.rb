@@ -17,4 +17,9 @@ RSpec.describe MeetingsItem, type: :model do
     meetings_item.reason = nil
     expect(meetings_item).to_not be_valid
   end
+
+  it 'is #completed?' do
+    meetings_item.completed_at = Date.today
+    expect(meetings_item.completed?).to eq(true)
+  end
 end
