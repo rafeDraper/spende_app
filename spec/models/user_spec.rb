@@ -1,4 +1,8 @@
 RSpec.describe User, type: :model do
+  before(:example) do
+    @test_user = create(:user)
+  end
+
   it 'is valid' do
     user = User.new(
       email: 'rafa@gmail.com',
@@ -34,16 +38,16 @@ RSpec.describe User, type: :model do
     expect(user.errors[:email]).to include('ist bereits vergeben')
   end
 
-  xit '#methods return a string' do
-    expect(@user_test.email).to match('user@spendekollektor.com')
-    expect(@user_test.role).to match('user')
-    expect(@user_test.encrypted_password).to match('')
+  it '#methods return a string' do
+    expect(@test_user.email).to match('user@spendekollektor.com')
+    expect(@test_user.role).to match('user')
+    expect(@test_user.encrypted_password).to match('')
   end
 
-  xit { should respond_to(:email, :role, :encrypted_password) }
+  it { expect(@test_user).to respond_to(:email, :role, :encrypted_password) }
 
-  xdescribe 'when fields are empty it should not be valid' do
-    before { @user_test.email = '', @user_test.encrypted_password = '' }
+  describe 'when fields are empty it should not be valid' do
+    before { @test_user.email = '', @test_user.encrypted_password = '' }
     it { should_not be_valid }
   end
 end
