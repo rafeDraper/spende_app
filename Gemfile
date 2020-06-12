@@ -7,7 +7,7 @@ ruby '2.7.1'
 gem 'activerecord-session_store'
 gem 'bootsnap',                   '1.4.5', require: false
 gem 'bootstrap-sass',             '3.4.1'
-gem 'devise',                     '4.7.1'
+gem 'devise',                     '4.7.2'
 gem 'faker',                      '2.11.0'
 gem 'flatpickr',                  '4.6.3.1'
 gem 'font_awesome5_rails',        '1.1.1'
@@ -33,9 +33,6 @@ end
 
 group :development do
   gem 'listen',                '3.1.5'
-  gem 'spring',                '2.1.0'
-  gem 'spring-commands-rspec'
-  gem 'spring-watcher-listen', '2.0.1'
   gem 'web-console',           '4.0.1'
 end
 
