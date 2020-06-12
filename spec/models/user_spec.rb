@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
       email: 'rafa@gmail.com',
       password: 'badabumts123'
     )
-    expect(user.role).to eq('user')
+    expect(user.set_default_role).to eq('user')
   end
 
   it 'is invalid when duplicate email address' do
@@ -50,4 +50,5 @@ RSpec.describe User, type: :model do
     before { @test_user.email = '', @test_user.encrypted_password = '' }
     it { should_not be_valid }
   end
+
 end

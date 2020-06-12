@@ -10,8 +10,7 @@ class User < ApplicationRecord
   after_initialize :set_default_role, if: :new_record?
 
   def set_default_role
-    self.role = :user
-    # self.role ||= :user this method was not working on production
+    self.role ||= 0
   end
 
   def self.from_omniauth(provider_data)
