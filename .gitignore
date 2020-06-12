@@ -41,4 +41,4 @@ db/test.*
 
 # Ignore the vendor/bundler folder
 vendor/bundle
-coverage
+/coverage
