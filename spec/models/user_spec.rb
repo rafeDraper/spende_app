@@ -1,6 +1,6 @@
 RSpec.describe User, type: :model do
   before(:each) do
-    @test_user = create(:user)
+    @test_user = FactoryBot.create(:user)
   end
 
   describe 'validations' do
@@ -12,9 +12,9 @@ RSpec.describe User, type: :model do
 
     context 'invalid attributes' do
       it 'without email' do
-        @test_user.email = nil
-        @test_user.valid?
-        expect(@test_user.errors[:email]).to include('muss ausgefüllt werden')
+        user = FactoryBot.build(:user, email: nil)
+        user.valid?
+        expect(user.errors[:email]).to include('muss ausgefüllt werden')
       end
 
       it 'without password' do
@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
 
   describe 'instance variables' do
     it '#methods return a string' do
-      expect(@test_user.email).to match('user@spendekollektor.com')
+      expect(@test_user.email).to match('user27@spendekollektor.com')
       expect(@test_user.role).to match('user')
       expect(@test_user.encrypted_password).to match('')
     end
