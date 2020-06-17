@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
 
   describe 'instance variables' do
     it '#methods return a string' do
-      expect(@test_user.email).to match('user27@spendekollektor.com')
+      expect(@test_user.email).to match('user@spendekollektor.com')
       expect(@test_user.role).to match('user')
       expect(@test_user.encrypted_password).to match('')
     end
