@@ -22,7 +22,7 @@ RSpec.describe MeetingsItemsController, type: :controller do
         @list = FactoryBot.create(:meetings_list)
       end
       it 'succeed' do
-        get :create, params: { meetings_id: @list.id, meetings_item: { date: 'today', reason: 'whatever', amount: 23 } }
+        post :create, params: { meetings_item: { }}
         expect(response).to redirect_to(meetings_lists_path)
       end
     end
