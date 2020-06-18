@@ -17,11 +17,6 @@ RSpec.describe User, type: :model do
         expect(user.errors[:email]).to include('muss ausgefüllt werden')
       end
 
-      it 'without password' do
-        @test_user.password = nil
-        @test_user.valid?
-        expect(@test_user.errors[:password]).to include('muss ausgefüllt werden')
-      end
 
       it 'is invalid with duplicated email' do
         User.create(
@@ -39,7 +34,7 @@ RSpec.describe User, type: :model do
 
     context 'user role' do
       it 'initialize as user' do
-        expect(@test_user.set_default_role).to eq('user')
+        expect(@test_user.set_default_role).to eq(0)
       end
     end
   end

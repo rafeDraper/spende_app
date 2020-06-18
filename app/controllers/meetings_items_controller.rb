@@ -3,7 +3,7 @@
 class MeetingsItemsController < ApplicationController
   before_action :set_meeting_list
   before_action :set_meetings_item, except: %i[create]
-  
+
   def create
     @meetings_item = @meetings_list.meetings_items.create(meeting_item_params)
     if @meetings_item.valid?
