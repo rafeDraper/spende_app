@@ -5,13 +5,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 gem 'activerecord-session_store'
-gem 'bootsnap',                   '1.4.5', require: false
+gem 'bootsnap',                   '1.4.6', require: false
 gem 'bootstrap-sass',             '3.4.1'
 gem 'devise',                     '4.7.2'
-gem 'faker',                      '2.11.0'
+gem 'faker',                      '2.13.0'
 gem 'flatpickr',                  '4.6.3.1'
 gem 'font_awesome5_rails',        '1.1.1'
-gem 'jbuilder',                   '2.9.1'
+gem 'jbuilder',                   '2.10.0'
 gem 'money-rails',                '1.13.3'
 gem 'omniauth',                   '1.9.1'
 gem 'omniauth-google-oauth2',     '0.8.0'
@@ -25,30 +25,30 @@ gem 'turbolinks',                 '5.2.1'
 gem 'webpacker',                  '5.1.1'
 
 group :development, :test do
-  gem 'byebug', '11.0.1', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug', '11.1.3', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 4.0.0'
   gem 'sqlite3', '1.4.2'
 end
 
 group :development do
-  gem 'listen',                '3.1.5'
-  gem 'web-console',           '4.0.1'
+  gem 'listen',                '3.2.1'
+  gem 'web-console',           '4.0.3'
 end
 
 group :test do
-  gem 'capybara', '3.32.2'
+  gem 'capybara', '3.33.0'
   gem 'guard', '2.16.2'
   gem 'launchy'
-  gem 'rails-controller-testing', '1.0.4'
-  gem 'selenium-webdriver',       '3.142.4'
+  gem 'rails-controller-testing', '1.0.5'
+  gem 'selenium-webdriver',       '3.142.7'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
-  gem 'webdrivers', '4.1.2'
+  gem 'webdrivers', '4.4.1'
 end
 
 group :production do
-  gem 'pg', '1.1.4'
+  gem 'pg', '1.2.3'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
