@@ -172,8 +172,8 @@ RSpec.describe MeetingsListsController, type: :controller do
     context 'when user is not authorized' do
       it 'do not allow action' do
         expect do
-          delete(:destroy, params: { id: @meeting_list_delete })
-        end.to change(MeetingsList, :count).by(0)
+          delete(:destroy, params: { id: @meeting_list_delete.id })
+        end.to_not change(MeetingsList, :count)
       end
     end
   end

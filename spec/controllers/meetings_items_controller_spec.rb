@@ -1,15 +1,13 @@
 RSpec.describe MeetingsItemsController, type: :controller do
-  before(:each) do
-    @item = FactoryBot.create(:meetings_item)
-    @list = FactoryBot.create(:meetings_list)
-  end
-
   describe '#new' do
     context 'authenticated user' do
-      login_user
+      before do
+        @user = FactoryBot.create(:user)
+        @item = FactoryBot.create(:meetings_item)
+      end
 
       it 'responds successfully' do
-        get :new, params: { meetings_list_id: @list.id }
+        get :new, params: { meetings_list_id: @item.id }
         expect(response).to render_template(:new)
       end
     end
@@ -17,36 +15,62 @@ RSpec.describe MeetingsItemsController, type: :controller do
 
   describe '#create' do
     context 'authenticated admin' do
-      login_admin
+      before do
+        @user = FactoryBot.create(:user, :admin)
+        @item = FactoryBot.create(:meetings_item)
+        @list = FactoryBot.create(:meetings_list)
+      end
 
       it 'with valid input' do
-        post :create, params: { meetings_item: {
-          date: @item.date,
-          amount: @item.amount,
-          reason: @item.reason
-        }, meetings_list_id: @list.id }
-        expect(response).to redirect_to("/meetings_lists/#{@list.id}")
+        item_params = FactoryBot.attributes_for(:meetings_item)
+        sign_in(@user)
+        expect do
+          post(:create, params: { meetings_item: item_params,
+                                  meetings_list_id: @list.id })
+        end.to change(MeetingsItem, :count).by(1)
       end
 
       it 'with invalid input' do
-        post(:create, params: { meetings_item: {
-               date: nil,
-               amount: @item.amount,
-               reason: @item.reason
-             }, meetings_list_id: @list.id })
+        item_params = FactoryBot.attributes_for(:meetings_item, :invalid_item)
+        sign_in(@user)
+        post(:create, params: { meetings_item: item_params,
+                                meetings_list_id: @list.id })
         expect(response).to render_template(:new)
         expect(response).to have_http_status('200')
+        expect do
+          post(:create, params: { meetings_item: item_params,
+                                  meetings_list_id: @list.id })
+        end.to_not change(MeetingsItem, :count)
       end
     end
   end
 
   describe '#delete' do
     context 'authenticated admin' do
-      login_admin
+      before do
+        @user = FactoryBot.create(:user, :admin)
+        @item = FactoryBot.create(:meetings_item)
+        @list = FactoryBot.create(:meetings_list)
+      end
       it 'deletes an item' do
+        sign_in(@user)
         expect do
           delete(:destroy, params: { id: @item.id, meetings_list_id: @item.id })
         end.to change(MeetingsItem, :count).by(-1)
+      end
+    end
+
+    context 'unauthenticated user' do
+      before do
+        @user = FactoryBot.create(:user)
+        @item = FactoryBot.create(:meetings_item)
+      end
+
+      it 'fails to delete' do
+        expect do
+          delete(:destroy, params: { id: @item.id,
+                                     meetings_list_id: @item.id })
+        end.to_not change(MeetingsItem, :count)
       end
     end
   end

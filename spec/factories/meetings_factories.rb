@@ -9,9 +9,13 @@ FactoryBot.define do
   end
 
   factory :meetings_item do
-    meetings_list
-    date   { 'Date of Today' }
-    reason { 'Spende' }
-    amount { 22 }
+    association :meetings_list
+    date   { Date.today }
+    reason { Faker::Dessert.variety }
+    amount { Faker::Number.number(digits: 2) }
+
+    trait :invalid_item do
+      reason { nil }
+    end
   end
 end
