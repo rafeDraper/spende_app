@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MeetingsItemsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_meeting_list
   before_action :set_meetings_item, except: %i[create]
 
