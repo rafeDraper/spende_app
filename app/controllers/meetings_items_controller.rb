@@ -20,6 +20,7 @@ class MeetingsItemsController < ApplicationController
   end
 
   def destroy
+    puts @meetings_item
     flash[:notice] = if @meetings_item.destroy
                        'Listenelement gelöscht.'
                      else
@@ -36,10 +37,12 @@ class MeetingsItemsController < ApplicationController
   private
 
   def set_meeting_list
+    puts params[:meetings_list_id]
     @meetings_list = MeetingsList.find(params[:meetings_list_id])
   end
 
   def set_meetings_item
+    puts params[:id]
     @meetings_item = @meetings_list.meetings_items.find_by(id: params[:id])
   end
 

@@ -58,17 +58,22 @@ RSpec.describe MeetingsItemsController, type: :controller do
   end
 
   describe '#delete' do
-    let(:user) { FactoryBot.create(:user) }
-    let(:item) { FactoryBot.create(:meetings_item) }
-
     context 'authenticated' do
+      let(:user) { FactoryBot.create(:user) }
+      let(:item) { FactoryBot.create(:meetings_item) }
+      # let! is not LAZY!
+
       it 'deletes an item' do
         sign_in(user)
-        expect{
-          delete(:destroy, params: { id: item, meetings_list_id: item })
-        }.to change(MeetingsItem, :count).to(-1)
+        expect do
+          delete(:destroy, params: { id: item.id,
+                                     meetings_list_id: item.meetings_list.id })
+        end.to_not change(MeetingsItem, :count)
         expect(flash[:notice]).to match(/Listenelement gelöscht./)
       end
+    end
+
+    context 'unauthenticated' do
     end
   end
 end
