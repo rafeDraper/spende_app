@@ -74,6 +74,14 @@ RSpec.describe MeetingsItemsController, type: :controller do
     end
 
     context 'unauthenticated' do
+      let(:item) { FactoryBot.create(:meetings_item) }
+
+      it 'fails and flash error' do
+        item
+        delete(:destroy, params: { id: item.id,
+                                   meetings_list_id: item.meetings_list.id })
+        expect(MeetingsItem.count).to eq(1)
+      end
     end
   end
 end
