@@ -59,7 +59,7 @@ RSpec.describe MeetingsItemsController, type: :controller do
 
   describe '#delete' do
     context 'authenticated' do
-      let(:user) { FactoryBot.create(:user) }
+      let(:user) { FactoryBot.create(:user, :admin) }
       let(:item) { FactoryBot.create(:meetings_item) }
       # let! is not LAZY!
 
@@ -69,18 +69,21 @@ RSpec.describe MeetingsItemsController, type: :controller do
           delete(:destroy, params: { id: item.id,
                                      meetings_list_id: item.meetings_list.id })
         end.to_not change(MeetingsItem, :count)
-        expect(flash[:notice]).to match(/Listenelement gelöscht./)
+        expect(flash[:notice]).to match(/Item erfolgreich vernichtet./)
+        expect(response).to redirect_to("/meetings_lists/#{item.meetings_list.id}")
       end
     end
 
-    context 'unauthenticated' do
+    context 'authenticated, but not admin' do
+      let(:user) { FactoryBot.create(:user) }
       let(:item) { FactoryBot.create(:meetings_item) }
 
-      it 'fails and flash error' do
+      it 'is not allowed' do
+        sign_in(user)
         item
-        delete(:destroy, params: { id: item.id,
-                                   meetings_list_id: item.meetings_list.id })
+        delete(:destroy, params: { id: item.id, meetings_list_id: item.meetings_list.id })
         expect(MeetingsItem.count).to eq(1)
+        expect(flash[:alert]).to match(/Benutzer ist nicht Autorisiert/)
       end
     end
   end

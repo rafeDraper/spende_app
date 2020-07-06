@@ -20,13 +20,16 @@ class MeetingsItemsController < ApplicationController
   end
 
   def destroy
-    puts @meetings_item
-    flash[:notice] = if @meetings_item.destroy
-                       'Listenelement gelöscht.'
-                     else
-                       'Listenelement kann nicht gelöscht werden.'
-                     end
-    redirect_to @meetings_list
+    authorize @meetings_item
+    #flash[:notice] = ('Item erfolgreich vernichtet.' if @meetings_item.destroy)
+    #redirect_to @meetings_list
+    @meetings_item.destroy
+    respond_to do |format|
+      format.html do
+        redirect_to @meetings_list, notice: 'Item erfolgreich vernichtet.'
+      end
+      format.json { head :no_content }
+    end
   end
 
   def complete
@@ -37,12 +40,10 @@ class MeetingsItemsController < ApplicationController
   private
 
   def set_meeting_list
-    puts params[:meetings_list_id]
     @meetings_list = MeetingsList.find(params[:meetings_list_id])
   end
 
   def set_meetings_item
-    puts params[:id]
     @meetings_item = @meetings_list.meetings_items.find_by(id: params[:id])
   end
 
