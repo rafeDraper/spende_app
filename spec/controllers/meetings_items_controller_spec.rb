@@ -78,7 +78,7 @@ RSpec.describe MeetingsItemsController, type: :controller do
       let(:user) { FactoryBot.create(:user) }
       let(:item) { FactoryBot.create(:meetings_item) }
 
-      it 'is not allowed' do
+      it 'fails' do
         sign_in(user)
         item
         delete(:destroy, params: { id: item.id, meetings_list_id: item.meetings_list.id })
@@ -87,4 +87,19 @@ RSpec.describe MeetingsItemsController, type: :controller do
       end
     end
   end
+
+  describe "#update" do
+    context "authenticated" do
+      let(:user) { FactoryBot.create(:user, :admin) }
+      let(:item) { FactoryBot.create(:meetings_item) }
+
+      it "edits an item" do
+        sign_in(user)
+        item_params = FactoryBot.attributes_for(:meetings_item, amount: 40)
+        patch(:update, params: { id: item.id, meetings_list_id: item.meetings_list.id })
+        expect(item.reload.amount).to eq(40)
+      end
+    end
+  end
+  
 end
