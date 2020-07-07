@@ -323,7 +323,7 @@ body {
 		}
 
 		.meetings_item {
-			width: 40%;
+			width: 30%;
 			float: left;
 
 			p {
@@ -361,6 +361,15 @@ body {
 		}
 
 		.trash {
+			width: 10%;
+			float: left;
+			text-align: center;
+			border-left: 1px solid rgba(250, 250, 250, .3);
+			border-right: 1px solid rgba(250, 250, 250, .3);
+			padding: 1em 0;
+		}
+
+		.edit {
 			width: 10%;
 			float: left;
 			text-align: center;
