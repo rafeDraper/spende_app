@@ -48,6 +48,9 @@ class MeetingsItemsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def complete
     @meetings_item.update_attribute(:completed_at, Time.now)
     redirect_to @meetings_list, notice: 'Aufgabe erledigt'
