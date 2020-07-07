@@ -1900,13 +1900,13 @@ Metrics/CyclomaticComplexity:
   Max: 6
 
 Metrics/MethodLength:
-  Description: 'Avoid methods longer than 10 lines of code.'
+  Description: 'Avoid methods longer than 20 lines of code.'
   StyleGuide: '#short-methods'
   Enabled: true
   VersionAdded: '0.25'
   VersionChanged: '0.59.2'
   CountComments: false  # count full line comments?
-  Max: 10
+  Max: 20
   ExcludedMethods: []
 
 Metrics/ModuleLength:
