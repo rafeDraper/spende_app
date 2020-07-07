@@ -30,7 +30,7 @@ class MeetingsListsController < ApplicationController
 
     respond_to do |format|
       if @meetings_list.save
-        format.html { redirect_to @meetings_list, notice: 'Meetings list was successfully created.' }
+        format.html { redirect_to @meetings_list, notice: 'Die Meeting-Liste wurde erfolgreich erstellt.' }
         format.json { render :show, status: :created, location: @meetings_list }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class MeetingsListsController < ApplicationController
       if @meetings_list.update(meetings_list_params)
         format.html do
           redirect_to @meetings_list,
-                      notice: 'Meetings list was successfully updated.'
+                      notice: 'Die Meeting-Liste wurde erfolgreich aktualisiert.'
         end
         format.json { render :show, status: :ok, location: @meetings_list }
       else

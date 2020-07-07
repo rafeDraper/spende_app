@@ -88,18 +88,19 @@ RSpec.describe MeetingsItemsController, type: :controller do
     end
   end
 
-  describe "#update" do
-    context "authenticated" do
+  describe '#edit' do
+    context 'authenticated' do
       let(:user) { FactoryBot.create(:user, :admin) }
       let(:item) { FactoryBot.create(:meetings_item) }
 
-      it "edits an item" do
+      it 'edits an item' do
         sign_in(user)
-        item_params = FactoryBot.attributes_for(:meetings_item, amount: 40)
-        patch(:update, params: { id: item.id, meetings_list_id: item.meetings_list.id })
-        expect(item.reload.amount).to eq(40)
+        item_params = FactoryBot.attributes_for(:meetings_item, reason: 'test reason')
+        patch(:update, params: { meetings_list_id: item.meetings_list.id, id: item.id, meetings_item: item_params })
+        # edit_meetings_list_meetings_item GET      /meetings_lists/:meetings_list_id/meetings_items/:id/edit(.:format)                      meetings_items#edit
+        expect(item.reload.reason).to eq('test reason')
+        expect(flash[:notice]).to match(/Item erfolgreich aktualisiert/)
       end
     end
   end
-  
 end
