@@ -20,7 +20,7 @@ class MeetingsItemsController < ApplicationController
   end
 
   def destroy
-    #puts @meetings_item
+    # puts @meetings_item
     authorize @meetings_item
     # flash[:notice] = ('Item erfolgreich vernichtet.' if @meetings_item.destroy)
     # redirect_to @meetings_list
@@ -48,8 +48,7 @@ class MeetingsItemsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def complete
     @meetings_item.update_attribute(:completed_at, Time.now)
@@ -59,12 +58,12 @@ class MeetingsItemsController < ApplicationController
   private
 
   def set_meeting_list
-    #puts params[:meetings_list_id]
+    # puts params[:meetings_list_id]
     @meetings_list = MeetingsList.find(params[:meetings_list_id])
   end
 
   def set_meetings_item
-    #puts params[:id]
+    # puts params[:id]
     @meetings_item = @meetings_list.meetings_items.find_by(id: params[:id])
   end
 
