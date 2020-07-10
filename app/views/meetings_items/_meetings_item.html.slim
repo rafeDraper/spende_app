@@ -35,5 +35,5 @@
       = link_to meetings_list_meetings_item_path(@meetings_list, meetings_item),method: :delete, data: { confirm: "Bist du sicher?" } do
         i.fa.fa-trash
     .edit
-      = link_to edit_meetings_list_meetings_item_path(@meetings_list, meetings_item)
+      = link_to edit_meetings_list_meetings_item_path(@meetings_list, meetings_item.id)
         i.fa.fa-edit
