@@ -16,3 +16,30 @@
     = f.text_field :reason, placeholder: "Gebe bitte den Verwendungszweck an"
   .actions
     = f.submit value: "Neuer Eintrag"
+/ = form_with(model: @meetings_item, local: true) do |f|
+  - if @meetings_item.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@meetings_item.errors.count, "error")
+        | prohibited this meetings_item from bein saved:
+      ul
+        - @meetings_item.errors.full_messages.each do |m|
+          li
+            = m
+  .date_wrapper
+    = f.label :date, "Datum:"
+    = f.text_field :date, data: {controller: "flatpickr", 
+                                 flatpickr_alt_format: t("date.formats.long"),
+                                 flatpickr_alt_input: true,
+                                 },
+                                 placeholder: "Wähle das Datum aus"
+  .currency-input
+    = f.label :amount, "Betrag:"
+    = f.text_field :amount, class: "currency-input-mask", value: "0"
+  .reason-input
+    = f.label :reason, "Grund:"
+    = f.text_field :reason, placeholder: "Gebe bitte den Verwendungszweck an"
+  .actions
+    = f.submit value: "Neuer Eintrag"
+
+  

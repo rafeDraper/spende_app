@@ -1,3 +1,4 @@
+- provide(:title, "#{@meetings_list.title}")
 = form_with(model: meetings_list, local: true) do |form|
   - if meetings_list.errors.any?
     #error_explanation
