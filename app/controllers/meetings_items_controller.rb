@@ -43,7 +43,7 @@ class MeetingsItemsController < ApplicationController
         format.json { render :show, status: :ok, location: @meetings_list }
       else
         format.html { render :edit }
-        format.json { render json: @meetings_list.errors, status: :unprocessable_entity }
+        format.json { render json: @meetings_item.errors, status: :unprocessable_entity }
       end
     end
   end

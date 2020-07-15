@@ -2,4 +2,6 @@ h1.meetings_list_title
   | Neuer Eintrag
 #meetings_items_wrapper
   #form
-    = render  "meetings_items/form"
+    = render  'form'
+  .links
+    = link_to 'Cancel', @meetings_list

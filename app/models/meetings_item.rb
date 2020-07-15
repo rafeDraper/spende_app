@@ -1,6 +1,6 @@
 # Meetings items class
 class MeetingsItem < ApplicationRecord
-  validates :date, :reason, presence: true
+  validates :date, :reason, :amount, presence: true
 
   belongs_to :meetings_list
   monetize :amount_cents, allow_nil: true, default: nil
