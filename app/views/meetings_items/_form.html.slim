@@ -1,5 +1,5 @@
 - provide(:title, "#{@meetings_list.title}")
-= form_for [@meetings_list, @meetings_list.meetings_items.build] do |form|
+= form_with(model: [ @meetings_list, MeetingsItem.new ], local: true) do |form|
   = render 'eintrag_errors'
   .date_wrapper
     = form.label :date, "Datum:"
