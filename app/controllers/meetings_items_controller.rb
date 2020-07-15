@@ -48,7 +48,9 @@ class MeetingsItemsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @edit_item = MeetingsItem.find(params[:id])
+  end
 
   def complete
     @meetings_item.update_attribute(:completed_at, Time.now)

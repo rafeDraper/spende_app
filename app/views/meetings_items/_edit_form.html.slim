@@ -1,20 +1,16 @@
-- provide(:title, "#{@meetings_list.title}")
-= form_for [@meetings_list, @meetings_list.meetings_items.build] do |form|
+= form_with(model: [ @meetings_list, @meetings_item ], local: true, method: :put) do |form|
   = render 'eintrag_errors'
   .date_wrapper
     = form.label :date, "Datum:"
     = form.text_field :date, data: {controller: "flatpickr", 
                                  flatpickr_alt_format: t("date.formats.long"),
                                  flatpickr_alt_input: true,
-                                 },
-                                 placeholder: "Wähle das Datum aus"
+                                 }
   .currency-input
     = form.label :amount, "Betrag:"
     = form.text_field :amount, class: "currency-input-mask"
   .reason-input
     = form.label :reason, "Grund:"
-    = form.text_field :reason, placeholder: "Gebe bitte den Verwendungszweck an"
+    = form.text_field :reason
   .actions
     = form.submit value: "Neuer Eintrag"
-
-  
