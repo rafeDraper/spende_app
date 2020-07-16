@@ -1,3 +1,4 @@
+- provide(:title, "#{@meetings_list.title}")
 = form_with(model: [ @meetings_list, @meetings_item ], local: true, method: :put) do |form|
   = render 'eintrag_errors'
   .date_wrapper
