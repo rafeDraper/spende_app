@@ -90,6 +90,7 @@ RSpec.describe MeetingsItemsController, type: :controller do
 
   describe '#edit' do
     context 'authenticated' do
+      render_views
       let(:user) { FactoryBot.create(:user, :admin) }
       let(:item) { FactoryBot.create(:meetings_item) }
 
@@ -101,6 +102,33 @@ RSpec.describe MeetingsItemsController, type: :controller do
                                  meetings_item: item_params })
         expect(item.reload.reason).to eq('test reason')
         expect(flash[:notice]).to match(/Item erfolgreich aktualisiert/)
+      end
+
+      it 'fails, with wrong params' do
+        sign_in(user)
+        item_params = FactoryBot.attributes_for(:meetings_item, reason: nil)
+        patch(:update, params: { meetings_list_id: item.meetings_list.id,
+                                 id: item.id,
+                                 meetings_item: item_params })
+        expect(response).to render_template(:edit)
+        expect(response.body).to match(/Reason muss ausgefüllt werden/)
+      end
+    end
+  end
+
+  skip describe '#complete' do
+    context 'authenticated' do
+      let(:user) { FactoryBot.create(:user, :admin) }
+      let(:item) { FactoryBot.create(:meetings_item) }
+      it 'completes an item' do
+        sign_in(user)
+        item_params = FactoryBot.attributes_for(:meetings_item)
+        patch(:update, params: { meetings_list_id: item.meetings_list.id,
+                                 id: item.id,
+                                 meetings_item: item_params,
+                                 completeted_at: Time.now })
+
+        expect(response).to redirect_to("/meetings_lists/1")
       end
     end
   end

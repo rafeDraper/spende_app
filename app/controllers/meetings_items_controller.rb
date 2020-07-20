@@ -37,8 +37,7 @@ class MeetingsItemsController < ApplicationController
     respond_to do |format|
       if @meetings_item.update(meeting_item_params)
         format.html do
-          redirect_to @meetings_list,
-                      notice: 'Item erfolgreich aktualisiert'
+          redirect_to @meetings_list, notice: 'Item erfolgreich aktualisiert'
         end
         format.json { render :show, status: :ok, location: @meetings_list }
       else
@@ -49,7 +48,6 @@ class MeetingsItemsController < ApplicationController
   end
 
   def edit
-    @edit_item = MeetingsItem.find(params[:id])
   end
 
   def complete
