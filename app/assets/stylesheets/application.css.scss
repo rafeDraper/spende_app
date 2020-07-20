@@ -305,7 +305,7 @@ body {
 	}
 
 	.items_container {
-		width: 80%;
+		width: 70%;
 	}
 
 	.row {
@@ -616,12 +616,12 @@ input[type="submit"] {
 	}
 
 	input[value="Konto löschen"] {
-		background: white;
+		background: rgb(253, 253, 253);
 		outline: none;
 		border: none;
 		height: 40px;
 		border-radius: 4px;
-		width: 100%;
+		width: 400px;
 		display: inline-block;
 		transition: all .4s ease-in-out;
 		cursor: pointer;
