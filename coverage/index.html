@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-07-15T12:35:22+02:00">2020-07-15T12:35:22+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-07-20T10:25:29+02:00">2020-07-20T10:25:29+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  71.43%
+  71.11%
 </span>
 
      </span>
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>224</b> relevant lines,
+    <b>225</b> relevant lines,
     <span class="green"><b>160</b> lines covered</span> and
-    <span class="red"><b>64</b> lines missed. </span>
+    <span class="red"><b>65</b> lines missed. </span>
     (<span class="red">
-  71.43%
+  71.11%
 </span>
 )
   </div>
@@ -105,12 +105,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#534f34d7f360282cebfa4a6e52e9f0703ad65a14" class="src_link" title="app/controllers/meetings_items_controller.rb">app/controllers/meetings_items_controller.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">89.47 %</td>
-            <td class="cell--number">73</td>
-            <td class="cell--number">38</td>
+            <td class="yellow strong cell--number t-file__coverage">87.18 %</td>
+            <td class="cell--number">75</td>
+            <td class="cell--number">39</td>
             <td class="cell--number">34</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">1.37</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">1.33</td>
             
           </tr>
         
@@ -346,14 +346,14 @@
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
       <span class="red">
-  76.8%
+  76.19%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.33
+         1.32
        </span>
     </span> hits/line
     )
@@ -366,11 +366,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>125</b> relevant lines,
+    <b>126</b> relevant lines,
     <span class="green"><b>96</b> lines covered</span> and
-    <span class="red"><b>29</b> lines missed. </span>
+    <span class="red"><b>30</b> lines missed. </span>
     (<span class="red">
-  76.8%
+  76.19%
 </span>
 )
   </div>
@@ -406,12 +406,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#534f34d7f360282cebfa4a6e52e9f0703ad65a14" class="src_link" title="app/controllers/meetings_items_controller.rb">app/controllers/meetings_items_controller.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">89.47 %</td>
-            <td class="cell--number">73</td>
-            <td class="cell--number">38</td>
+            <td class="yellow strong cell--number t-file__coverage">87.18 %</td>
+            <td class="cell--number">75</td>
+            <td class="cell--number">39</td>
             <td class="cell--number">34</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">1.37</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">1.33</td>
             
           </tr>
         
@@ -1463,7 +1463,7 @@
     <h3>app/controllers/meetings_items_controller.rb</h3>
     <h4>
       <span class="yellow">
-  89.47%
+  87.18%
 </span>
 
       lines covered
@@ -1472,9 +1472,9 @@
     
 
     <div class="t-line-summary">
-      <b>38</b> relevant lines.
+      <b>39</b> relevant lines.
       <span class="green"><b>34</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
 
     
@@ -2041,56 +2041,23 @@
 
             
 
-            <code class="ruby">  def edit; end</code>
+            <code class="ruby">  def edit</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="52">
+          <li class="missed" data-hits="0" data-linenumber="52">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    @edit_item = MeetingsItem.find(params[:id])</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="53">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def complete</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="54">
-            
-            
-
-            
-
-            <code class="ruby">    @meetings_item.update_attribute(:completed_at, Time.now)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="55">
-            
-            
-
-            
-
-            <code class="ruby">    redirect_to @meetings_list, notice: &#39;Aufgabe erledigt&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="56">
+          <li class="never" data-hits="" data-linenumber="53">
             
             
 
@@ -2101,7 +2068,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="57">
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -2112,13 +2079,46 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="58">
+          <li class="covered" data-hits="1" data-linenumber="55">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">  def complete</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">    @meetings_item.update_attribute(:completed_at, Time.now)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby">    redirect_to @meetings_list, notice: &#39;Aufgabe erledigt&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2140,7 +2140,7 @@
 
             
 
-            <code class="ruby">  def set_meeting_list</code>
+            <code class="ruby">  private</code>
           </li>
         </div>
       
@@ -2151,18 +2151,18 @@
 
             
 
-            <code class="ruby">    # puts params[:meetings_list_id]</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="62">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="1" data-linenumber="62">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    @meetings_list = MeetingsList.find(params[:meetings_list_id])</code>
+            <code class="ruby">  def set_meeting_list</code>
           </li>
         </div>
       
@@ -2173,29 +2173,29 @@
 
             
 
+            <code class="ruby">    # puts params[:meetings_list_id]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="64">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    @meetings_list = MeetingsList.find(params[:meetings_list_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="65">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="64">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="65">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def set_meetings_item</code>
           </li>
         </div>
       
@@ -2206,18 +2206,18 @@
 
             
 
-            <code class="ruby">    # puts params[:id]</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="67">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="1" data-linenumber="67">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    @meetings_item = @meetings_list.meetings_items.find_by(id: params[:id])</code>
+            <code class="ruby">  def set_meetings_item</code>
           </li>
         </div>
       
@@ -2228,12 +2228,34 @@
 
             
 
+            <code class="ruby">    # puts params[:id]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="69">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    @meetings_item = @meetings_list.meetings_items.find_by(id: params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="70">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="69">
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -2244,7 +2266,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="70">
+          <li class="covered" data-hits="1" data-linenumber="72">
             <span class="hits">1</span>
             
 
@@ -2255,7 +2277,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="71">
+          <li class="covered" data-hits="4" data-linenumber="73">
             <span class="hits">4</span>
             
 
@@ -2266,7 +2288,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="72">
+          <li class="never" data-hits="" data-linenumber="74">
             
             
 
@@ -2277,7 +2299,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="73">
+          <li class="never" data-hits="" data-linenumber="75">
             
             
 
