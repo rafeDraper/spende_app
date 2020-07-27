@@ -116,19 +116,20 @@ RSpec.describe MeetingsItemsController, type: :controller do
     end
   end
 
-  skip describe '#complete' do
+  describe '#complete' do
     context 'authenticated' do
       let(:user) { FactoryBot.create(:user, :admin) }
       let(:item) { FactoryBot.create(:meetings_item) }
       it 'completes an item' do
         sign_in(user)
         item_params = FactoryBot.attributes_for(:meetings_item)
-        patch(:update, params: { meetings_list_id: item.meetings_list.id,
-                                 id: item.id,
-                                 meetings_item: item_params,
-                                 completeted_at: Time.now })
-
-        expect(response).to redirect_to("/meetings_lists/1")
+        patch(:complete, params: { meetings_list_id: item.meetings_list.id,
+                                   id: item.id,
+                                   meetings_item: item_params,
+                                   completeted_at: Time.now,
+                                   updated_at: Time.now })
+        expect(item.reload.completed?).to eq(true)
+        expect(flash[:notice]).to match(/Aufgabe erledigt/)
       end
     end
   end
