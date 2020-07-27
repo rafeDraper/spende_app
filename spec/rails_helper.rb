@@ -9,6 +9,7 @@ require 'devise'
 require 'capybara/rspec'
 require 'shoulda/matchers'
 require 'pundit/rspec'
+require 'pundit/matchers'
 require 'faker'
 require_relative 'support/controller_macros'
 # Prevent database truncation if the environment is production

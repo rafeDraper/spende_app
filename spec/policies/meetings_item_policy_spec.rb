@@ -1,13 +1,11 @@
-require 'rails_helper'
-
 RSpec.describe MeetingsItemPolicy, type: :policy do
-  let(:user) { User.new }
+  subject { MeetingsItemPolicy.new(user, record) }
+  let(:item) { FactoryBot.create(:meetings_item) }
 
-  subject { described_class }
+  context 'being a visitor' do
+    let(:user) { nil }
 
-  permissions :destroy? do
-    it "deletes an item if administrator only" do
-      expect(subject).to permit(user, MeetingsItem.delete())
-    end
+    it { is_expected.to permit_action(:show) }
+    it { is_expected.to forbid_action(:destroy) }
   end
 end
