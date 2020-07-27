@@ -40,6 +40,7 @@ group :test do
   gem 'capybara', '3.33.0'
   gem 'guard', '2.16.2'
   gem 'launchy'
+  gem 'pundit-matchers', '~> 1.6.0'
   gem 'rails-controller-testing', '1.0.5'
   gem 'selenium-webdriver',       '3.142.7'
   gem 'shoulda-matchers'
