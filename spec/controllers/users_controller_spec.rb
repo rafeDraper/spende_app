@@ -68,16 +68,6 @@ RSpec.describe UsersController, type: :controller do
         expect(flash[:notice]).to match(/Benutzer erfolgreich aktualisiert/)
       end
     end
-
-    context 'authenticated but not admin' do
-      it 'fail if signed in as' do
-        sign_in(admin)
-        user_params = FactoryBot.attributes_for(:user, tacos: nil, role: nil)
-        patch(:update, params: { id: user.id, user: user_params })
-        expect(response).to redirect_to(users_path)
-        expect(user.reload.role).to eq(nil)
-        expect(flash[:error]).to match(/nicht in der Lage zu aktualisieren/)
-      end
-    end
+    
   end
 end
