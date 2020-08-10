@@ -12,7 +12,7 @@ RSpec.feature 'MeetingsItems', type: :feature do
 
     expect do
       find('#container_link_list').click_link('Listen')
-      find(click_link 'Neue Liste'
+      find(click_link 'Neue Liste')
 
       expect(page).to have_content("Meeting list successfully created")
       expect(page).to have_content("Test List")
