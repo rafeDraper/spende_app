@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.feature 'MeetingsItems', type: :feature do
+RSpec.feature 'MeetingsList', type: :feature do
   scenario 'user creates a new MeetingList' do
     user = FactoryBot.create(:user, :admin)
+    meeting = FactoryBot.create(:meetings_list)
 
     visit(root_path)
     click_link 'Anmelden'
@@ -12,11 +13,13 @@ RSpec.feature 'MeetingsItems', type: :feature do
 
     expect do
       find('#container_link_list').click_link('Listen')
-      find(click_link 'Neue Liste')
-
-      expect(page).to have_content("Meeting list successfully created")
-      expect(page).to have_content("Test List")
-      expect(page).to have_content("angemeldet als: #{user.email}")
+      click_link('Neue Liste')
+      fill_in 'meetings_list_title',	with: meeting.title
+      fill_in 'meetings_list_responsible', with: meeting.responsible
+      click_button('Erstellen')
+      expect(page).to have_content('Die Meeting-Liste wurde erfolgreich erstellt.')
+      expect(page).to have_content(meeting.title)
+      expect(page).to have_content("Angemeldet als: #{user.email}")
     end.to change(MeetingsList, :count).by(1)
   end
 end
